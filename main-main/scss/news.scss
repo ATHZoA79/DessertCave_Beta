@@ -1,0 +1,276 @@
+// -- Define variable --
+$grey-9: #dcdcdc;
+$grey-8: #c2c2c2;
+$grey-7: #969696;
+$grey-6: #7e7e7e;
+$grey-5: #555;
+$grey-3: #393939;
+$grey-2: #242424;
+$grey-1: #121212;
+$redwine: #901111;
+$logo_color: rgb(141, 215, 204);
+$darkgold: rgb(107, 78, 38);
+// -- End of variable --
+
+// -- animation
+@keyframes test {}
+
+
+// -- Define mixin --
+@mixin dimension($w, $h) {
+  width: $w;
+  height: $h;
+
+}
+
+// width, height 
+@mixin position-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+@mixin flex-row($main, $sub) {
+  display: flex;
+  justify-content: $main;
+  align-items: $sub;
+}
+
+// justify-content, align-items
+@mixin flex-col($main, $sub) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $main;
+  align-items: $sub;
+}
+
+// justify-content, align-items
+@mixin image($uri) {
+  background-image: url($uri);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@mixin keyframe($animation_name, $animation_duration, $animation_count, $animation_time_function) {
+  animation-name: $animation_name;
+  animation-duration: $animation_duration;
+  animation-iteration-count: $animation_count;
+  animation-timing-function: $animation_time_function;
+}
+
+@mixin transition($transition_time, $transition_delay, $transition_funtion) {
+  transition-duration: $transition_time;
+  transition-delay: $transition_delay;
+  transition-timing-function: $transition_funtion;
+
+}
+
+@mixin background($bgcolor) {
+  background-color: $bgcolor;
+}
+
+
+@mixin font($size, $weight, $family, $color) {
+  font-size: $size;
+  font-weight: $weight;
+  font-family: $family;
+  color: $color;
+}
+
+
+// -- End of mixin --
+
+main {
+  width: 100%;
+
+  .page-area {
+    @include dimension(100%, 50px);
+    // background-color: $grey-6;
+    margin-top: 40px;
+
+    @include flex-row(End, center);
+
+    .page {
+      height: 20px;
+      // background-color: $grey-7;
+      padding-right: 5%;
+
+      a {
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+
+        // color: black;
+        &:hover {
+          border-bottom: solid black;
+          transition: 0.1s linear;
+        }
+      }
+    }
+  }
+
+  .hr-head {
+    @include dimension(500px, auto);
+    @include flex-row(center, center);
+    padding: 150px 0;
+    margin: auto;
+    // background-color: $grey-9;
+
+    p {
+      font-size: 24px;
+
+      &::before {
+        content: '———';
+
+      }
+
+      &::after {
+        content: '———';
+
+      }
+    }
+  }
+
+  .news-container {
+    @include dimension(1090px, auto);
+    margin: auto;
+    padding-top: 40px;
+    background-color: $grey-9;
+
+    .news-card {
+      @include dimension(100%, 402px);
+      @include flex-row(center, flex-start);
+      margin-bottom: 166px;
+      // background-color: $grey-8;
+
+      .news-info {
+        @include dimension(555px, 402px);
+        background-color: $grey-7;
+
+
+        .news-date {
+          @include dimension(95px, 50px);
+          background-color: $logo_color;
+          // position: absolute;
+          // left: 50px;
+          transform: translate(50%, 0);
+          z-index: 1;
+        }
+
+        .news-text {
+          @include dimension(453px, 155px);
+          margin: 90px 0 22px 10%;
+          background-color: $grey-7;
+
+          .news-text-title {
+            // position: absolute;
+            // top: 147px;
+            // left: 51px;
+            @include dimension(80%, 30px);
+            margin-bottom: 32px;
+            background-color: #555;
+            font-size: 18px;
+          }
+
+          .new-text-content {
+            @include dimension(440px, 92px);
+            background-color: #901111;
+          }
+        }
+
+        .news-date-duration-box {
+          @include flex-row(space-between, center);
+          padding: 0 10%;
+
+          .news-date-duration {
+            @include dimension(161px, 13px);
+            // position: absolute;
+            // top: 322px;
+            // left: 51px;
+            background-color: blue;
+
+          }
+
+          a {
+            text-decoration: none;
+          }
+
+          .news-btn-area {
+            @include dimension(20%, 10%);
+            @include flex-row(left, center);
+            background-color: $grey-9;
+            border-radius: 10px;
+            // position: absolute;
+            // top: 318px;
+            // right: 60px;
+
+            &:hover {
+              i {
+                transform: translateX(1em);
+                @include transition(0.5s, 0s, linear);
+              }
+            }
+
+            button {
+              background-color: transparent;
+              border: 0px;
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+
+      .news-img {
+        @include dimension(535px, 402px);
+        background-color: $grey-3;
+      }
+    }
+  }
+}
+
+@media (max-width: 1240px) {
+  main {
+    .news-container {
+      @include dimension(80%, auto);
+
+      .news-card {
+        .news-info {
+          width: 50%;
+
+          .news-text {
+            margin: 50px 0 80px 10%;
+            @include dimension(90%, 155px);
+
+            .new-text-content {
+              @include dimension(90%, 100px);
+            }
+          }
+        }
+
+        .news-img {
+          width: 50%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 720px) {
+  main {
+    .news-container {
+      .news-card {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+
+        .news-info {
+          @include dimension(90%, 50%);
+        }
+        .news-img {
+          width: 90%;
+        }
+      }
+    }
+  }
+}

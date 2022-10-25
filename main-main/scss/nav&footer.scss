@@ -1,0 +1,598 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap");
+@import url("./_/_mixin.scss");
+@import url("./_/_variable.scss");
+// -- Define variable --
+$grey-9: #dcdcdc;
+$grey-8: #c2c2c2;
+$grey-7: #969696;
+$grey-6: #7e7e7e;
+$grey-2: #242424;
+$grey-1: #121212;
+$redwine: #901111;
+$logo_color: rgb(141, 215, 204);
+$darkgold: rgb(107, 78, 38);
+
+// -- End of variable --
+// -- animation
+@keyframes test {}
+
+// -- Define mixin --
+@mixin dimension($w, $h) {
+    width: $w;
+    height: $h;
+
+}
+
+// width, height 
+@mixin position-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+
+@mixin flex-row($main, $sub) {
+    display: flex;
+    justify-content: $main;
+    align-items: $sub;
+}
+
+// justify-content, align-items
+@mixin flex-col($main, $sub) {
+    display: flex;
+    flex-direction: column;
+    justify-content: $main;
+    align-items: $sub;
+}
+
+// justify-content, align-items
+@mixin image($uri) {
+    background-image: url($uri);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@mixin keyframe($animation_name, $animation_duration, $animation_count, $animation_time_function) {
+    animation-name: $animation_name;
+    animation-duration: $animation_duration;
+    animation-iteration-count: $animation_count;
+    animation-timing-function: $animation_time_function;
+}
+
+@mixin transition($transition_time, $transition_delay, $transition_funtion) {
+    transition-duration: $transition_time;
+    transition-delay: $transition_delay;
+    transition-timing-function: $transition_funtion;
+
+}
+
+@mixin background($bgcolor) {
+    background-color: $bgcolor;
+}
+
+
+@mixin font($size, $weight, $family, $color) {
+    font-size: $size;
+    font-weight: $weight;
+    font-family: $family;
+    color: $color;
+}
+
+
+// -- End of mixin --
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Noto Serif TC", sans-serif;
+}
+
+html {
+    ::-webkit-scrollbar {
+        width: 0px;
+    }
+}
+
+body {
+    @include dimension(100%, auto);
+    position: relative;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+header {
+    @include dimension(100%, 70px);
+    // position: fixed;
+    border-top: 7px solid white;
+    background-color: $logo_color;
+
+    nav {
+        @include flex-row(flex-end, center);
+        position: relative;
+        max-width: 1100px;
+        height: 100%;
+        margin: auto;
+        background-color: $logo_color;
+
+        .nav-logo {
+            @include flex-row(center, center);
+            height: 102px;
+            width: 102px;
+            // background-color: gray;
+            @include image('../img/NAV/Logo/logo-bg-white.png');
+            position: absolute;
+            top: 15px;
+            left: 0;
+            border-radius: 50%;
+            z-index: 4;
+        }
+
+        .nav-btns {
+            li {
+                @include flex-row(center, center);
+            }
+
+            a+a {
+                margin-left: 12px;
+            }
+
+            @include flex-row(flex-end, center);
+            position: relative;
+            height: 100%;
+            flex: 1;
+            padding: 0 28px;
+            background-color: $logo_color;
+
+            .nav-style {
+                @include flex-row(center, center);
+                position: relative;
+                padding: 4px 8px;
+                text-decoration: none;
+                color: $grey-1;
+                font-weight: 700;
+                font-size: 1.2em;
+                letter-spacing: 1px;
+                transition: 0.3s ease;
+                z-index: 2;
+
+                &:hover {
+                    background-color: #fff;
+                }
+
+                &#order .order-menu {
+                    width: 100%;
+                    position: absolute;
+                    top: 100%;
+                    list-style: none;
+                    display: none;
+                    line-height: 40px;
+                    border: 1px black solid;
+                    background-color: #eee;
+                    // transform: translateY(-50%);
+                }
+
+                &#order:hover .order-menu {
+                    display: block;
+                    width: 100%;
+
+                    & li:hover {
+                        background-color: #000;
+                        color: #eee;
+                    }
+                }
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                right: 0;
+                height: 36px;
+                border-right: 2px solid $grey-2;
+            }
+        }
+
+        .social-media-area {
+            @include flex-row(center, center);
+            position: relative;
+            padding: 0 16px 0 32px;
+            background-color: $logo_color;
+
+            a+a {
+                margin-left: 12px;
+            }
+
+            .social-style {
+                width: 44px;
+                height: 44px;
+            }
+
+            #facebook {
+                @include dimension(40px, 40px);
+                @include image('../img/NAV/社群/FB.png');
+                transition: 0.4s ease;
+                scale: 1;
+
+                &:hover {
+                    scale: 1.15;
+                }
+            }
+
+            #instagram {
+                @include dimension(38px, 38px);
+                @include image('../img/NAV/社群/IG.png');
+                background-size: contain;
+                transition: 0.4s ease;
+                scale: 1;
+
+                &:hover {
+                    scale: 1.15;
+                }
+            }
+        }
+    }
+
+    .ham-icon,
+    #toggle_menu {
+        display: none;
+    }
+
+    .pagination {
+        @include dimension(100%, 40px);
+        @include flex-row(flex-end, center);
+        position: absolute;
+        // top: 100%;
+
+        .content {
+            @include flex-row(space-around, center);
+            @include dimension(calc(50% + 720px - 67px), 100%);
+            padding: 0 10%;
+            background-color: #000;
+            z-index: 1;
+
+            a {
+                color: $redwine;
+                text-decoration: none;
+            }
+        }
+    }
+
+    // End of pagination 
+}
+
+// End of header
+
+footer {
+    @include dimension(100%, 468px);
+    @include flex-col(center, center);
+    background-color: $grey-7;
+    color: $darkgold;
+
+    .footer_box {
+        width: 80%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .information {
+            @include flex-row(center, center);
+
+            .information_box {
+                width: 350px;
+                font-size: 14px;
+                background-color: $grey-6;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                #footer_title {
+                    @include dimension(261px, 87px);
+                    @include flex-row(flex-start, flex-end);
+                    border-bottom: 1px solid $darkgold;
+                    background-color: $grey-2;
+                }
+
+                .text {
+                    background-color: $grey-8;
+                    color: white;
+                    padding-top: 10px;
+
+                    i {
+                        padding: 5px 10px;
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+
+        .map {
+            @include flex-row(center, center);
+
+            iframe {
+                @include dimension(554px, 236px);
+                border: 0;
+                border-radius: 40px;
+                padding: 10px;
+            }
+        }
+    }
+
+    .copy-right {
+        @include dimension(419px, 15px);
+        @include flex-row(center, center);
+        transform: translate(0, 250%);
+        color: white;
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+}
+
+
+
+// Media Query
+
+
+// --1440px
+@media (min-width:1240px) and (max-width:1440px) {
+    footer {
+        .footer_box {
+            .map {
+                iframe {
+                    width: 400px;
+                }
+            }
+        }
+    }
+}
+
+// -- End of 1440px
+
+
+
+//-- 1240px
+@media screen and (min-width:1024px) and (max-width:1280px) {
+
+    header {
+        nav {
+            width: 100%;
+            padding: 0 5%;
+
+            .nav-logo {
+                margin: 0 5%;
+            }
+        }
+    }
+
+    footer {
+        .footer_box {
+            .map {
+                iframe {
+                    width: calc(100% - 100px);
+                }
+
+            }
+        }
+
+    }
+}
+
+//--End of 1240px
+
+
+
+//--1024 px
+@media screen and (min-width:750px) and (max-width:1024px) {
+
+    header {
+        nav {
+            width: 100%;
+            padding: 0 5%;
+
+            .nav-logo {
+                margin: 0 5%;
+            }
+        }
+    }
+
+    footer {
+        .footer_box {
+            @include flex-row(center, center);
+
+            // .information {}
+
+            .map {
+                display: none;
+            }
+        }
+    }
+
+    #phone_Ham:checked+.phone-ham-list {
+        visibility: visible;
+        height: 100vh;
+        width: 100%;
+    }
+}
+
+//--End of 1024px
+
+
+
+//--750px
+
+@media screen and (min-width:720px) and (max-width:750px) {
+    header {
+        nav {
+            .nav-btns {
+                .nav-style {
+                    padding: 4px 4px;
+                }
+            }
+        }
+    }
+}
+
+//--End of 750px
+
+
+
+//--720 px
+@media (max-width:720px) {
+    header {
+        position: relative;
+
+        nav {
+            .nav-logo {
+                @include dimension(70px, 72px);
+                transform: translateX(-50%);
+                position: absolute;
+                left: 50%;
+                top: 0;
+            }
+
+            .nav-btns,
+            .social-media-area {
+                display: none;
+            }
+        }
+
+        .ham-icon {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            display: block;
+            font-size: 3rem;
+            // background-color: rgb(48, 68, 111);
+            z-index: 20;
+        }
+
+        #ham-icon:checked~#toggle-menu {
+            display: block;
+            visibility: visible;
+        }
+
+        #toggle-menu {
+            @include dimension(100%, 100vh);
+            position: fixed;
+            top: 0;
+            display: none;
+            visibility: hidden;
+            background-color: rgba(131, 105, 54, 0.5);
+            z-index: 5;
+        }
+
+    }
+
+    footer {
+        .footer_box {
+            @include flex-row(center, center);
+
+            // .information {}
+
+            .map {
+                display: none;
+            }
+        }
+    }
+}
+
+//--End of 720px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// -- 720px
+// @media screen and (min-width:760px) and (max-width: 1024px) {
+//     header {
+//         position: relative;
+//         nav {
+//             padding: 0 20px;
+//             .nav-logo {
+//                 @include dimension(96px, 96px);
+//                 position: absolute;
+//                 top: 0;
+//                 left: 50%;
+//                 translate: -50% 0;
+//             }
+//             .nav-btns,
+//             .social-media-area {
+//                 display: none;
+//             }
+//         }
+//         .ham-icon {
+//             position: absolute;
+//             right: 0;
+//             top: 50%;
+//             transform: translateY(-50%);
+//             display: block;
+//             font-size: 3rem;
+//             // background-color: rgb(48, 68, 111);
+//             z-index: 20;
+//         }
+//         #ham_icon:checked~#toggle_menu {
+//             display: block;
+//             visibility: visible;
+//         }
+
+//         #toggle_menu {
+//             @include dimension(100%, 100vh);
+//             position: fixed;
+//             top: 0;
+//             display: none;
+//             visibility: hidden;
+//             background-color: rgba(131, 105, 54, 0.5);
+//         }
+//     }
+//     .pagination {
+//         .content {
+//             width: 100%;
+//             color: white;
+//         }
+//     }
+//     footer {
+//         .footer_box{
+//             .map{
+//                 display: none;
+//             }
+//         }
+//     }
+
+//     #phone_Ham:checked+.phone-ham-list {
+//         visibility: visible;
+//         height: 100vh;
+//         width: 100%;
+//     }
+// }
+// -- End of 720px

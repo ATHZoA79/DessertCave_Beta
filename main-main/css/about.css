@@ -1,0 +1,366 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap");
+@keyframes rotate {
+  0% {
+    transform: rotate(360deg);
+  }
+  25% {
+    transform: rotate(270deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+main .page-area {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: End;
+  align-items: center;
+  margin-top: 40px;
+}
+main .page-area .page {
+  height: 20px;
+  padding-right: 5%;
+}
+main .page-area .page a {
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+}
+main .page-area .page a:hover {
+  border-bottom: solid black;
+  transition: 0.1s linear;
+}
+main .phone_title li {
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+}
+main .phone_title li span {
+  letter-spacing: 10px;
+  padding: 18px 10px;
+  text-align: center;
+  font-size: 18px;
+}
+main .logo-area {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 148px 0;
+}
+main .logo-area .logo {
+  width: 900px;
+  height: 126px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: rgb(107, 78, 38);
+}
+main .logo-area .logo .logo-img {
+  width: 434px;
+  height: 126px;
+  background-color: #7e7e7e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main .logo-area .logo .logo-text {
+  width: 330px;
+  height: 120px;
+  color: black;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 30px;
+  font-size: 20px;
+}
+main .banner-area {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 120px;
+}
+main .banner-area .banner {
+  width: 1091px;
+  height: 505px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #969696;
+  color: rgb(107, 78, 38);
+  font-size: 2rem;
+}
+main .slogan-area {
+  width: 100%;
+  height: 613px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 120px 0;
+  background-color: #969696;
+}
+main .slogan-area .slogan-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: black;
+  font-size: 24px;
+  position: absolute;
+  z-index: 1;
+}
+main .slogan-area .slogan-oval1 {
+  width: 646px;
+  height: 235px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  background-color: #7e7e7e;
+  border-radius: 50%;
+}
+main .slogan-area .slogan-oval1 .slogan-oval2 {
+  width: 587.97px;
+  height: 235.73px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation-name: rotate;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  border: 1px solid black;
+  background-color: #969696;
+  border-radius: 50%;
+}
+main .history-area {
+  width: 100%;
+  height: 1480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main .history-area .cordon-area {
+  width: 90%;
+  height: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 120px 0;
+}
+main .history-area .cordon-area .cordon-story {
+  width: 45%;
+  height: 402px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightcyan;
+  color: black;
+  font-size: 18px;
+}
+main .history-area .cordon-area .cordon-story ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+main .history-area .cordon-area .cordon-story ul li:nth-of-type(1) {
+  font-size: 20px;
+  line-height: 35px;
+}
+main .history-area .cordon-area .vl {
+  width: 1px;
+  height: 500px;
+  border: 1px solid #242424;
+  background-color: #7e7e7e;
+}
+main .history-area .cordon-area .cordon-graduate {
+  width: 45%;
+  height: 402px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightsteelblue;
+  color: black;
+  font-size: 2rem;
+}
+main .history-area .brand-area {
+  width: 90%;
+  height: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 120px 0;
+}
+main .history-area .brand-area .brand-story {
+  width: 45%;
+  height: 402px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightcyan;
+  color: black;
+  font-size: 18px;
+}
+main .history-area .brand-area .brand-story ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+main .history-area .brand-area .brand-story ul li:nth-of-type(1) {
+  font-size: 20px;
+  line-height: 35px;
+}
+main .history-area .brand-area .vl {
+  width: 1px;
+  height: 500px;
+  border: 1px solid #242424;
+  background-color: #7e7e7e;
+}
+main .history-area .brand-area .brand-picture {
+  width: 45%;
+  height: 402px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: lightsteelblue;
+  color: black;
+  font-size: 2rem;
+}
+
+@media (max-width: 720px) {
+  main .phone_title li {
+    opacity: 1;
+  }
+  main .logo-area {
+    height: 100%;
+    padding: 0;
+  }
+  main .logo-area .logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+  }
+  main .logo-area .logo .logo-img {
+    width: 260px;
+    height: 75px;
+    margin-top: 112px;
+    margin-bottom: 107px;
+  }
+  main .logo-area .logo .logo-text {
+    width: 300px;
+    height: 96px;
+    margin-bottom: 112px;
+    line-height: 24px;
+    font-size: 16px;
+  }
+  main .slogan-area .slogan-text {
+    font-size: 16px;
+  }
+  main .slogan-area .slogan-oval1 {
+    width: 380px;
+    height: 160px;
+  }
+  main .slogan-area .slogan-oval1 .slogan-oval2 {
+    width: 380px;
+    height: 160px;
+  }
+  main .history-area {
+    width: 100%;
+    height: 100%;
+  }
+  main .history-area .cordon-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 0;
+  }
+  main .history-area .cordon-area .cordon-story {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  main .history-area .cordon-area .cordon-story ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  main .history-area .cordon-area .cordon-story ul li:nth-of-type(1) {
+    font-size: 18px;
+    line-height: 35px;
+    margin-top: 100px;
+  }
+  main .history-area .cordon-area .cordon-story ul li:nth-last-of-type(1) {
+    margin-bottom: 112px;
+  }
+  main .history-area .cordon-area .vl {
+    display: none;
+  }
+  main .history-area .cordon-area .cordon-graduate {
+    width: 100%;
+    height: 500px;
+  }
+  main .history-area .brand-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 0;
+  }
+  main .history-area .brand-area .brand-picture {
+    width: 100%;
+    height: 500px;
+  }
+  main .history-area .brand-area .brand-story {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  main .history-area .brand-area .brand-story ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  main .history-area .brand-area .brand-story ul li:nth-of-type(1) {
+    font-size: 18px;
+    line-height: 35px;
+    margin-top: 100px;
+  }
+  main .history-area .brand-area .brand-story ul li:nth-last-of-type(1) {
+    margin-bottom: 112px;
+  }
+  main .history-area .brand-area .vl {
+    display: none;
+  }
+}/*# sourceMappingURL=about.css.map */

@@ -1,0 +1,429 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap');
+
+
+// -- Define variable --
+$grey-9: #dcdcdc;
+$grey-8: #c2c2c2;
+$grey-7: #969696;
+$grey-6: #7e7e7e;
+$grey-2: #242424;
+$grey-1: #121212;
+$redwine: #901111;
+$logo_color: rgb(141, 215, 204);
+$darkgold: rgb(107, 78, 38);
+
+// -- End of variable --
+
+//---keyframe
+
+@keyframes rotate {
+    0% {
+        transform: rotate(360deg);
+    }
+
+    25% {
+        transform: rotate(270deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    75% {
+        transform: rotate(90deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
+//---end of keyframe
+
+
+// -- Define mixin --
+@mixin dimension($w, $h) {
+    width: $w;
+    height: $h;
+
+}
+
+// width, height 
+@mixin position-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+
+@mixin flex-row($main, $sub) {
+    display: flex;
+    justify-content: $main;
+    align-items: $sub;
+}
+
+// justify-content, align-items
+@mixin flex-col($main, $sub) {
+    display: flex;
+    flex-direction: column;
+    justify-content: $main;
+    align-items: $sub;
+}
+
+// justify-content, align-items
+@mixin image($uri) {
+    background-image: url($uri);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@mixin keyframe($animation_name, $animation_duration, $animation_count, $animation_time_function) {
+    animation-name: $animation_name;
+    animation-duration: $animation_duration;
+    animation-iteration-count: $animation_count;
+    animation-timing-function: $animation_time_function;
+}
+
+@mixin transition($transition_time, $transition_delay, $transition_funtion) {
+    transition-duration: $transition_time;
+    transition-delay: $transition_delay;
+    transition-timing-function: $transition_funtion;
+
+}
+
+@mixin background($bgcolor) {
+    background-color: $bgcolor;
+}
+
+
+@mixin font($size, $weight, $family, $color) {
+    font-size: $size;
+    font-weight: $weight;
+    font-family: $family;
+    color: $color;
+}
+
+// ul,
+// li {
+//     list-style: none;
+// }
+
+// -- End of mixin --
+
+main {
+    .page-area {
+        @include dimension(100%, 50px);
+        @include flex-row(End, center);
+        // background-color: $grey-6;
+        margin-top: 40px;
+
+
+        .page {
+            height: 20px;
+            // background-color: $grey-7;
+            padding-right: 5%;
+
+            a {
+                text-decoration: none;
+                border-bottom: 2px solid transparent;
+
+                // color: black;
+                &:hover {
+                    border-bottom: solid black;
+                    transition: 0.1s linear;
+                }
+            }
+        }
+
+    }
+
+    .phone_title {
+
+        li {
+            opacity: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 700;
+
+            span {
+                letter-spacing: 10px;
+                padding: 18px 10px;
+                text-align: center;
+                font-size: 18px;
+            }
+        }
+    }
+
+    .logo-area {
+        @include dimension(100%, auto);
+        @include flex-row(center, center);
+        padding: 148px 0;
+        // background-color: $grey-7;
+
+        .logo {
+            @include dimension(900px, 126px);
+            @include flex-row(space-around, center);
+            // background-color: black;
+            color: $darkgold;
+
+
+            .logo-img {
+                @include dimension(434px, 126px);
+                background-color: #7e7e7e;
+                @include flex-row(center, center);
+            }
+
+            .logo-text {
+                @include dimension(330px, 120px);
+                // background-color: #901111;
+                color: black;
+                font-size: 18px;
+                @include flex-col(center, center);
+                line-height: 30px;
+                font-size: 20px;
+            }
+        }
+    }
+
+    .banner-area {
+        @include dimension(100%, auto);
+        @include flex-row(center, center);
+        margin-bottom: 120px;
+        // background-color: $grey-7;
+
+        .banner {
+            @include dimension(1091px, 505px);
+            @include flex-row(center, center);
+            background-color: $grey-7;
+            color: $darkgold;
+            font-size: 2rem;
+        }
+    }
+
+    .slogan-area {
+        @include dimension(100%, 613px);
+        @include flex-row(center, center);
+        position: relative;
+        padding: 120px 0;
+        background-color: $grey-7;
+
+        .slogan-text {
+            @include flex-row(center, center);
+            background-color: white;
+            color: black;
+            font-size: 24px;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .slogan-oval1 {
+            @include dimension(646px, 235px);
+            @include flex-row(center, center);
+            border: 1px solid black;
+            background-color: $grey-6;
+            border-radius: 50%;
+
+            .slogan-oval2 {
+                @include dimension(587.97px, 235.73px);
+                @include flex-row(center, center);
+                @include keyframe(rotate, 4s, infinite, linear);
+                border: 1px solid black;
+                background-color: $grey-7;
+                border-radius: 50%;
+
+
+            }
+
+        }
+    }
+
+    .history-area {
+        @include dimension(100%, 1480px);
+        @include flex-col(center, center);
+        // background-color: $grey-1;
+
+        .cordon-area {
+            @include dimension(90%, auto);
+            @include flex-row(space-around, center);
+            padding: 120px 0;
+            // background-color: $grey-6;
+
+            .cordon-story {
+                @include dimension(45%, 402px);
+                @include flex-row(center, center);
+                background-color: lightcyan;
+                color: black;
+                font-size: 18px;
+                ul{
+                    @include flex-col(center, flex-start);
+                    li:nth-of-type(1){
+                        font-size: 20px;
+                        line-height: 35px;
+                    }
+                }
+            }
+
+            .vl {
+                @include dimension(1px, 500px);
+                border: 1px solid $grey-2;
+                background-color: $grey-6;
+            }
+
+            .cordon-graduate {
+                @include dimension(45%, 402px);
+                @include flex-row(center, center);
+                background-color: lightsteelblue;
+                color: black;
+                font-size: 2rem;
+            }
+        }
+
+        .brand-area {
+            @include dimension(90%, 50%);
+            @include flex-row(space-around, center);
+            padding: 120px 0;
+            // background-color: $grey-8;
+
+            .brand-story {
+                @include dimension(45%, 402px);
+                @include flex-row(center, center);
+                background-color: lightcyan;
+                color: black;
+                font-size: 18px;
+                ul{
+                    @include flex-col(center, flex-start);
+                    li:nth-of-type(1){
+                        font-size: 20px;
+                        line-height: 35px;
+                    }
+                }
+            }
+
+            .vl {
+                @include dimension(1px, 500px);
+                border: 1px solid $grey-2;
+                background-color: $grey-6;
+            }
+
+            .brand-picture {
+                @include dimension(45%, 402px);
+                @include flex-row(center, center);
+                background-color: lightsteelblue;
+                color: black;
+                font-size: 2rem;
+            }
+        }
+    }
+
+}
+
+
+//phone-size:720px
+
+@media (max-width: 720px) {
+    main {
+        .phone_title {
+
+            li {
+                opacity: 1;
+            }
+        }
+
+        .logo-area {
+            height: 100%;
+            padding: 0;
+
+            .logo {
+                @include flex-col(space-between, center);
+                height: 100%;
+
+                .logo-img {
+                    @include dimension(260px, 75px);
+                    margin-top: 112px;
+                    margin-bottom: 107px;
+                }
+
+                .logo-text {
+                    @include dimension(300px, 96px);
+                    margin-bottom: 112px;
+                    line-height: 24px;
+                    font-size: 16px;
+                }
+            }
+        }
+
+        .slogan-area{
+            .slogan-text{
+                font-size: 16px;
+            }
+            .slogan-oval1{
+                @include dimension(380px, 160px);
+                .slogan-oval2{
+                    @include dimension(380px, 160px);
+                }
+            }
+        }
+
+        .history-area{
+            @include dimension(100%, 100%);
+            .cordon-area{
+                @include flex-col(space-around, center);
+                padding: 50px 0;
+                .cordon-story{
+                    @include dimension(100%, 100%);
+                    @include flex-col(center, center);
+                    font-size: 16px;
+                    line-height: 24px;
+                    ul{
+                        @include flex-col(center, flex-start);
+                        li:nth-of-type(1){
+                            font-size: 18px;
+                            line-height: 35px;
+                            margin-top: 100px;
+                        }
+                        li:nth-last-of-type(1){
+                            margin-bottom: 112px;
+                        }
+                    }
+                }
+                .vl{
+                    display: none;
+                }
+                
+                .cordon-graduate{
+                    @include dimension(100%, 500px);
+                }
+            }
+            .brand-area{
+                @include flex-col(space-around, center);
+                padding: 50px 0;
+                .brand-picture{
+                    @include dimension(100%, 500px);
+                }
+                .brand-story{
+                    @include dimension(100%, 100%);
+                    @include flex-col(center, center);
+                    font-size: 16px;
+                    line-height: 24px;
+                    ul{
+                        @include flex-col(center, flex-start);
+                        li:nth-of-type(1){
+                            font-size: 18px;
+                            line-height: 35px;
+                            margin-top: 100px;
+                        }
+                        li:nth-last-of-type(1){
+                            margin-bottom: 112px;
+                        }
+                    }
+                }
+                .vl{
+                    display: none;
+                }
+            }
+        }
+    }
+}

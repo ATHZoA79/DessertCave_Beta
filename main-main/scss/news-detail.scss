@@ -1,0 +1,137 @@
+// -- Define variable --
+$grey-9: #dcdcdc;
+$grey-8: #c2c2c2;
+$grey-7: #969696;
+$grey-6: #7e7e7e;
+$grey-5: #555;
+$grey-3: #393939;
+$grey-2: #242424;
+$grey-1: #121212;
+$redwine: #901111;
+$logo_color: rgb(141, 215, 204);
+$darkgold: rgb(107, 78, 38);
+// -- End of variable --
+
+// -- animation
+@keyframes test {}
+
+// -- Define mixin --
+@mixin dimension($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+// width, height
+@mixin position-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+@mixin flex-row($main, $sub) {
+  display: flex;
+  justify-content: $main;
+  align-items: $sub;
+}
+
+// justify-content, align-items
+@mixin flex-col($main, $sub) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $main;
+  align-items: $sub;
+}
+
+// justify-content, align-items
+@mixin image($uri) {
+  background-image: url($uri);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@mixin transition($time, $dealy, $funtion) {
+  transition-duration: $time;
+  transition-delay: $delay;
+  transition-timing-function: $funtion;
+}
+
+@mixin background($bgcolor) {
+  background-color: $bgcolor;
+}
+
+// -- End of mixin --
+
+main {
+  width: 100%;
+
+  .page-area {
+    @include dimension(100%, 50px);
+    // background-color: $grey-6;
+    margin-top: 40px;
+
+    @include flex-row(End, center);
+
+    .page {
+      height: 20px;
+      // background-color: $grey-7;
+      padding-right: 5%;
+
+      a {
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+
+        // color: black;
+        &:hover {
+          border-bottom: solid black;
+          transition: 0.1s linear;
+        }
+      }
+    }
+  }
+
+  
+
+  .news-container {
+    @include dimension(1090px, auto);
+    margin: auto;
+    padding: 40px 0 150px;
+    background-color: $grey-9;
+
+    .news-header {
+      @include dimension(100%, auto);
+      @include flex-col(left, center);
+      // background-color: lightblue;
+      border-bottom: 2px solid black;
+
+      .title {
+        @include dimension(100%, 110px);
+        @include flex-row(flex-start, center);
+        margin-bottom: 20px;
+        font-size: 24px;
+        // background-color: $grey-5;
+      }
+
+      .subtitle {
+        @include dimension(100%, 60px);
+        @include flex-row(flex-start, center);
+        padding-bottom: 39px;
+        font-size: 20px;
+        // background-color: $grey-5;
+      }
+    }
+
+    .news-banner {
+      @include dimension(962px, 600px);
+      margin: 127px auto ;
+      background-color: $grey-7;
+    }
+
+    .news-content {
+      @include dimension(962px, 350px);
+      margin: 133px auto;
+      background-color: $grey-3;
+    }
+  }
+}
