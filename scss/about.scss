@@ -105,6 +105,11 @@ $darkgold: rgb(107, 78, 38);
     color: $color;
 }
 
+@mixin setobject() {
+    object-fit: cover;
+    object-position: center;
+}
+
 // ul,
 // li {
 //     list-style: none;
@@ -115,16 +120,17 @@ $darkgold: rgb(107, 78, 38);
 a {
     text-decoration: none;
     color: unset;
-  }
+}
 
 main {
+    width: 100%;
+    @include flex-col(center, center);
     .page-area {
         width: 1100px;
         margin-top: 40px;
 
         li {
             @include flex-row(flex-end, center);
-            // background-color: $grey-7;
             font-size: 16px;
             line-height: 19px;
             font-weight: 400;
@@ -135,8 +141,6 @@ main {
                 a {
                     border-bottom: 2px solid transparent;
                     margin-top: 3px;
-
-                    // color: black;
                     &:hover {
                         border-bottom: solid black;
                         transition: 0.1s linear;
@@ -147,45 +151,40 @@ main {
     }
 
     .phone_title {
-
         li {
-            opacity: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: 700;
-
-            span {
-                letter-spacing: 10px;
-                padding: 18px 10px;
-                text-align: center;
-                font-size: 18px;
-            }
+          @include flex-row(center, center);
+          font-weight: 700;
+          margin: 118px 0 71px;
+          opacity: 0;
+    
+          span {
+            letter-spacing: 10px;
+            padding: 18px 10px 18px 20px;
+            font-size: 18px;
+          }
         }
-    }
+      }
 
     .logo-area {
         @include dimension(100%, auto);
         @include flex-row(center, center);
         padding: 148px 0;
-        // background-color: $grey-7;
 
         .logo {
             @include dimension(900px, 126px);
             @include flex-row(space-around, center);
-            // background-color: black;
             color: $darkgold;
 
 
             .logo-img {
                 @include dimension(434px, 126px);
-                // background-color: #7e7e7e;
                 @include flex-row(center, center);
+                object-fit: cover;
+                object-position: center;
             }
 
             .logo-text {
                 @include dimension(330px, 120px);
-                // background-color: #901111;
                 color: $grey-1;
                 @include flex-col(center, flex-start);
                 line-height: 30px;
@@ -199,14 +198,12 @@ main {
         @include dimension(100%, auto);
         @include flex-row(center, center);
         margin-bottom: 120px;
-        // background-color: $grey-7;
 
-        .banner {
+        img {
             @include dimension(1091px, 505px);
             @include flex-row(center, center);
-            background-color: $grey-7;
-            color: $darkgold;
-            font-size: 2rem;
+            object-fit: cover;
+            object-position: center;
         }
     }
 
@@ -218,7 +215,6 @@ main {
 
         ul {
             position: absolute;
-            z-index: 1;
 
             p {
                 line-height: 24px;
@@ -264,20 +260,15 @@ main {
     .history-area {
         @include dimension(100%, 1480px);
         @include flex-col(center, center);
-        // background-color: $grey-1;
 
         .cordon-area {
             @include dimension(90%, auto);
             @include flex-row(space-around, center);
             padding: 120px 0;
-            // background-color: $grey-6;
 
             .cordon-story {
                 @include dimension(45%, 402px);
                 @include flex-row(center, center);
-                // background-color: lightcyan;
-                color: black;
-                font-size: 18px;
 
                 ul {
                     @include flex-col(center, flex-start);
@@ -300,16 +291,16 @@ main {
             .vl {
                 @include dimension(1px, 500px);
                 border: 1px solid $grey-2;
-                background-color: $grey-6;
             }
 
             .cordon-graduate {
                 @include dimension(45%, 402px);
                 @include flex-row(center, center);
 
-                // background-color: lightsteelblue;
                 img {
                     @include dimension(545px, 340px);
+                    object-fit: cover;
+                    object-position: center;
                 }
             }
         }
@@ -318,14 +309,10 @@ main {
             @include dimension(90%, 50%);
             @include flex-row(space-around, center);
             padding: 120px 0;
-            // background-color: $grey-8;
 
             .brand-story {
                 @include dimension(45%, 402px);
                 @include flex-row(center, center);
-                // background-color: lightcyan;
-                color: black;
-                font-size: 18px;
 
                 ul {
                     @include flex-col(center, flex-start);
@@ -348,16 +335,16 @@ main {
             .vl {
                 @include dimension(1px, 500px);
                 border: 1px solid $grey-2;
-                background-color: $grey-6;
             }
 
             .brand-picture {
                 @include dimension(45%, 402px);
                 @include flex-row(center, center);
 
-                // background-color: lightsteelblue;
                 img {
                     @include dimension(545px, 340px);
+                    object-fit: cover;
+                    object-position: center;
                 }
             }
         }
@@ -445,6 +432,8 @@ main {
                     margin-top: 112px;
                     margin-bottom: 107px;
                     padding: 0;
+                    object-fit: cover;
+                    object-position: center;
                 }
 
                 .logo-text {

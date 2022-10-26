@@ -77,7 +77,6 @@ main {
 
     li {
       @include flex-row(flex-end, center);
-      // background-color: $grey-7;
       font-size: 16px;
       line-height: 19px;
       font-weight: 400;
@@ -89,9 +88,8 @@ main {
           border-bottom: 2px solid transparent;
           margin-top: 3px;
 
-          // color: black;
           &:hover {
-            border-bottom: solid black;
+            border-bottom: 2px solid black;
             transition: 0.1s linear;
           }
         }
@@ -103,13 +101,11 @@ main {
     li {
       @include flex-row(center, center);
       font-weight: 700;
-      margin-top: 118px;
-      margin-bottom: 71px;
+      margin: 118px 0 71px;
 
       span {
         letter-spacing: 10px;
-        padding: 18px 10px;
-        text-align: center;
+        padding: 18px 10px 18px 20px;
         font-size: 18px;
       }
     }
@@ -117,14 +113,12 @@ main {
 
   .news-container {
     @include dimension(1090px, auto);
-    margin: auto;
     padding: 40px 0 150px;
-    // background-color: $grey-9;
+    @include flex-col(center, center);
 
     .news-header {
       @include dimension(100%, auto);
       @include flex-col(left, center);
-      // background-color: lightblue;
       border-bottom: 2px solid $logo_color;
       margin-bottom: 67px;
 
@@ -135,7 +129,6 @@ main {
         font-weight: 600;
         font-size: 24px;
         line-height: 29px;
-        // background-color: $grey-5;
         letter-spacing: 2px;
       }
 
@@ -146,25 +139,23 @@ main {
         font-weight: 400;
         font-size: 20px;
         line-height: 24px;
-        // background-color: $grey-5;
       }
     }
 
     .news-banner {
       @include dimension(962px, 600px);
-      // background-color: $grey-7;
       @include flex-row(center, center);
-      margin: auto;
 
       img {
         @include dimension(962px, 600px);
+        object-fit: cover;
+        object-position: center;
       }
     }
 
     .news-content {
       @include dimension(962px, 225px);
       margin: 127px auto 196px;
-      // background-color: $grey-3;
       font-weight: 400;
       font-size: 16px;
       line-height: 25px;

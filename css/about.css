@@ -21,6 +21,13 @@ a {
   color: unset;
 }
 
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 main .page-area {
   width: 1100px;
   margin-top: 40px;
@@ -45,16 +52,16 @@ main .page-area li span a:hover {
   transition: 0.1s linear;
 }
 main .phone_title li {
-  opacity: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: 700;
+  margin: 118px 0 71px;
+  opacity: 0;
 }
 main .phone_title li span {
   letter-spacing: 10px;
-  padding: 18px 10px;
-  text-align: center;
+  padding: 18px 10px 18px 20px;
   font-size: 18px;
 }
 main .logo-area {
@@ -79,6 +86,8 @@ main .logo-area .logo .logo-img {
   display: flex;
   justify-content: center;
   align-items: center;
+  object-fit: cover;
+  object-position: center;
 }
 main .logo-area .logo .logo-text {
   width: 330px;
@@ -100,15 +109,14 @@ main .banner-area {
   align-items: center;
   margin-bottom: 120px;
 }
-main .banner-area .banner {
+main .banner-area img {
   width: 1091px;
   height: 505px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #969696;
-  color: rgb(107, 78, 38);
-  font-size: 2rem;
+  object-fit: cover;
+  object-position: center;
 }
 main .slogan-area {
   width: 100%;
@@ -121,7 +129,6 @@ main .slogan-area {
 }
 main .slogan-area ul {
   position: absolute;
-  z-index: 1;
 }
 main .slogan-area ul p {
   line-height: 24px;
@@ -182,8 +189,6 @@ main .history-area .cordon-area .cordon-story {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: black;
-  font-size: 18px;
 }
 main .history-area .cordon-area .cordon-story ul {
   display: flex;
@@ -206,7 +211,6 @@ main .history-area .cordon-area .vl {
   width: 1px;
   height: 500px;
   border: 1px solid #242424;
-  background-color: #7e7e7e;
 }
 main .history-area .cordon-area .cordon-graduate {
   width: 45%;
@@ -218,6 +222,8 @@ main .history-area .cordon-area .cordon-graduate {
 main .history-area .cordon-area .cordon-graduate img {
   width: 545px;
   height: 340px;
+  object-fit: cover;
+  object-position: center;
 }
 main .history-area .brand-area {
   width: 90%;
@@ -233,8 +239,6 @@ main .history-area .brand-area .brand-story {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: black;
-  font-size: 18px;
 }
 main .history-area .brand-area .brand-story ul {
   display: flex;
@@ -257,7 +261,6 @@ main .history-area .brand-area .vl {
   width: 1px;
   height: 500px;
   border: 1px solid #242424;
-  background-color: #7e7e7e;
 }
 main .history-area .brand-area .brand-picture {
   width: 45%;
@@ -269,6 +272,8 @@ main .history-area .brand-area .brand-picture {
 main .history-area .brand-area .brand-picture img {
   width: 545px;
   height: 340px;
+  object-fit: cover;
+  object-position: center;
 }
 
 @media (max-width: 1240px) {
@@ -315,6 +320,8 @@ main .history-area .brand-area .brand-picture img {
     margin-top: 112px;
     margin-bottom: 107px;
     padding: 0;
+    object-fit: cover;
+    object-position: center;
   }
   main .logo-area .logo .logo-text {
     width: 300px;
