@@ -7,17 +7,6 @@ var product_detail_opacity = document.querySelector('.product-detail-opacity');
 var product_sheet = document.querySelectorAll('.product-series');
 
 
-//--product detail
-product_card.forEach(card => {
-    card.addEventListener('click', function show_detail() {
-        porduct_detail.classList.toggle('block-display')
-    })
-});
-product_detail_close.addEventListener('click', close_detail);
-product_detail_opacity.addEventListener('click', close_detail);
-//--End of product detail
-
-
 //--product sheet
 product_sheet.forEach(sheet => {
     sheet.addEventListener('click', function () {
@@ -346,16 +335,21 @@ product_sheet.forEach(sheet => {
         }
 
 
-
-
-
     })
 });
 //--End of product sheet
 
 
 
-
+//--product detail
+product_card.forEach(card => {
+    card.addEventListener('click', function show_detail() {
+        porduct_detail.classList.toggle('block-display')
+    })
+});
+product_detail_close.addEventListener('click', close_detail);
+product_detail_opacity.addEventListener('click', close_detail);
+//--End of product detail
 
 
 
