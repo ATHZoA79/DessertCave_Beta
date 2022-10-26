@@ -496,12 +496,12 @@ main {
     }
 
     .product-series {
-        @include dimension(100%, 1029px);
+        @include dimension(100%, auto);
         // @include flex-row(center, center);
         color: $darkgold;
         font-family: "Noto Serif TC";
         font-size: 3rem;
-        background-color: $grey-9;
+        // background-color: $grey-9;
 
         .marquee-area {
             width: 100%;
@@ -525,32 +525,63 @@ main {
         }
 
         .swiper-area {
-            @include dimension(100%, 700px);
+            @include dimension(100%, auto);
+            padding: 145px 0 126px;
             position: relative;
             display: flex;
             align-items: center;
-            // background-color: #901111;
 
             .swiper {
-                @include dimension(100%, 500px);
-                // background-color: darkblue;
+                @include dimension(100%, auto);
+                padding: 0;
+                .swiper-wrapper {
+                    position: relative;
+                    left: 50%;
+                    translate: -144px 0;
+                    .swiper-slide {
+                        @include dimension(289px, auto);
+                        @include flex-col(start, center);
 
-                .swiper-slide {
-                    @include flex-col(start, center);
-                    // border: 1px solid black;
+                        .swiper-product-img {
+                            @include dimension(289px, 289px);
+                            // padding-bottom: 47px;
 
-                    .swiper-product-img {
-                        @include dimension(100%, 90%);
-                        padding-bottom: 47px;
-                        // border: #901111 1px solid;
+                            img {
+                                @include dimension(100%, 100%);
+                                object-fit: cover;
+                                object-position: center;
+                            }
+                        }
 
-                        img {
-                            @include dimension(100%, 100%);
+                        .swiper-product-name {
+                            @include font(20px, none, "Noto Serif TC", black);
+                            padding-top: 48px;
                         }
                     }
-
-                    .swiper-product-name {
-                        @include font(20px, none, "Noto Serif TC", black);
+                }
+            }
+        }
+        @media screen and (max-width: 720px){
+            .swiper-area {
+                padding: 80px 0 60px;
+                .swiper {
+                    .swiper-wrapper {
+                        position: relative;
+                        left: 50%;
+                        translate: -144px 0;
+                        .swiper-slide {
+                            @include dimension(300px, auto);
+                            @include flex-col(start, center);
+    
+                            .swiper-product-img {
+                                @include dimension(300px, 300px);
+                            }
+    
+                            .swiper-product-name {
+                                @include font(20px, none, "Noto Serif TC", black);
+                                padding-top: 36px;
+                            }
+                        }
                     }
                 }
             }
@@ -811,14 +842,13 @@ footer {
         #ham_icon:checked ~ #toggle_menu {
             @include dimension(100%, 100vh);
             z-index: 5;
-            @include transition(1s, 0s, linear);
             // display: block;
             // visibility: visible;
         }
 
         #toggle_menu {
             @include dimension(0, 100vh);
-            @include transition(1s, 0s, linear);
+            @include transition(0.4s, 0s, ease-out);
             position: fixed;
             top: 0;
             right: 0;
@@ -846,12 +876,6 @@ footer {
             left: 0;
             translate: 0 0;
         }
-    }
-
-    #phone_Ham:checked + .phone-ham-list {
-        visibility: visible;
-        height: 100vh;
-        width: 100%;
     }
 }
 

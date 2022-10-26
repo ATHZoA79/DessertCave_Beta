@@ -430,11 +430,10 @@ main .new-product .text button:hover {
 }
 main .product-series {
   width: 100%;
-  height: 1029px;
+  height: auto;
   color: rgb(107, 78, 38);
   font-family: "Noto Serif TC";
   font-size: 3rem;
-  background-color: #dcdcdc;
 }
 main .product-series .marquee-area {
   width: 100%;
@@ -461,35 +460,75 @@ main .product-series .marquee-area .marquee-text::after {
 }
 main .product-series .swiper-area {
   width: 100%;
-  height: 700px;
+  height: auto;
+  padding: 145px 0 126px;
   position: relative;
   display: flex;
   align-items: center;
 }
 main .product-series .swiper-area .swiper {
   width: 100%;
-  height: 500px;
+  height: auto;
+  padding: 0;
 }
-main .product-series .swiper-area .swiper .swiper-slide {
+main .product-series .swiper-area .swiper .swiper-wrapper {
+  position: relative;
+  left: 50%;
+  translate: -144px 0;
+}
+main .product-series .swiper-area .swiper .swiper-wrapper .swiper-slide {
+  width: 289px;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
 }
-main .product-series .swiper-area .swiper .swiper-slide .swiper-product-img {
-  width: 100%;
-  height: 90%;
-  padding-bottom: 47px;
+main .product-series .swiper-area .swiper .swiper-wrapper .swiper-slide .swiper-product-img {
+  width: 289px;
+  height: 289px;
 }
-main .product-series .swiper-area .swiper .swiper-slide .swiper-product-img img {
+main .product-series .swiper-area .swiper .swiper-wrapper .swiper-slide .swiper-product-img img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
-main .product-series .swiper-area .swiper .swiper-slide .swiper-product-name {
+main .product-series .swiper-area .swiper .swiper-wrapper .swiper-slide .swiper-product-name {
   font-size: 20px;
   font-weight: none;
   font-family: "Noto Serif TC";
   color: black;
+  padding-top: 48px;
+}
+@media screen and (max-width: 720px) {
+  main .product-series .swiper-area {
+    padding: 80px 0 60px;
+  }
+  main .product-series .swiper-area .swiper .swiper-wrapper {
+    position: relative;
+    left: 50%;
+    translate: -144px 0;
+  }
+  main .product-series .swiper-area .swiper .swiper-wrapper .swiper-slide {
+    width: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+  }
+  main .product-series .swiper-area .swiper .swiper-wrapper .swiper-slide .swiper-product-img {
+    width: 300px;
+    height: 300px;
+  }
+  main .product-series .swiper-area .swiper .swiper-wrapper .swiper-slide .swiper-product-name {
+    font-size: 20px;
+    font-weight: none;
+    font-family: "Noto Serif TC";
+    color: black;
+    padding-top: 36px;
+  }
 }
 
 footer {
@@ -716,16 +755,13 @@ header nav .social-media-area {
     width: 100%;
     height: 100vh;
     z-index: 5;
-    transition-duration: 1s;
-    transition-delay: 0s;
-    transition-timing-function: linear;
   }
   header #toggle_menu {
     width: 0;
     height: 100vh;
-    transition-duration: 1s;
+    transition-duration: 0.4s;
     transition-delay: 0s;
-    transition-timing-function: linear;
+    transition-timing-function: ease-out;
     position: fixed;
     top: 0;
     right: 0;
@@ -745,11 +781,6 @@ footer .map {
     top: 0;
     left: 0;
     translate: 0 0;
-  }
-  #phone_Ham:checked + .phone-ham-list {
-    visibility: visible;
-    height: 100vh;
-    width: 100%;
   }
 }
 .header-hide {
