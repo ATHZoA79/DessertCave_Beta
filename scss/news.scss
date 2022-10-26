@@ -119,16 +119,14 @@ main {
   }
 
   .phone_title {
-    height: 100%;
     li {
       @include flex-row(center, center);
       font-weight: 700;
-      margin-top: 118px;
+      margin: 118px 0 71px;
 
       span {
         letter-spacing: 10px;
-        padding: 0px 10px;
-        text-align: center;
+        padding: 18px 10px 18px 20px;
         font-size: 18px;
       }
     }
@@ -138,53 +136,36 @@ main {
   .news-container {
     @include dimension(1090px, 100%);
     margin: 91px auto 221px;
-    // background-color: $grey-9;
-
-    .news-card:nth-of-type(2){
-      margin-top: 150px;
-    }
-
-    .news-card:nth-of-type(3){
-      margin-top: 150px;
-    }
 
     .news-card {
       @include dimension(100%, 402px);
       @include flex-row(center, flex-start);
-      // background-color: $grey-8;
       border: 2px solid $logo_color;
 
       .news-info {
         @include dimension(555px, 402px);
-        // background-color: $grey-7;
-
 
         .news-date {
           @include dimension(95px, 50px);
           background-color: $logo_color;
           @include flex-row(center, center);
           transform: translate(50%, 0);
-          z-index: 1;
         }
 
         .news-text {
           @include dimension(453px, 155px);
           margin: 90px 0 22px 10%;
-          // background-color: $grey-7;
+          font-weight: 400;
 
           .news-text-title {
             @include dimension(80%, 20px);
             margin-bottom: 32px;
-            // background-color: #555;
-            font-weight: 400;
             font-size: 18px;
             line-height: 22px;
           }
 
           .new-text-content {
             @include dimension(440px, 94px);
-            // background-color: #901111;
-            font-weight: 400;
             font-size: 16px;
             line-height: 19px;
             overflow: hidden;
@@ -198,7 +179,6 @@ main {
 
           .news-date-duration {
             @include dimension(160px, 17px);
-            // background-color: blue;
             font-weight: 400;
             font-size: 14px;
             line-height: 17px;
@@ -216,13 +196,9 @@ main {
               @include transition(0.5s, 0s, linear);
             }
 
-            span:nth-of-type(1) {
+            span {
               width: 100px;
               font-size: 30px;
-            }
-
-            span:nth-of-type(2) {
-              font-size: 25px;
             }
           }
         }
@@ -230,10 +206,11 @@ main {
 
       .news-img {
         @include dimension(535px, 398px);
-        background-color: $grey-3;
 
         img {
           @include dimension(100%, 100%);
+          object-fit: cover;
+          object-position: center;
         }
 
         .news-img-date {
@@ -242,6 +219,14 @@ main {
           background-color: $logo_color;
           @include flex-row(center, center);
         }
+      }
+
+      &:nth-of-type(2) {
+        margin-top: 150px;
+      }
+
+      &:nth-of-type(3) {
+        margin-top: 150px;
       }
     }
   }
@@ -286,14 +271,6 @@ main {
     }
   }
 }
-
-// @media (max-width: 1080px) {
-//   main{
-//     .page-area{
-//       width: 1000px;
-//     }
-//   }
-// }
 
 
 @media (max-width: 720px) {

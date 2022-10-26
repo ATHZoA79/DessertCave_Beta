@@ -31,7 +31,7 @@ main .page-area li span a {
   margin-top: 3px;
 }
 main .page-area li span a:hover {
-  border-bottom: solid black;
+  border-bottom: 2px solid black;
   transition: 0.1s linear;
 }
 main .phone_title li {
@@ -39,20 +39,21 @@ main .phone_title li {
   justify-content: center;
   align-items: center;
   font-weight: 700;
-  margin-top: 118px;
-  margin-bottom: 71px;
+  margin: 118px 0 71px;
 }
 main .phone_title li span {
   letter-spacing: 10px;
-  padding: 18px 10px;
-  text-align: center;
+  padding: 18px 10px 18px 20px;
   font-size: 18px;
 }
 main .news-container {
   width: 1090px;
   height: auto;
-  margin: auto;
   padding: 40px 0 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 main .news-container .news-header {
   width: 100%;
@@ -93,11 +94,12 @@ main .news-container .news-banner {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: auto;
 }
 main .news-container .news-banner img {
   width: 962px;
   height: 600px;
+  object-fit: cover;
+  object-position: center;
 }
 main .news-container .news-content {
   width: 962px;
