@@ -120,7 +120,7 @@ main {
     // background-color: $grey-9;
 
     p {
-     @include font(24px,bold ,none ,black );
+      @include font(24px, bold, none, black);
 
       &::before {
         content: '———';
@@ -176,8 +176,9 @@ main {
         @include dimension(100%, 350px);
         // background-color: $grey-7;
         overflow: hidden;
-        img{
-          @include dimension(100%,100% );
+
+        img {
+          @include dimension(100%, 100%);
         }
       }
 
@@ -250,20 +251,36 @@ main {
         .product-detail-img {
           @include dimension(580px, 335px);
           position: absolute;
-          background-color: $grey-7;
+          // background-color: $grey-7;
           top: 0;
           left: 0;
-          img{
-            @include dimension(100%,100% );
+
+          img {
+            @include dimension(100%, 100%);
           }
         }
 
         .product-detail-text {
-          @include dimension(580px, 195px);
-          background-color: $grey-6;
+          @include dimension(100%, 195px);
+          @include flex-col(space-around,center);
+          // background-color: $grey-6;
           position: absolute;
           left: 0;
           bottom: 0;
+
+          .product-detail-name {
+            @include dimension(197px,22px );
+            @include flex-row(center,center );
+            font-size: 18px;
+            font-weight: bold;
+          }
+
+          .product-detail-content {
+            @include dimension(498px,74px );
+            @include flex-row(center,center );
+            font-size: 16px;
+            font-weight: bold;
+          }
         }
 
         .product-detail-button {
@@ -293,11 +310,12 @@ main {
 // --End of control block
 
 // control sheet color
-.bg-pink{
+.bg-pink {
   background-color: #EEB8AF;
 }
 
-.bg-white{
+.bg-white {
   background-color: white;
 }
+
 // 
