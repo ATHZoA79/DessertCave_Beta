@@ -97,6 +97,7 @@ main {
       height: 20px;
       // background-color: $grey-7;
       padding-right: 5%;
+      font-size: 16px;
 
       a {
         text-decoration: none;
@@ -116,10 +117,10 @@ main {
     @include flex-row(center, center);
     padding: 150px 0;
     margin: auto;
-    background-color: $grey-9;
+    // background-color: $grey-9;
 
     p {
-      font-size: 24px;
+     @include font(24px,bold ,none ,black );
 
       &::before {
         content: '———';
@@ -144,15 +145,11 @@ main {
     .product-series {
       @include dimension(120px, 50px);
       @include flex-row(center, center);
-      background-color: $grey-1;
-      color: $darkgold;
+      // background-color: $grey-1;
       border-radius: 10px;
       text-decoration: none;
-      font-size: 20px;
+      @include font(20px, none, 'Inter', black);
 
-      &:hover {
-        background-color: $grey-3;
-      }
     }
   }
 
@@ -179,6 +176,9 @@ main {
         @include dimension(100%, 350px);
         background-color: $grey-7;
         overflow: hidden;
+        img{
+          @include dimension(100%,100% );
+        }
       }
 
       .product-name {
@@ -262,6 +262,17 @@ main {
           left: 0;
           bottom: 0;
         }
+
+        .product-detail-button {
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          transform: translateX(-50%);
+
+          a {
+            text-decoration: none;
+          }
+        }
       }
     }
   }
@@ -277,3 +288,13 @@ main {
 }
 
 // --End of control block
+
+// control sheet color
+.bg-pink{
+  background-color: #EEB8AF;
+}
+
+.bg-white{
+  background-color: white;
+}
+// 

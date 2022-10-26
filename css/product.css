@@ -15,6 +15,7 @@ main .page-area {
 main .page-area .page {
   height: 20px;
   padding-right: 5%;
+  font-size: 16px;
 }
 main .page-area .page a {
   text-decoration: none;
@@ -32,10 +33,12 @@ main .hr-head {
   align-items: center;
   padding: 150px 0;
   margin: auto;
-  background-color: #dcdcdc;
 }
 main .hr-head p {
   font-size: 24px;
+  font-weight: bold;
+  font-family: none;
+  color: black;
 }
 main .hr-head p::before {
   content: "———";
@@ -58,14 +61,12 @@ main .product-sheet-area .product-series {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #121212;
-  color: rgb(107, 78, 38);
   border-radius: 10px;
   text-decoration: none;
   font-size: 20px;
-}
-main .product-sheet-area .product-series:hover {
-  background-color: #393939;
+  font-weight: none;
+  font-family: "Inter";
+  color: black;
 }
 main .product-card-area {
   width: 1000px;
@@ -93,6 +94,10 @@ main .product-card-area .product-card .img-container {
   height: 350px;
   background-color: #969696;
   overflow: hidden;
+}
+main .product-card-area .product-card .img-container img {
+  width: 100%;
+  height: 100%;
 }
 main .product-card-area .product-card .product-name {
   width: 100%;
@@ -177,6 +182,15 @@ main .product-detail-area .product-detail-card-container .product-detail-card .p
   left: 0;
   bottom: 0;
 }
+main .product-detail-area .product-detail-card-container .product-detail-card .product-detail-button {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+main .product-detail-area .product-detail-card-container .product-detail-card .product-detail-button a {
+  text-decoration: none;
+}
 
 .block-display {
   display: block !important;
@@ -184,4 +198,12 @@ main .product-detail-area .product-detail-card-container .product-detail-card .p
 
 .block-hidden {
   display: none !important;
+}
+
+.bg-pink {
+  background-color: #EEB8AF;
+}
+
+.bg-white {
+  background-color: white;
 }/*# sourceMappingURL=product.css.map */
