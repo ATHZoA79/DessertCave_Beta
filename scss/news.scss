@@ -20,7 +20,6 @@ $darkgold: rgb(107, 78, 38);
 @mixin dimension($w, $h) {
   width: $w;
   height: $h;
-
 }
 
 // width, height 
@@ -82,78 +81,88 @@ $darkgold: rgb(107, 78, 38);
 
 // -- End of mixin --
 
+a {
+  text-decoration: none;
+  color: unset;
+}
+
 main {
   width: 100%;
+  @include flex-col(center, center);
 
   .page-area {
-    @include dimension(100%, 50px);
-    // background-color: $grey-6;
+    width: 1100px;
     margin-top: 40px;
 
-    @include flex-row(End, center);
-
-    .page {
-      height: 20px;
+    li {
+      @include flex-row(flex-end, center);
       // background-color: $grey-7;
-      padding-right: 5%;
+      font-size: 16px;
+      line-height: 19px;
+      font-weight: 400;
 
-      a {
-        text-decoration: none;
-        border-bottom: 2px solid transparent;
+      span {
+        padding: 0 11px;
 
-        // color: black;
-        &:hover {
-          border-bottom: solid black;
-          transition: 0.1s linear;
+        a {
+          border-bottom: 2px solid transparent;
+          margin-top: 3px;
+
+          // color: black;
+          &:hover {
+            border-bottom: solid black;
+            transition: 0.1s linear;
+          }
         }
       }
     }
   }
 
-  .hr-head {
-    @include dimension(500px, auto);
-    @include flex-row(center, center);
-    padding: 150px 0;
-    margin: auto;
-    // background-color: $grey-9;
+  .phone_title {
+    height: 100%;
+    li {
+      @include flex-row(center, center);
+      font-weight: 700;
+      margin-top: 118px;
 
-    p {
-      font-size: 24px;
-
-      &::before {
-        content: '———';
-
-      }
-
-      &::after {
-        content: '———';
-
+      span {
+        letter-spacing: 10px;
+        padding: 0px 10px;
+        text-align: center;
+        font-size: 18px;
       }
     }
   }
 
+
   .news-container {
-    @include dimension(1090px, auto);
-    margin: auto;
-    padding-top: 40px;
-    background-color: $grey-9;
+    @include dimension(1090px, 100%);
+    margin: 91px auto 221px;
+    // background-color: $grey-9;
+
+    .news-card:nth-of-type(2){
+      margin-top: 150px;
+    }
+
+    .news-card:nth-of-type(3){
+      margin-top: 150px;
+    }
 
     .news-card {
       @include dimension(100%, 402px);
       @include flex-row(center, flex-start);
-      margin-bottom: 166px;
       // background-color: $grey-8;
+      border: 2px solid $logo_color;
 
       .news-info {
         @include dimension(555px, 402px);
-        background-color: $grey-7;
+        // background-color: $grey-7;
 
 
         .news-date {
           @include dimension(95px, 50px);
           background-color: $logo_color;
-          // position: absolute;
-          // left: 50px;
+          @include flex-row(center, center);
           transform: translate(50%, 0);
           z-index: 1;
         }
@@ -161,69 +170,91 @@ main {
         .news-text {
           @include dimension(453px, 155px);
           margin: 90px 0 22px 10%;
-          background-color: $grey-7;
+          // background-color: $grey-7;
 
           .news-text-title {
-            // position: absolute;
-            // top: 147px;
-            // left: 51px;
-            @include dimension(80%, 30px);
+            @include dimension(80%, 20px);
             margin-bottom: 32px;
-            background-color: #555;
+            // background-color: #555;
+            font-weight: 400;
             font-size: 18px;
+            line-height: 22px;
           }
 
           .new-text-content {
-            @include dimension(440px, 92px);
-            background-color: #901111;
+            @include dimension(440px, 94px);
+            // background-color: #901111;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            overflow: hidden;
           }
         }
 
         .news-date-duration-box {
           @include flex-row(space-between, center);
-          padding: 0 10%;
+          padding: 30px 10%;
+          @include dimension(100%, 17px);
 
           .news-date-duration {
-            @include dimension(161px, 13px);
-            // position: absolute;
-            // top: 322px;
-            // left: 51px;
-            background-color: blue;
-
-          }
-
-          a {
-            text-decoration: none;
+            @include dimension(160px, 17px);
+            // background-color: blue;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
           }
 
           .news-btn-area {
-            @include dimension(20%, 10%);
-            @include flex-row(left, center);
-            background-color: $grey-9;
+            @include dimension(45%, 17px);
+            @include flex-row(flex-end, center);
             border-radius: 10px;
-            // position: absolute;
-            // top: 318px;
-            // right: 60px;
+            color: $logo_color;
+            padding-right: 10px;
 
             &:hover {
-              i {
-                transform: translateX(1em);
-                @include transition(0.5s, 0s, linear);
-              }
+              transform: translateX(2em);
+              @include transition(0.5s, 0s, linear);
             }
 
-            button {
-              background-color: transparent;
-              border: 0px;
-              font-size: 1rem;
+            span:nth-of-type(1) {
+              width: 100px;
+              font-size: 30px;
+            }
+
+            span:nth-of-type(2) {
+              font-size: 25px;
             }
           }
         }
       }
 
       .news-img {
-        @include dimension(535px, 402px);
+        @include dimension(535px, 398px);
         background-color: $grey-3;
+
+        img {
+          @include dimension(100%, 100%);
+        }
+
+        .news-img-date {
+          opacity: 0;
+          @include dimension(95px, 50px);
+          background-color: $logo_color;
+          @include flex-row(center, center);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  main {
+    .page-area {
+      width: 99%;
+      padding: 0 5%;
+
+      .page {
+        @include flex-row(center, center);
       }
     }
   }
@@ -231,19 +262,19 @@ main {
 
 @media (max-width: 1240px) {
   main {
+
     .news-container {
-      @include dimension(80%, auto);
+      @include dimension(90%, 100%);
 
       .news-card {
         .news-info {
           width: 50%;
 
           .news-text {
-            margin: 50px 0 80px 10%;
             @include dimension(90%, 155px);
 
             .new-text-content {
-              @include dimension(90%, 100px);
+              width: 90%;
             }
           }
         }
@@ -256,19 +287,82 @@ main {
   }
 }
 
+// @media (max-width: 1080px) {
+//   main{
+//     .page-area{
+//       width: 1000px;
+//     }
+//   }
+// }
+
+
 @media (max-width: 720px) {
   main {
+    .page-area {
+      display: none;
+    }
+
+    .phone_title {
+      padding: 78px 0;
+    }
+
     .news-container {
+      @include flex-col(unset, center);
+      @include dimension(95%, 80%);
+
       .news-card {
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
+        @include dimension(360px, 450px);
 
         .news-info {
-          @include dimension(90%, 50%);
+          @include dimension(90%, 180px);
+
+          .news-date {
+            opacity: 0;
+          }
+
+          .news-text {
+            margin: 23px 0 23px 30px;
+            transform: translateY(-35%);
+
+            .news-text-title {
+              height: 20px;
+              margin-bottom: 23px;
+              font-size: 16px;
+              line-height: 20px;
+            }
+
+            .new-text-content {
+              @include dimension(95%, 61px);
+              font-size: 14px;
+              -webkit-line-clamp: 3;
+            }
+          }
+
+          .news-date-duration-box {
+            @include dimension(95%, 17px);
+            transform: translateY(-300%);
+            padding: 11px 0px 26px 30px;
+          }
         }
+
         .news-img {
-          width: 90%;
+          width: 100%;
+          height: 270px;
+          position: relative;
+
+          img {
+            height: 270px;
+          }
+
+          .news-img-date {
+            opacity: 1;
+            position: absolute;
+            top: 0;
+            left: 10%;
+          }
         }
       }
     }
