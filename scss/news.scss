@@ -155,13 +155,14 @@ main {
         .news-text {
           @include dimension(453px, 155px);
           margin: 90px 0 22px 10%;
-          font-weight: 400;
+
 
           .news-text-title {
             @include dimension(80%, 20px);
             margin-bottom: 32px;
             font-size: 18px;
             line-height: 22px;
+            font-weight: 600;
           }
 
           .new-text-content {
@@ -169,6 +170,7 @@ main {
             font-size: 16px;
             line-height: 19px;
             overflow: hidden;
+            font-weight: 400;
           }
         }
 
