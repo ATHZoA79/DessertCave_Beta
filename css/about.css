@@ -16,23 +16,31 @@
     transform: rotate(0deg);
   }
 }
+a {
+  text-decoration: none;
+  color: unset;
+}
+
 main .page-area {
-  width: 100%;
-  height: 50px;
-  display: flex;
-  justify-content: End;
-  align-items: center;
+  width: 1100px;
   margin-top: 40px;
 }
-main .page-area .page {
-  height: 20px;
-  padding-right: 5%;
+main .page-area li {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: 400;
 }
-main .page-area .page a {
-  text-decoration: none;
+main .page-area li span {
+  padding: 0 11px;
+}
+main .page-area li span a {
   border-bottom: 2px solid transparent;
+  margin-top: 3px;
 }
-main .page-area .page a:hover {
+main .page-area li span a:hover {
   border-bottom: solid black;
   transition: 0.1s linear;
 }
@@ -68,7 +76,6 @@ main .logo-area .logo {
 main .logo-area .logo .logo-img {
   width: 434px;
   height: 126px;
-  background-color: #7e7e7e;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -76,14 +83,14 @@ main .logo-area .logo .logo-img {
 main .logo-area .logo .logo-text {
   width: 330px;
   height: 120px;
-  color: black;
-  font-size: 18px;
+  color: #121212;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   line-height: 30px;
   font-size: 20px;
+  letter-spacing: 0.1em;
 }
 main .banner-area {
   width: 100%;
@@ -111,17 +118,25 @@ main .slogan-area {
   align-items: center;
   position: relative;
   padding: 120px 0;
-  background-color: #969696;
 }
-main .slogan-area .slogan-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
-  color: black;
-  font-size: 24px;
+main .slogan-area ul {
   position: absolute;
   z-index: 1;
+}
+main .slogan-area ul p {
+  line-height: 24px;
+  font-size: 24px;
+  padding: 6px 0;
+  font-weight: 700;
+}
+main .slogan-area ul p:nth-last-of-type(2) span {
+  color: #EEB8AF;
+}
+main .slogan-area ul p:nth-last-of-type(1) span:nth-last-of-type(2) {
+  color: #EEB8AF;
+}
+main .slogan-area ul p:nth-last-of-type(1) span:nth-last-of-type(1) {
+  color: rgb(141, 215, 204);
 }
 main .slogan-area .slogan-oval1 {
   width: 646px;
@@ -130,7 +145,6 @@ main .slogan-area .slogan-oval1 {
   justify-content: center;
   align-items: center;
   border: 1px solid black;
-  background-color: #7e7e7e;
   border-radius: 50%;
 }
 main .slogan-area .slogan-oval1 .slogan-oval2 {
@@ -144,7 +158,6 @@ main .slogan-area .slogan-oval1 .slogan-oval2 {
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   border: 1px solid black;
-  background-color: #969696;
   border-radius: 50%;
 }
 main .history-area {
@@ -169,7 +182,6 @@ main .history-area .cordon-area .cordon-story {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: lightcyan;
   color: black;
   font-size: 18px;
 }
@@ -179,9 +191,16 @@ main .history-area .cordon-area .cordon-story ul {
   justify-content: center;
   align-items: flex-start;
 }
+main .history-area .cordon-area .cordon-story ul li {
+  font-weight: 400;
+  line-height: 25px;
+  font-size: 18px;
+}
 main .history-area .cordon-area .cordon-story ul li:nth-of-type(1) {
   font-size: 20px;
   line-height: 35px;
+  margin-bottom: 26px;
+  letter-spacing: 0.1em;
 }
 main .history-area .cordon-area .vl {
   width: 1px;
@@ -195,9 +214,10 @@ main .history-area .cordon-area .cordon-graduate {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: lightsteelblue;
-  color: black;
-  font-size: 2rem;
+}
+main .history-area .cordon-area .cordon-graduate img {
+  width: 545px;
+  height: 340px;
 }
 main .history-area .brand-area {
   width: 90%;
@@ -213,7 +233,6 @@ main .history-area .brand-area .brand-story {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: lightcyan;
   color: black;
   font-size: 18px;
 }
@@ -223,9 +242,16 @@ main .history-area .brand-area .brand-story ul {
   justify-content: center;
   align-items: flex-start;
 }
+main .history-area .brand-area .brand-story ul li {
+  font-weight: 400;
+  line-height: 25px;
+  font-size: 18px;
+}
 main .history-area .brand-area .brand-story ul li:nth-of-type(1) {
   font-size: 20px;
   line-height: 35px;
+  margin-bottom: 26px;
+  letter-spacing: 0.1em;
 }
 main .history-area .brand-area .vl {
   width: 1px;
@@ -239,12 +265,36 @@ main .history-area .brand-area .brand-picture {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: lightsteelblue;
-  color: black;
-  font-size: 2rem;
+}
+main .history-area .brand-area .brand-picture img {
+  width: 545px;
+  height: 340px;
 }
 
+@media (max-width: 1240px) {
+  main .banner-area .banner {
+    width: 1000px;
+  }
+  main .history-area .cordon-area .cordon-graduate img {
+    width: 95%;
+  }
+  main .history-area .brand-area .brand-picture img {
+    width: 95%;
+  }
+}
+@media (max-width: 1024px) {
+  main .banner-area .banner {
+    width: 800px;
+  }
+  main .logo-area .logo .logo-img {
+    width: 350px;
+    padding: 5%;
+  }
+}
 @media (max-width: 720px) {
+  main .page-area {
+    opacity: 0;
+  }
   main .phone_title li {
     opacity: 1;
   }
@@ -264,6 +314,7 @@ main .history-area .brand-area .brand-picture {
     height: 75px;
     margin-top: 112px;
     margin-bottom: 107px;
+    padding: 0;
   }
   main .logo-area .logo .logo-text {
     width: 300px;
@@ -271,6 +322,9 @@ main .history-area .brand-area .brand-picture {
     margin-bottom: 112px;
     line-height: 24px;
     font-size: 16px;
+  }
+  main .banner-area .banner {
+    width: 100%;
   }
   main .slogan-area .slogan-text {
     font-size: 16px;

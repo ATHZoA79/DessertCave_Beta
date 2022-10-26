@@ -112,31 +112,38 @@ $darkgold: rgb(107, 78, 38);
 
 // -- End of mixin --
 
+a {
+    text-decoration: none;
+    color: unset;
+  }
+
 main {
     .page-area {
-        @include dimension(100%, 50px);
-        @include flex-row(End, center);
-        // background-color: $grey-6;
+        width: 1100px;
         margin-top: 40px;
 
-
-        .page {
-            height: 20px;
+        li {
+            @include flex-row(flex-end, center);
             // background-color: $grey-7;
-            padding-right: 5%;
+            font-size: 16px;
+            line-height: 19px;
+            font-weight: 400;
 
-            a {
-                text-decoration: none;
-                border-bottom: 2px solid transparent;
+            span {
+                padding: 0 11px;
 
-                // color: black;
-                &:hover {
-                    border-bottom: solid black;
-                    transition: 0.1s linear;
+                a {
+                    border-bottom: 2px solid transparent;
+                    margin-top: 3px;
+
+                    // color: black;
+                    &:hover {
+                        border-bottom: solid black;
+                        transition: 0.1s linear;
+                    }
                 }
             }
         }
-
     }
 
     .phone_title {
@@ -172,18 +179,18 @@ main {
 
             .logo-img {
                 @include dimension(434px, 126px);
-                background-color: #7e7e7e;
+                // background-color: #7e7e7e;
                 @include flex-row(center, center);
             }
 
             .logo-text {
                 @include dimension(330px, 120px);
                 // background-color: #901111;
-                color: black;
-                font-size: 18px;
-                @include flex-col(center, center);
+                color: $grey-1;
+                @include flex-col(center, flex-start);
                 line-height: 30px;
                 font-size: 20px;
+                letter-spacing: 0.1em;
             }
         }
     }
@@ -208,22 +215,39 @@ main {
         @include flex-row(center, center);
         position: relative;
         padding: 120px 0;
-        background-color: $grey-7;
 
-        .slogan-text {
-            @include flex-row(center, center);
-            background-color: white;
-            color: black;
-            font-size: 24px;
+        ul {
             position: absolute;
             z-index: 1;
+
+            p {
+                line-height: 24px;
+                font-size: 24px;
+                padding: 6px 0;
+                font-weight: 700;
+            }
+
+            p:nth-last-of-type(2) {
+                span {
+                    color: #EEB8AF;
+                }
+            }
+
+            p:nth-last-of-type(1) {
+                span:nth-last-of-type(2) {
+                    color: #EEB8AF;
+                }
+
+                span:nth-last-of-type(1) {
+                    color: $logo_color;
+                }
+            }
         }
 
         .slogan-oval1 {
             @include dimension(646px, 235px);
             @include flex-row(center, center);
             border: 1px solid black;
-            background-color: $grey-6;
             border-radius: 50%;
 
             .slogan-oval2 {
@@ -231,10 +255,7 @@ main {
                 @include flex-row(center, center);
                 @include keyframe(rotate, 4s, infinite, linear);
                 border: 1px solid black;
-                background-color: $grey-7;
                 border-radius: 50%;
-
-
             }
 
         }
@@ -254,14 +275,24 @@ main {
             .cordon-story {
                 @include dimension(45%, 402px);
                 @include flex-row(center, center);
-                background-color: lightcyan;
+                // background-color: lightcyan;
                 color: black;
                 font-size: 18px;
-                ul{
+
+                ul {
                     @include flex-col(center, flex-start);
-                    li:nth-of-type(1){
+
+                    li {
+                        font-weight: 400;
+                        line-height: 25px;
+                        font-size: 18px;
+                    }
+
+                    li:nth-of-type(1) {
                         font-size: 20px;
                         line-height: 35px;
+                        margin-bottom: 26px;
+                        letter-spacing: 0.1em;
                     }
                 }
             }
@@ -275,9 +306,11 @@ main {
             .cordon-graduate {
                 @include dimension(45%, 402px);
                 @include flex-row(center, center);
-                background-color: lightsteelblue;
-                color: black;
-                font-size: 2rem;
+
+                // background-color: lightsteelblue;
+                img {
+                    @include dimension(545px, 340px);
+                }
             }
         }
 
@@ -290,14 +323,24 @@ main {
             .brand-story {
                 @include dimension(45%, 402px);
                 @include flex-row(center, center);
-                background-color: lightcyan;
+                // background-color: lightcyan;
                 color: black;
                 font-size: 18px;
-                ul{
+
+                ul {
                     @include flex-col(center, flex-start);
-                    li:nth-of-type(1){
+
+                    li {
+                        font-weight: 400;
+                        line-height: 25px;
+                        font-size: 18px;
+                    }
+
+                    li:nth-of-type(1) {
                         font-size: 20px;
                         line-height: 35px;
+                        margin-bottom: 26px;
+                        letter-spacing: 0.1em;
                     }
                 }
             }
@@ -311,9 +354,11 @@ main {
             .brand-picture {
                 @include dimension(45%, 402px);
                 @include flex-row(center, center);
-                background-color: lightsteelblue;
-                color: black;
-                font-size: 2rem;
+
+                // background-color: lightsteelblue;
+                img {
+                    @include dimension(545px, 340px);
+                }
             }
         }
     }
@@ -321,12 +366,67 @@ main {
 }
 
 
-//phone-size:720px
+//1240px
+
+@media (max-width: 1240px) {
+    main {
+        .banner-area {
+            .banner {
+                width: 1000px;
+            }
+        }
+
+        .history-area {
+            .cordon-area {
+                .cordon-graduate {
+                    img {
+                        width: 95%;
+                    }
+                }
+            }
+
+            .brand-area {
+                .brand-picture {
+                    img {
+                        width: 95%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//1024px
+
+@media (max-width: 1024px) {
+    main {
+        .banner-area {
+            .banner {
+                width: 800px;
+            }
+        }
+
+        .logo-area {
+            .logo {
+                .logo-img {
+                    width: 350px;
+                    padding: 5%;
+                }
+            }
+        }
+    }
+}
+
+
+//phone-size:750px
 
 @media (max-width: 720px) {
     main {
-        .phone_title {
+        .page-area {
+            opacity: 0;
+        }
 
+        .phone_title {
             li {
                 opacity: 1;
             }
@@ -344,6 +444,7 @@ main {
                     @include dimension(260px, 75px);
                     margin-top: 112px;
                     margin-bottom: 107px;
+                    padding: 0;
                 }
 
                 .logo-text {
@@ -355,72 +456,93 @@ main {
             }
         }
 
-        .slogan-area{
-            .slogan-text{
+        .banner-area {
+            .banner {
+                width: 100%;
+            }
+        }
+
+        .slogan-area {
+            .slogan-text {
                 font-size: 16px;
             }
-            .slogan-oval1{
+
+            .slogan-oval1 {
                 @include dimension(380px, 160px);
-                .slogan-oval2{
+
+                .slogan-oval2 {
                     @include dimension(380px, 160px);
                 }
             }
         }
 
-        .history-area{
+        .history-area {
             @include dimension(100%, 100%);
-            .cordon-area{
+
+            .cordon-area {
                 @include flex-col(space-around, center);
                 padding: 50px 0;
-                .cordon-story{
+
+                .cordon-story {
                     @include dimension(100%, 100%);
                     @include flex-col(center, center);
                     font-size: 16px;
                     line-height: 24px;
-                    ul{
+
+                    ul {
                         @include flex-col(center, flex-start);
-                        li:nth-of-type(1){
+
+                        li:nth-of-type(1) {
                             font-size: 18px;
                             line-height: 35px;
                             margin-top: 100px;
                         }
-                        li:nth-last-of-type(1){
+
+                        li:nth-last-of-type(1) {
                             margin-bottom: 112px;
                         }
                     }
                 }
-                .vl{
+
+                .vl {
                     display: none;
                 }
-                
-                .cordon-graduate{
+
+                .cordon-graduate {
                     @include dimension(100%, 500px);
                 }
             }
-            .brand-area{
+
+            .brand-area {
                 @include flex-col(space-around, center);
                 padding: 50px 0;
-                .brand-picture{
+
+                .brand-picture {
                     @include dimension(100%, 500px);
                 }
-                .brand-story{
+
+                .brand-story {
                     @include dimension(100%, 100%);
                     @include flex-col(center, center);
                     font-size: 16px;
                     line-height: 24px;
-                    ul{
+
+                    ul {
                         @include flex-col(center, flex-start);
-                        li:nth-of-type(1){
+
+                        li:nth-of-type(1) {
                             font-size: 18px;
                             line-height: 35px;
                             margin-top: 100px;
                         }
-                        li:nth-last-of-type(1){
+
+                        li:nth-last-of-type(1) {
                             margin-bottom: 112px;
                         }
                     }
                 }
-                .vl{
+
+                .vl {
                     display: none;
                 }
             }

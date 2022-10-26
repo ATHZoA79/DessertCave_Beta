@@ -62,76 +62,177 @@ $darkgold: rgb(107, 78, 38);
 }
 
 // -- End of mixin --
+a {
+  text-decoration: none;
+  color: unset;
+}
 
 main {
   width: 100%;
+  @include flex-col(center, center);
 
   .page-area {
-    @include dimension(100%, 50px);
-    // background-color: $grey-6;
+    width: 1100px;
     margin-top: 40px;
 
-    @include flex-row(End, center);
-
-    .page {
-      height: 20px;
+    li {
+      @include flex-row(flex-end, center);
       // background-color: $grey-7;
-      padding-right: 5%;
+      font-size: 16px;
+      line-height: 19px;
+      font-weight: 400;
 
-      a {
-        text-decoration: none;
-        border-bottom: 2px solid transparent;
+      span {
+        padding: 0 11px;
 
-        // color: black;
-        &:hover {
-          border-bottom: solid black;
-          transition: 0.1s linear;
+        a {
+          border-bottom: 2px solid transparent;
+          margin-top: 3px;
+
+          // color: black;
+          &:hover {
+            border-bottom: solid black;
+            transition: 0.1s linear;
+          }
         }
       }
     }
   }
 
-  
+  .phone_title {
+    li {
+      @include flex-row(center, center);
+      font-weight: 700;
+      margin-top: 118px;
+      margin-bottom: 71px;
+
+      span {
+        letter-spacing: 10px;
+        padding: 18px 10px;
+        text-align: center;
+        font-size: 18px;
+      }
+    }
+  }
 
   .news-container {
     @include dimension(1090px, auto);
     margin: auto;
     padding: 40px 0 150px;
-    background-color: $grey-9;
+    // background-color: $grey-9;
 
     .news-header {
       @include dimension(100%, auto);
       @include flex-col(left, center);
       // background-color: lightblue;
-      border-bottom: 2px solid black;
+      border-bottom: 2px solid $logo_color;
+      margin-bottom: 67px;
 
       .title {
-        @include dimension(100%, 110px);
+        @include dimension(100%, 100%);
         @include flex-row(flex-start, center);
-        margin-bottom: 20px;
+        margin-bottom: 24px;
+        font-weight: 600;
         font-size: 24px;
+        line-height: 29px;
         // background-color: $grey-5;
+        letter-spacing: 2px;
       }
 
       .subtitle {
         @include dimension(100%, 60px);
         @include flex-row(flex-start, center);
         padding-bottom: 39px;
+        font-weight: 400;
         font-size: 20px;
+        line-height: 24px;
         // background-color: $grey-5;
       }
     }
 
     .news-banner {
       @include dimension(962px, 600px);
-      margin: 127px auto ;
-      background-color: $grey-7;
+      // background-color: $grey-7;
+      @include flex-row(center, center);
+      margin: auto;
+
+      img {
+        @include dimension(962px, 600px);
+      }
     }
 
     .news-content {
-      @include dimension(962px, 350px);
-      margin: 133px auto;
-      background-color: $grey-3;
+      @include dimension(962px, 225px);
+      margin: 127px auto 196px;
+      // background-color: $grey-3;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 25px;
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  main {
+    .page-area {
+      width: 99%;
+      padding: 0 5%;
+
+      .page {
+        @include flex-row(center, center);
+      }
+    }
+  }
+}
+
+@media (max-width: 1240px) {
+  main {
+    .news-container {
+      width: 90%;
+
+      .news-banner {
+        img {
+          width: 100%;
+        }
+      }
+
+      .news-content {
+        width: 80%;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  main {
+    .news-container {
+      width: 90%;
+
+      .news-banner {
+        width: 80%;
+      }
+    }
+  }
+
+  @media (max-width: 720px) {
+    main {
+      .page-area {
+        display: none;
+      }
+
+      .phone_title {
+        padding: 78px 0;
+      }
+
+      .news-container {
+        .news-banner {
+          width: 80%;
+
+          img {
+            width: 100%;
+          }
+        }
+      }
     }
   }
 }
