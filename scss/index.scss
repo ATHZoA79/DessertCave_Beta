@@ -601,11 +601,6 @@ footer {
             background-image: url(../img/logo-橫式-white.png);
             background-position: center;
             background-size: contain;
-            // @include flex-row(flex-start, flex-end);
-            // margin-bottom: 10px;
-            // font-size: 1.2rem;
-            // border-bottom: 1px solid $darkgold;
-            // background-color: $grey-2;
         }
 
         .text {
@@ -780,7 +775,7 @@ footer {
 
 
 // -- 720px
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 720px) {
     header {
         position: relative;
 

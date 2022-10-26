@@ -631,7 +631,7 @@ footer .copy-right {
     width: 500px;
   }
 }
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 720px) {
   header {
     position: relative;
   }
