@@ -113,7 +113,7 @@ main {
   }
 
   .hr-head {
-    @include dimension(500px, auto);
+    @include dimension(100%, auto);
     @include flex-row(center, center);
     padding: 150px 0;
     margin: auto;
@@ -262,22 +262,22 @@ main {
 
         .product-detail-text {
           @include dimension(100%, 195px);
-          @include flex-col(space-around,center);
+          @include flex-col(space-around, center);
           // background-color: $grey-6;
           position: absolute;
           left: 0;
           bottom: 0;
 
           .product-detail-name {
-            @include dimension(197px,22px );
-            @include flex-row(center,center );
+            @include dimension(197px, 22px);
+            @include flex-row(center, center);
             font-size: 18px;
             font-weight: bold;
           }
 
           .product-detail-content {
-            @include dimension(498px,74px );
-            @include flex-row(center,center );
+            @include dimension(498px, 74px);
+            @include flex-row(center, center);
             font-size: 16px;
             font-weight: bold;
           }
@@ -324,6 +324,187 @@ main {
 
 //--Media Query
 
-@media screen and(min-width:1441px) and (max-width:1600px){
-  
+
+
+//-- 1100px
+@media screen and(min-width:851px) and (max-width:1100px) {
+  main {
+    .product-sheet-area {
+      @include dimension(80%, auto);
+      flex-wrap: wrap;
+
+      .product-series {
+        @include dimension(200px, 50px);
+      }
+    }
+
+    .product-card-area {
+      @include dimension(80%, auto);
+
+      .product-card {
+        @include dimension(275px, 410px);
+        margin: 0 10px;
+      }
+    }
+  }
 }
+
+//-- End of 1100px
+
+
+//--850px
+
+@media screen and(min-width:721px) and (max-width:850px) {
+  main {
+
+    .product-sheet-area {
+      @include dimension(80%, auto);
+      flex-wrap: wrap;
+
+      .product-series {
+        @include dimension(200px, 50px);
+      }
+    }
+
+    .product-card-area {
+      @include dimension(80%, auto);
+      padding-bottom: 200px;
+
+      .product-card {
+        @include dimension(200px, 335px);
+        margin: 0 30px;
+
+        .img-container {
+          @include dimension(auto, auto);
+
+          img {
+            object-fit: contain;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+//--End of 850px
+
+
+//--720px
+
+@media screen and (min-width:541px) and (max-width:720px) {
+  main {
+
+    .product-sheet-area {
+      @include dimension(80%, auto);
+      justify-content: center;
+      flex-wrap: wrap;
+
+      .product-series {
+        @include dimension(200px, 50px);
+      }
+    }
+
+    .product-card-area {
+      @include dimension(auto, auto);
+      @include flex-row(center, space-between);
+      padding-bottom: 200px;
+
+      .product-card {
+        @include dimension(165px, auto);
+        margin: 0 50px;
+
+        .img-container {
+          @include dimension(auto, auto);
+
+          img {
+            object-fit: contain;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+//--End of 720px
+
+
+//--540px
+@media screen and (min-width:431px) and (max-width:540px) {
+  main {
+
+    .product-sheet-area {
+      @include dimension(80%, auto);
+      justify-content: center;
+      flex-wrap: wrap;
+
+      .product-series {
+        @include dimension(200px, 50px);
+      }
+    }
+
+    .product-card-area {
+      @include dimension(auto, auto);
+      @include flex-row(center, space-between);
+      padding-bottom: 200px;
+
+      .product-card {
+        @include dimension(165px, auto);
+        margin: 0 10px;
+
+        .img-container {
+          @include dimension(auto, auto);
+
+          img {
+            object-fit: contain;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+
+//--End of 540px
+
+
+//--430px
+
+@media screen and (max-width:430px) {
+  main {
+
+    .product-sheet-area {
+      @include dimension(80%, auto);
+      justify-content: center;
+      flex-wrap: wrap;
+
+      .product-series {
+        @include dimension(200px, 50px);
+      }
+    }
+
+    .product-card-area {
+      @include dimension(auto, auto);
+      @include flex-row(space-around, space-between);
+      padding-bottom: 200px;
+
+      .product-card {
+        @include dimension(165px, auto);
+       
+
+        .img-container {
+          @include dimension(auto, auto);
+
+          img {
+            object-fit: contain;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+//--End of 650px
