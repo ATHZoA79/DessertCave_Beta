@@ -148,18 +148,18 @@ main {
     .phone_title {
         display: none;
         li {
-          @include flex-row(center, center);
-          font-weight: 700;
-          margin: 118px 0 71px;
-          opacity: 0;
-    
-          span {
-            letter-spacing: 10px;
-            padding: 18px 10px 18px 20px;
-            font-size: 18px;
-          }
+            @include flex-row(center, center);
+            font-weight: 700;
+            margin: 118px 0 71px;
+            opacity: 0;
+
+            span {
+                letter-spacing: 10px;
+                padding: 18px 10px 18px 20px;
+                font-size: 18px;
+            }
         }
-      }
+    }
 
     .logo-area {
         @include dimension(100%, auto);

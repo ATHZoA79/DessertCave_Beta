@@ -102,6 +102,7 @@ li {
     list-style: none;
 }
 
+// -- header --
 header {
     @include dimension(100%, 70px);
     // position: fixed;
@@ -280,14 +281,13 @@ footer {
             .information_box {
                 width: 350px;
                 font-size: 14px;
-                // background-color: $grey-6;
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
+                justify-content: start;
 
                 #footer_title {
                     @include dimension(261px, 87px);
-                    background-image: url(../img/logo-橫式-white.png);
+                    background-image: url('../img/logo-white.png');
                     background-position: center;
                     background-size: contain;
                 }
@@ -308,7 +308,7 @@ footer {
 
         .map {
             @include flex-row(center, center);
-
+            
             iframe {
                 @include dimension(554px, 236px);
                 border: 0;
@@ -359,11 +359,10 @@ footer {
     }
 
     footer {
+        @include flex-row(center, center);
         .footer_box {
-            .map {
-                iframe {
-                    width: calc(100% - 100px);
-                }
+            .map, .map iframe {
+                display: none !important;
             }
         }
     }
@@ -372,7 +371,7 @@ footer {
 //--End of 1240px
 
 //--1024 px
-@media screen and (min-width: 750px) and (max-width: 1024px) {
+@media screen and (min-width: 720px) and (max-width: 1024px) {
     header {
         nav {
             width: 100%;
@@ -388,10 +387,8 @@ footer {
         .footer_box {
             @include flex-row(center, center);
 
-            // .information {}
-
-            .map {
-                display: none;
+            .map, .map iframe {
+                display: none !important;
             }
         }
     }
@@ -422,7 +419,7 @@ footer {
 //--End of 750px
 
 //--720 px
-@media (max-width: 720px) {
+@media screen and (max-width: 720px) {
     header {
         position: relative;
 
@@ -469,78 +466,23 @@ footer {
     }
 
     footer {
-        .information,
-        .map {
-            position: relative !important;
-            top: 0;
-            left: 0;
-            translate: 0 0;
+        .footer-box {
+            .information{
+                position: relative !important;
+                top: 0;
+                left: 0;
+                translate: 0 0;
+            }
+            .map, .map iframe {
+                display: none !important;
+            }
+        }
+        .copy-right {
+            @include dimension(300px, auto);
+            padding: 20px 0;
+            border-top: 2px solid black;
         }
     }
 }
 
 //--End of 720px
-
-// -- 720px
-// @media screen and (min-width:760px) and (max-width: 1024px) {
-//     header {
-//         position: relative;
-//         nav {
-//             padding: 0 20px;
-//             .nav-logo {
-//                 @include dimension(96px, 96px);
-//                 position: absolute;
-//                 top: 0;
-//                 left: 50%;
-//                 translate: -50% 0;
-//             }
-//             .nav-btns,
-//             .social-media-area {
-//                 display: none;
-//             }
-//         }
-//         .ham-icon {
-//             position: absolute;
-//             right: 0;
-//             top: 50%;
-//             transform: translateY(-50%);
-//             display: block;
-//             font-size: 3rem;
-//             // background-color: rgb(48, 68, 111);
-//             z-index: 20;
-//         }
-//         #ham_icon:checked~#toggle_menu {
-//             display: block;
-//             visibility: visible;
-//         }
-
-//         #toggle_menu {
-//             @include dimension(100%, 100vh);
-//             position: fixed;
-//             top: 0;
-//             display: none;
-//             visibility: hidden;
-//             background-color: rgba(131, 105, 54, 0.5);
-//         }
-//     }
-//     .pagination {
-//         .content {
-//             width: 100%;
-//             color: white;
-//         }
-//     }
-//     footer {
-//         .footer_box{
-//             .map{
-//                 display: none;
-//             }
-//         }
-//     }
-
-//     #phone_Ham:checked+.phone-ham-list {
-//         visibility: visible;
-//         height: 100vh;
-//         width: 100%;
-//     }
-// }
-// -- End of 720px
