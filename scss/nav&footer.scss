@@ -265,15 +265,15 @@ header {
 // End of header
 
 footer {
-    @include dimension(100%, 468px);
+    @include dimension(100%, auto);
     @include flex-col(center, center);
     background-color: $logo_color;
     color: $darkgold;
 
     .footer_box {
+        @include flex-row(center, flex-start);
         width: 80%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        padding: 20px 0 0;
 
         .information {
             @include flex-row(center, center);
@@ -286,10 +286,16 @@ footer {
                 justify-content: start;
 
                 #footer_title {
-                    @include dimension(261px, 87px);
-                    background-image: url('../img/logo-white.png');
-                    background-position: center;
-                    background-size: contain;
+                    @include dimension(240px, auto);
+                    img {
+                        width: 100%;
+                        object-fit: contain;
+                    }
+                }
+                @media screen and (max-width: 720px) {
+                    #footer_title {
+                    @include dimension(166px, auto);
+                    }
                 }
 
                 .text {
@@ -300,6 +306,24 @@ footer {
                         line-height: 17px;
                         i {
                             padding-right: 8px;
+                        }
+                    }
+                }
+            }
+        }
+        @media screen and (max-width: 1440px) {
+            .information {
+                @include flex-col(flex-start, center);
+                .information_box {
+                    @include flex-col(flex-start, center);
+                    .text {
+                        color: #000;
+                        @include flex-col(flex-start, center);
+                        li {
+                            font-size: 12px;
+                            i {
+                                display: none;
+                            }
                         }
                     }
                 }
@@ -316,34 +340,32 @@ footer {
                 padding: 10px;
             }
         }
+        @media screen and (max-width: 1440px) {
+            .map {
+                display: none;
+            }
+        }
     }
 
     .copy-right {
         @include dimension(419px, 15px);
         @include flex-row(center, center);
-        transform: translate(0, 250%);
-        color: white;
+        padding: 20px 0 32px;
+        color: #fff;
         font-size: 12px;
         letter-spacing: 1px;
     }
-}
-
-// Media Query
-
-// --1440px
-@media (min-width: 1240px) and (max-width: 1440px) {
-    footer {
-        .footer_box {
-            .map {
-                iframe {
-                    width: 400px;
-                }
-            }
+    @media screen and (max-width: 1440px) {
+        .copy-right {
+            color: #000;
+            border-top: 1px solid black;
+            font-size: 10px;
+            letter-spacing: 0;
         }
     }
 }
 
-// -- End of 1440px
+// Media Query
 
 //-- 1240px
 @media screen and (min-width: 1024px) and (max-width: 1280px) {
@@ -354,15 +376,6 @@ footer {
 
             .nav-logo {
                 margin: 0 5%;
-            }
-        }
-    }
-
-    footer {
-        @include flex-row(center, center);
-        .footer_box {
-            .map, .map iframe {
-                display: none !important;
             }
         }
     }
@@ -379,16 +392,6 @@ footer {
 
             .nav-logo {
                 margin: 0 5%;
-            }
-        }
-    }
-
-    footer {
-        .footer_box {
-            @include flex-row(center, center);
-
-            .map, .map iframe {
-                display: none !important;
             }
         }
     }
@@ -462,25 +465,6 @@ footer {
             visibility: hidden;
             background-color: rgba(131, 105, 54, 0.5);
             z-index: 5;
-        }
-    }
-
-    footer {
-        .footer-box {
-            .information{
-                position: relative !important;
-                top: 0;
-                left: 0;
-                translate: 0 0;
-            }
-            .map, .map iframe {
-                display: none !important;
-            }
-        }
-        .copy-right {
-            @include dimension(300px, auto);
-            padding: 20px 0;
-            border-top: 2px solid black;
         }
     }
 }

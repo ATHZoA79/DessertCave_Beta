@@ -494,63 +494,116 @@ main .product-series .swiper-area .swiper .swiper-slide .swiper-product-name {
 
 footer {
   width: 100%;
-  height: 468px;
+  height: auto;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  position: relative;
   background-color: rgb(141, 215, 204);
   color: rgb(107, 78, 38);
 }
-footer .information {
-  position: absolute;
-  top: 50%;
-  left: 18%;
-  translate: 0 -50%;
-  padding: 20px;
-  font-size: 1rem;
-  background-color: rgb(141, 215, 204);
+footer .footer_box {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 80%;
+  padding: 20px 0 0;
 }
-footer .information #footer_title {
-  width: 261px;
-  height: 87px;
-  background-image: url(../img/logo-橫式-white.png);
-  background-position: center;
-  background-size: contain;
+footer .footer_box .information {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
 }
-footer .information .text {
-  background-color: rgb(141, 215, 204);
+footer .footer_box .information #footer_title {
+  width: 240px;
+  height: auto;
 }
-footer .information .text div {
-  padding-top: 20px;
+footer .footer_box .information #footer_title img {
+  width: 100%;
+  object-fit: contain;
 }
-footer .information .text i {
-  padding-right: 20px;
-  font-size: 20px;
+@media screen and (max-width: 720px) {
+  footer .footer_box .information #footer_title {
+    width: 166px;
+    height: auto;
+  }
 }
-footer .map {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: 12px -50%;
-  padding: 12px;
+footer .footer_box .information .text {
+  padding: 20px 10px;
+  color: #fff;
 }
-footer .map iframe {
-  width: 624px;
-  height: 313px;
+footer .footer_box .information .text li {
+  font-size: 14px;
+  line-height: 17px;
+}
+footer .footer_box .information .text li i {
+  padding-right: 8px;
+}
+@media screen and (max-width: 1440px) {
+  footer .footer_box .information {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  footer .footer_box .information .text {
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  footer .footer_box .information .text div {
+    font-size: 12px;
+  }
+  footer .footer_box .information .text div i {
+    display: none;
+  }
+}
+footer .footer_box .map {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .footer_box .map iframe {
+  width: 554px;
+  height: 236px;
   border: 0;
   border-radius: 40px;
+  padding: 10px;
+}
+@media screen and (max-width: 1440px) {
+  footer .footer_box .map {
+    display: none;
+  }
 }
 footer .copy-right {
   width: 419px;
   height: 15px;
-  color: white;
-  position: absolute;
-  bottom: 18px;
-  left: 50%;
-  translate: -50% 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0 32px;
+  color: #fff;
   font-size: 12px;
   letter-spacing: 1px;
+}
+@media screen and (max-width: 1440px) {
+  footer .copy-right {
+    color: #000;
+    border-top: 1px solid black;
+    font-size: 10px;
+    letter-spacing: 0;
+  }
 }
 
 @media screen and (min-width: 1441px) and (max-width: 1600px) {

@@ -188,7 +188,7 @@ header .pagination .content a {
 
 footer {
   width: 100%;
-  height: 468px;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -197,9 +197,11 @@ footer {
   color: rgb(107, 78, 38);
 }
 footer .footer_box {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
   width: 80%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  padding: 20px 0 0;
 }
 footer .footer_box .information {
   display: flex;
@@ -214,11 +216,18 @@ footer .footer_box .information .information_box {
   justify-content: start;
 }
 footer .footer_box .information .information_box #footer_title {
-  width: 261px;
-  height: 87px;
-  background-image: url("../img/logo-white.png");
-  background-position: center;
-  background-size: contain;
+  width: 240px;
+  height: auto;
+}
+footer .footer_box .information .information_box #footer_title img {
+  width: 100%;
+  object-fit: contain;
+}
+@media screen and (max-width: 720px) {
+  footer .footer_box .information .information_box #footer_title {
+    width: 166px;
+    height: auto;
+  }
 }
 footer .footer_box .information .information_box .text {
   padding: 20px 10px;
@@ -230,6 +239,33 @@ footer .footer_box .information .information_box .text li {
 }
 footer .footer_box .information .information_box .text li i {
   padding-right: 8px;
+}
+@media screen and (max-width: 1440px) {
+  footer .footer_box .information {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  footer .footer_box .information .information_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  footer .footer_box .information .information_box .text {
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  footer .footer_box .information .information_box .text li {
+    font-size: 12px;
+  }
+  footer .footer_box .information .information_box .text li i {
+    display: none;
+  }
 }
 footer .footer_box .map {
   display: flex;
@@ -243,23 +279,31 @@ footer .footer_box .map iframe {
   border-radius: 40px;
   padding: 10px;
 }
+@media screen and (max-width: 1440px) {
+  footer .footer_box .map {
+    display: none;
+  }
+}
 footer .copy-right {
   width: 419px;
   height: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translate(0, 250%);
-  color: white;
+  padding: 20px 0 32px;
+  color: #fff;
   font-size: 12px;
   letter-spacing: 1px;
 }
-
-@media (min-width: 1240px) and (max-width: 1440px) {
-  footer .footer_box .map iframe {
-    width: 400px;
+@media screen and (max-width: 1440px) {
+  footer .copy-right {
+    color: #000;
+    border-top: 1px solid black;
+    font-size: 10px;
+    letter-spacing: 0;
   }
 }
+
 @media screen and (min-width: 1024px) and (max-width: 1280px) {
   header nav {
     width: 100%;
@@ -267,14 +311,6 @@ footer .copy-right {
   }
   header nav .nav-logo {
     margin: 0 5%;
-  }
-  footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  footer .footer_box .map, footer .footer_box .map iframe {
-    display: none !important;
   }
 }
 @media screen and (min-width: 720px) and (max-width: 1024px) {
@@ -284,14 +320,6 @@ footer .copy-right {
   }
   header nav .nav-logo {
     margin: 0 5%;
-  }
-  footer .footer_box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  footer .footer_box .map, footer .footer_box .map iframe {
-    display: none !important;
   }
   #phone_Ham:checked + .phone-ham-list {
     visibility: visible;
@@ -342,20 +370,5 @@ header nav .social-media-area {
     visibility: hidden;
     background-color: rgba(131, 105, 54, 0.5);
     z-index: 5;
-  }
-  footer .footer-box .information {
-    position: relative !important;
-    top: 0;
-    left: 0;
-    translate: 0 0;
-  }
-  footer .footer-box .map, footer .footer-box .map iframe {
-    display: none !important;
-  }
-  footer .copy-right {
-    width: 300px;
-    height: auto;
-    padding: 20px 0;
-    border-top: 2px solid black;
   }
 }/*# sourceMappingURL=nav&footer.css.map */
