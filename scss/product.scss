@@ -424,6 +424,32 @@ main {
 
       }
     }
+
+    .product-detail-area {
+      .product-detail-card-container {
+        @include dimension(300px, 450px);
+
+        .product-detail-card {
+          .product-detail-img {
+            @include dimension(300px, 250px);
+          }
+
+          .product-detail-text {
+            @include dimension(300px, 200px);
+
+            .product-detail-name {
+              @include dimension(153px, 17px);
+              font-size: 14px;
+            }
+
+            .product-detail-content {
+              @include dimension(256px, 72px);
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -463,6 +489,32 @@ main {
 
       }
     }
+
+    .product-detail-area {
+      .product-detail-card-container {
+        @include dimension(300px, 450px);
+
+        .product-detail-card {
+          .product-detail-img {
+            @include dimension(300px, 250px);
+          }
+
+          .product-detail-text {
+            @include dimension(300px, 200px);
+
+            .product-detail-name {
+              @include dimension(153px, 17px);
+              font-size: 14px;
+            }
+
+            .product-detail-content {
+              @include dimension(256px, 72px);
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -492,7 +544,7 @@ main {
 
       .product-card {
         @include dimension(165px, auto);
-       
+
 
         .img-container {
           @include dimension(auto, auto);
@@ -502,6 +554,32 @@ main {
           }
         }
 
+      }
+    }
+
+    .product-detail-area {
+      .product-detail-card-container {
+        @include dimension(300px, 450px);
+
+        .product-detail-card {
+          .product-detail-img {
+            @include dimension(300px, 250px);
+          }
+
+          .product-detail-text {
+            @include dimension(300px, 200px);
+
+            .product-detail-name {
+              @include dimension(153px, 17px);
+              font-size: 14px;
+            }
+
+            .product-detail-content {
+              @include dimension(256px, 72px);
+              font-size: 14px;
+            }
+          }
+        }
       }
     }
   }
