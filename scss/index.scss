@@ -6,6 +6,8 @@ $grey-7: #969696;
 $grey-6: #7e7e7e;
 $grey-2: #242424;
 $grey-1: #121212;
+$primary: #8dd7cc;
+$secondary: #eeb8af;
 $redwine: #901111;
 $logo_color: rgb(141, 215, 204);
 $darkgold: rgb(107, 78, 38);
@@ -190,13 +192,13 @@ header {
                 color: black;
                 font-weight: 700;
                 font-size: 18px;
+                border-radius: 8px;
                 letter-spacing: 1px;
-                transition: 0.3s ease;
+                transition: 0.2s;
                 z-index: 2;
 
                 &:hover {
-                    background-color: rgb(20, 20, 20);
-                    color: $darkgold;
+                    outline: 3px solid $primary;
                 }
 
                 &#order .order-menu {
@@ -290,8 +292,12 @@ header {
             z-index: 1;
 
             a {
-                color: $redwine;
+                color: black;
                 text-decoration: none;
+                transition: .25s ease;
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
     }
@@ -354,7 +360,6 @@ main {
 
         .profile {
             @include dimension(574px, 225px);
-            @include image("");
             background-image: url("../img/index/Product_List/義式奶油檸檬塔.png");
             position: absolute;
             top: 217px;
@@ -550,6 +555,16 @@ main {
                                 @include dimension(100%, 100%);
                                 object-fit: cover;
                                 object-position: center;
+                            }
+                            .more-product {
+                                @include dimension(289px, 289px);
+                                @include flex-row(center, center);
+                                position: absolute;
+                                top: 0;
+                                color: #000;
+                                font-size: 24px;
+                                background-color: rgba($color: #fff, $alpha: .6);
+                                z-index: 5;
                             }
                         }
 
@@ -842,8 +857,6 @@ footer {
         #ham_icon:checked ~ #toggle_menu {
             @include dimension(100%, 100vh);
             z-index: 5;
-            // display: block;
-            // visibility: visible;
         }
 
         #toggle_menu {
@@ -853,9 +866,23 @@ footer {
             top: 0;
             right: 0;
             display: block;
-            // display: none;
-            // visibility: hidden;
             background-color: white;
+            .wrap {
+                display: flex;
+                .toggle-menu-content {
+                    @include dimension(calc(100% - 80px), 100vh);
+                    @include flex-col(flex-start, center);
+                    img {
+                        @include dimension(130px, 130px);
+                        object-fit: contain;
+                    }
+                }
+                .close-icon {
+                    @include dimension(80px, 100vh);
+                    @include flex-row(flex-start, center);
+                    background-color: #8dd7cc;
+                }
+            }
         }
 
         .pagination {
