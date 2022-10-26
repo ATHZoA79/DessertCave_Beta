@@ -180,21 +180,6 @@
 
     </footer>
 
-    <script>
-        //內文長度設置
-        const textContent = document.querySelector('.new-text-content');
-        var text = textContent.innerHTML;
-
-        console.log(textContent, text, h);
-        for(let i = 0; i < text.length; i++){
-            text = text.substr(0, i);
-            if(text < textContent.height){
-                text.style.overflow = 'hidden';
-                text = text.substr(0, i-3) + '...';
-                break;
-            }
-        }
-    </script>
 </body>
 
 </html>
