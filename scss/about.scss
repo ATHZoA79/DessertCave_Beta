@@ -190,12 +190,12 @@ main {
     }
 
     .banner-area {
-        @include dimension(100%, auto);
+        @include dimension(1190px, auto);
         @include flex-row(center, center);
         margin-bottom: 120px;
 
         img {
-            @include dimension(1091px, 505px);
+            @include dimension(100%, 505px);
             @include flex-row(center, center);
             object-fit: cover;
             object-position: center;
@@ -375,6 +375,25 @@ main {
                     }
                 }
             }
+        }
+    }
+}
+
+
+
+//1280px
+@media (max-width: 1280px) {
+    main{
+        .page-area {
+            width: 99%;
+            padding: 0 5%;
+      
+            .page {
+              @include flex-row(center, center);
+            }
+          }
+        .banner-area{
+            width: 85%;
         }
     }
 }
