@@ -253,6 +253,9 @@ main {
           background-color: $grey-7;
           top: 0;
           left: 0;
+          img{
+            @include dimension(100%,100% );
+          }
         }
 
         .product-detail-text {
