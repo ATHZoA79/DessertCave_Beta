@@ -158,11 +158,11 @@ main {
     @include flex-row(space-between, space-between);
     flex-wrap: wrap;
     margin: auto;
-    background-color: $grey-8;
+    // background-color: $grey-8;
 
     .product-card {
       @include dimension(275px, 410px);
-      background-color: $grey-9;
+      // background-color: $grey-9;
 
       &:hover {
         .img-container {
@@ -174,7 +174,7 @@ main {
 
       .img-container {
         @include dimension(100%, 350px);
-        background-color: $grey-7;
+        // background-color: $grey-7;
         overflow: hidden;
         img{
           @include dimension(100%,100% );
@@ -189,7 +189,7 @@ main {
         h3 {
           @include dimension(100%, 50px);
           color: $darkgold;
-          background-color: $grey-6;
+          // background-color: $grey-6;
         }
       }
 

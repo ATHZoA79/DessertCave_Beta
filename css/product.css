@@ -76,12 +76,10 @@ main .product-card-area {
   align-items: space-between;
   flex-wrap: wrap;
   margin: auto;
-  background-color: #c2c2c2;
 }
 main .product-card-area .product-card {
   width: 275px;
   height: 410px;
-  background-color: #dcdcdc;
 }
 main .product-card-area .product-card:hover .img-container {
   transition-duration: 0.5s;
@@ -92,7 +90,6 @@ main .product-card-area .product-card:hover .img-container {
 main .product-card-area .product-card .img-container {
   width: 100%;
   height: 350px;
-  background-color: #969696;
   overflow: hidden;
 }
 main .product-card-area .product-card .img-container img {
@@ -109,7 +106,6 @@ main .product-card-area .product-card .product-name h3 {
   width: 100%;
   height: 50px;
   color: rgb(107, 78, 38);
-  background-color: #7e7e7e;
 }
 main .message-area {
   width: 100%;
