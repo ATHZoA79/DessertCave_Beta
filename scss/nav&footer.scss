@@ -14,16 +14,16 @@ $darkgold: rgb(107, 78, 38);
 
 // -- End of variable --
 // -- animation
-@keyframes test {}
+@keyframes test {
+}
 
 // -- Define mixin --
 @mixin dimension($w, $h) {
     width: $w;
     height: $h;
-
 }
 
-// width, height 
+// width, height
 @mixin position-center {
     position: absolute;
     top: 50%;
@@ -64,13 +64,11 @@ $darkgold: rgb(107, 78, 38);
     transition-duration: $transition_time;
     transition-delay: $transition_delay;
     transition-timing-function: $transition_funtion;
-
 }
 
 @mixin background($bgcolor) {
     background-color: $bgcolor;
 }
-
 
 @mixin font($size, $weight, $family, $color) {
     font-size: $size;
@@ -78,7 +76,6 @@ $darkgold: rgb(107, 78, 38);
     font-family: $family;
     color: $color;
 }
-
 
 // -- End of mixin --
 
@@ -124,7 +121,7 @@ header {
             height: 102px;
             width: 102px;
             // background-color: gray;
-            @include image('../img/NAV/Logo/logo-bg-white.png');
+            @include image("../img/NAV/Logo/logo-bg-white.png");
             position: absolute;
             top: 15px;
             left: 0;
@@ -137,7 +134,7 @@ header {
                 @include flex-row(center, center);
             }
 
-            a+a {
+            a + a {
                 margin-left: 12px;
             }
 
@@ -202,7 +199,7 @@ header {
             padding: 0 16px 0 32px;
             background-color: $logo_color;
 
-            a+a {
+            a + a {
                 margin-left: 12px;
             }
 
@@ -213,7 +210,7 @@ header {
 
             #facebook {
                 @include dimension(40px, 40px);
-                @include image('../img/NAV/社群/FB.png');
+                @include image("../img/NAV/社群/FB.png");
                 transition: 0.4s ease;
                 scale: 1;
 
@@ -224,7 +221,7 @@ header {
 
             #instagram {
                 @include dimension(38px, 38px);
-                @include image('../img/NAV/社群/IG.png');
+                @include image("../img/NAV/社群/IG.png");
                 background-size: contain;
                 transition: 0.4s ease;
                 scale: 1;
@@ -261,7 +258,7 @@ header {
         }
     }
 
-    // End of pagination 
+    // End of pagination
 }
 
 // End of header
@@ -269,7 +266,7 @@ header {
 footer {
     @include dimension(100%, 468px);
     @include flex-col(center, center);
-    background-color: $grey-7;
+    background-color: $logo_color;
     color: $darkgold;
 
     .footer_box {
@@ -283,26 +280,27 @@ footer {
             .information_box {
                 width: 350px;
                 font-size: 14px;
-                background-color: $grey-6;
+                // background-color: $grey-6;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
 
                 #footer_title {
                     @include dimension(261px, 87px);
-                    @include flex-row(flex-start, flex-end);
-                    border-bottom: 1px solid $darkgold;
-                    background-color: $grey-2;
+                    background-image: url(../img/logo-橫式-white.png);
+                    background-position: center;
+                    background-size: contain;
                 }
 
                 .text {
-                    background-color: $grey-8;
-                    color: white;
-                    padding-top: 10px;
-
-                    i {
-                        padding: 5px 10px;
-                        font-size: 20px;
+                    padding: 20px 10px;
+                    color: #fff;
+                    li {
+                        font-size: 14px;
+                        line-height: 17px;
+                        i {
+                            padding-right: 8px;
+                        }
                     }
                 }
             }
@@ -330,13 +328,10 @@ footer {
     }
 }
 
-
-
 // Media Query
 
-
 // --1440px
-@media (min-width:1240px) and (max-width:1440px) {
+@media (min-width: 1240px) and (max-width: 1440px) {
     footer {
         .footer_box {
             .map {
@@ -350,11 +345,8 @@ footer {
 
 // -- End of 1440px
 
-
-
 //-- 1240px
-@media screen and (min-width:1024px) and (max-width:1280px) {
-
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
     header {
         nav {
             width: 100%;
@@ -372,20 +364,15 @@ footer {
                 iframe {
                     width: calc(100% - 100px);
                 }
-
             }
         }
-
     }
 }
 
 //--End of 1240px
 
-
-
 //--1024 px
-@media screen and (min-width:750px) and (max-width:1024px) {
-
+@media screen and (min-width: 750px) and (max-width: 1024px) {
     header {
         nav {
             width: 100%;
@@ -409,7 +396,7 @@ footer {
         }
     }
 
-    #phone_Ham:checked+.phone-ham-list {
+    #phone_Ham:checked + .phone-ham-list {
         visibility: visible;
         height: 100vh;
         width: 100%;
@@ -418,11 +405,9 @@ footer {
 
 //--End of 1024px
 
-
-
 //--750px
 
-@media screen and (min-width:720px) and (max-width:750px) {
+@media screen and (min-width: 720px) and (max-width: 750px) {
     header {
         nav {
             .nav-btns {
@@ -436,10 +421,8 @@ footer {
 
 //--End of 750px
 
-
-
 //--720 px
-@media (max-width:720px) {
+@media (max-width: 720px) {
     header {
         position: relative;
 
@@ -469,7 +452,7 @@ footer {
             z-index: 20;
         }
 
-        #ham-icon:checked~#toggle-menu {
+        #ham-icon:checked ~ #toggle-menu {
             display: block;
             visibility: visible;
         }
@@ -483,55 +466,20 @@ footer {
             background-color: rgba(131, 105, 54, 0.5);
             z-index: 5;
         }
-
     }
 
     footer {
-        .footer_box {
-            @include flex-row(center, center);
-
-            // .information {}
-
-            .map {
-                display: none;
-            }
+        .information,
+        .map {
+            position: relative !important;
+            top: 0;
+            left: 0;
+            translate: 0 0;
         }
     }
 }
 
 //--End of 720px
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // -- 720px
 // @media screen and (min-width:760px) and (max-width: 1024px) {

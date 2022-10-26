@@ -193,7 +193,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #969696;
+  background-color: rgb(141, 215, 204);
   color: rgb(107, 78, 38);
 }
 footer .footer_box {
@@ -209,7 +209,6 @@ footer .footer_box .information {
 footer .footer_box .information .information_box {
   width: 350px;
   font-size: 14px;
-  background-color: #7e7e7e;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -217,20 +216,20 @@ footer .footer_box .information .information_box {
 footer .footer_box .information .information_box #footer_title {
   width: 261px;
   height: 87px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
-  border-bottom: 1px solid rgb(107, 78, 38);
-  background-color: #242424;
+  background-image: url(../img/logo-橫式-white.png);
+  background-position: center;
+  background-size: contain;
 }
 footer .footer_box .information .information_box .text {
-  background-color: #c2c2c2;
-  color: white;
-  padding-top: 10px;
+  padding: 20px 10px;
+  color: #fff;
 }
-footer .footer_box .information .information_box .text i {
-  padding: 5px 10px;
-  font-size: 20px;
+footer .footer_box .information .information_box .text li {
+  font-size: 14px;
+  line-height: 17px;
+}
+footer .footer_box .information .information_box .text li i {
+  padding-right: 8px;
 }
 footer .footer_box .map {
   display: flex;
@@ -339,12 +338,11 @@ header nav .social-media-area {
     background-color: rgba(131, 105, 54, 0.5);
     z-index: 5;
   }
-  footer .footer_box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  footer .footer_box .map {
-    display: none;
+  footer .information,
+footer .map {
+    position: relative !important;
+    top: 0;
+    left: 0;
+    translate: 0 0;
   }
 }/*# sourceMappingURL=nav&footer.css.map */

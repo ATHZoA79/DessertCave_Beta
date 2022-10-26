@@ -319,7 +319,7 @@ main {
     .banner {
         @include dimension(100%, 771px);
         @include flex-row(center, center);
-        @include image('../img/首頁/banner_img.jfif');
+        @include image('../img/index/banner_img.jfif');
         position: relative;
     }
 
@@ -367,7 +367,7 @@ main {
         .profile {
             @include dimension(574px, 225px);
             @include image('');
-            background-image: url(../img/首頁/商品列表/義式奶油檸檬塔.png);
+            background-image: url('../img/index/Product_List/義式奶油檸檬塔.png');
             position: absolute;
             top: 217px;
             left: 231px;
@@ -424,7 +424,7 @@ main {
         .rotate-img {
             @include dimension(609px, 609px);
             @include keyframe(rotate, 10s, infinite, linear);
-            @include image('../img/首頁/檸檬塔去背.png');
+            @include image('../img/index/檸檬塔去背.png');
             position: absolute;
             top: 50%;
             right: 100px;
@@ -853,10 +853,6 @@ footer {
             left: 0;
             translate: 0 0;
         }
-
-        // .map {
-        //     display: none;
-        // }
     }
 
     #phone_Ham:checked+.phone-ham-list {
