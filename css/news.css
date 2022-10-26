@@ -90,8 +90,12 @@ main .news-container .news-card .news-info .news-text .new-text-content {
   height: 94px;
   font-size: 16px;
   line-height: 19px;
-  overflow: hidden;
   font-weight: 400;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 main .news-container .news-card .news-info .news-date-duration-box {
   display: flex;
@@ -152,6 +156,10 @@ main .news-container .news-card:nth-of-type(2) {
 }
 main .news-container .news-card:nth-of-type(3) {
   margin-top: 150px;
+}
+
+.hidden {
+  overflow: hidden;
 }
 
 @media (max-width: 1280px) {
