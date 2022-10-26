@@ -49,18 +49,19 @@ body {
 header {
   width: 100%;
   height: 70px;
+  position: relative;
   top: 0;
   border-top: 7px solid rgb(141, 215, 204);
   background-color: white;
   z-index: 3;
-  position: relative;
+  transition: 0.2s ease-out;
 }
 header nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   position: relative;
-  max-width: 1100px;
+  max-width: 1440px;
   height: 100%;
   margin: auto;
   background-color: white;
@@ -79,7 +80,9 @@ header nav .nav-logo {
   top: 15px;
   left: 0;
   border-radius: 50%;
-  z-index: 4;
+  z-index: 5;
+  scale: 1;
+  transition: 0.2s ease-out;
 }
 header nav .nav-btns {
   display: flex;
@@ -91,7 +94,7 @@ header nav .nav-btns {
   padding: 0 28px;
   background-color: white;
 }
-header nav .nav-btns li {
+header nav .nav-btns a ul li {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -106,15 +109,16 @@ header nav .nav-btns .nav-style {
   position: relative;
   padding: 4px 8px;
   text-decoration: none;
-  color: #121212;
+  color: black;
   font-weight: 700;
-  font-size: 1.2em;
+  font-size: 18px;
   letter-spacing: 1px;
   transition: 0.3s ease;
   z-index: 2;
 }
 header nav .nav-btns .nav-style:hover {
-  background-color: #fff;
+  background-color: rgb(20, 20, 20);
+  color: rgb(107, 78, 38);
 }
 header nav .nav-btns .nav-style#order .order-menu {
   width: 100%;
@@ -194,17 +198,15 @@ header .pagination {
   justify-content: flex-end;
   align-items: center;
   position: absolute;
-  left: 50%;
-  transform: translateX(calc(-45% + 20px));
 }
 header .pagination .content {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: calc(50% + 720px - 67px);
+  width: calc(50% + 720px - 51px);
   height: 100%;
   padding: 0 10%;
-  background-color: lightblue;
+  background-color: rgba(141, 215, 204, 0.6);
   z-index: 1;
 }
 header .pagination .content a {
@@ -222,10 +224,11 @@ main .banner {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("../img/首頁/banner_img.jfif");
+  background-image: url("../img/index/banner_img.jfif");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  position: relative;
 }
 main .product-showcase {
   width: 100%;
@@ -275,7 +278,7 @@ main .product-showcase .profile {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(../img/首頁/商品列表/義式奶油檸檬塔.png);
+  background-image: url("../img/index/Product_List/義式奶油檸檬塔.png");
   position: absolute;
   top: 217px;
   left: 231px;
@@ -333,7 +336,7 @@ main .product-showcase .rotate-img {
   animation-duration: 10s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-  background-image: url("../img/首頁/檸檬塔去背.png");
+  background-image: url("../img/index/檸檬塔去背.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -493,68 +496,59 @@ footer {
   width: 100%;
   height: 468px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  background-color: #969696;
+  position: relative;
+  background-color: rgb(141, 215, 204);
   color: rgb(107, 78, 38);
 }
-footer .footer_box {
-  width: 80%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+footer .information {
+  position: absolute;
+  top: 50%;
+  left: 18%;
+  translate: 0 -50%;
+  padding: 20px;
+  font-size: 1rem;
+  background-color: rgb(141, 215, 204);
 }
-footer .footer_box .information {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-footer .footer_box .information .information_box {
-  width: 350px;
-  font-size: 14px;
-  background-color: #7e7e7e;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-footer .footer_box .information .information_box #footer_title {
+footer .information #footer_title {
   width: 261px;
   height: 87px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-end;
-  border-bottom: 1px solid rgb(107, 78, 38);
-  background-color: #242424;
+  background-image: url(../img/logo-橫式-white.png);
+  background-position: center;
+  background-size: contain;
 }
-footer .footer_box .information .information_box .text {
-  background-color: #c2c2c2;
-  color: white;
-  padding-top: 10px;
+footer .information .text {
+  background-color: rgb(141, 215, 204);
 }
-footer .footer_box .information .information_box .text i {
-  padding: 5px 10px;
+footer .information .text div {
+  padding-top: 20px;
+}
+footer .information .text i {
+  padding-right: 20px;
   font-size: 20px;
 }
-footer .footer_box .map {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+footer .map {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: 12px -50%;
+  padding: 12px;
 }
-footer .footer_box .map iframe {
-  width: 554px;
-  height: 236px;
+footer .map iframe {
+  width: 624px;
+  height: 313px;
   border: 0;
   border-radius: 40px;
-  padding: 10px;
 }
 footer .copy-right {
   width: 419px;
   height: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: translate(0, 250%);
   color: white;
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  translate: -50% 0;
   font-size: 12px;
   letter-spacing: 1px;
 }
@@ -577,6 +571,20 @@ footer .copy-right {
   header nav .nav-logo {
     left: 50px;
   }
+  header .pagination .content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: calc(100% - 121px);
+    height: 100%;
+    padding: 0 10%;
+    background-color: rgba(141, 215, 204, 0.6);
+    z-index: 1;
+  }
+  header .pagination .content a {
+    color: #901111;
+    text-decoration: none;
+  }
   main .product-showcase .rotate-img {
     right: 0;
     width: 500px;
@@ -586,17 +594,29 @@ footer .copy-right {
     width: 800px;
     height: 624px;
   }
-  footer .footer_box .map iframe {
-    width: 400px;
-  }
 }
-@media screen and (min-width: 720px) and (max-width: 1240px) {
+@media screen and (min-width: 780px) and (max-width: 1240px) {
   header nav {
-    width: 100%;
-    padding: 0 5%;
+    padding: 0 20px;
+    width: calc(100% - 30px);
+    height: 100%;
   }
   header nav .nav-logo {
-    margin: 0 5%;
+    left: 30px;
+  }
+  header .pagination .content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: calc(100% - 131px);
+    height: 100%;
+    padding: 0 10%;
+    background-color: rgba(141, 215, 204, 0.6);
+    z-index: 1;
+  }
+  header .pagination .content a {
+    color: #901111;
+    text-decoration: none;
   }
   main .product-showcase .rotate-img {
     right: 0;
@@ -607,35 +627,8 @@ footer .copy-right {
     width: 700px;
     height: 624px;
   }
-  footer .footer_box .map iframe {
-    width: calc(100% - 100px);
-  }
-}
-@media screen and (min-width: 750px) and (max-width: 1024px) {
-  header nav {
-    width: 100%;
-    padding: 0 5%;
-  }
-  header nav .nav-logo {
-    margin: 0 5%;
-  }
-  footer .footer_box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  footer .footer_box .map {
-    display: none;
-  }
-  #phone_Ham:checked + .phone-ham-list {
-    visibility: visible;
-    height: 100vh;
-    width: 100%;
-  }
-}
-@media screen and (min-width: 720px) and (max-width: 750px) {
-  header nav .nav-btns .nav-style {
-    padding: 4px 4px;
+  footer .map iframe {
+    width: 500px;
   }
 }
 @media screen and (max-width: 720px) {
@@ -648,10 +641,10 @@ footer .copy-right {
   header nav .nav-logo {
     width: 70px;
     height: 72px;
-    transform: translateX(-50%);
     position: absolute;
-    left: 50%;
     top: 0;
+    left: 50%;
+    translate: -50% 0;
   }
   header nav .nav-btns,
 header nav .social-media-area {
@@ -693,12 +686,33 @@ header nav .social-media-area {
     width: 100%;
     color: white;
   }
-  footer .footer_box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  footer .information,
+footer .map {
+    position: relative !important;
+    top: 0;
+    left: 0;
+    translate: 0 0;
   }
-  footer .footer_box .map {
-    display: none;
+  #phone_Ham:checked + .phone-ham-list {
+    visibility: visible;
+    height: 100vh;
+    width: 100%;
   }
+}
+.header-hide {
+  position: fixed !important;
+  top: -70px;
+}
+
+.header-show {
+  position: fixed !important;
+  top: 0px;
+}
+
+.logo-hide {
+  scale: 0 !important;
+}
+
+.pagination-span {
+  width: 100% !important;
 }/*# sourceMappingURL=index.css.map */

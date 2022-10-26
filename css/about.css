@@ -30,6 +30,7 @@ main {
 }
 main .page-area {
   width: 1100px;
+  padding: 0 5%;
   margin-top: 40px;
 }
 main .page-area li {
@@ -50,6 +51,9 @@ main .page-area li span a {
 main .page-area li span a:hover {
   border-bottom: solid black;
   transition: 0.1s linear;
+}
+main .phone_title {
+  display: none;
 }
 main .phone_title li {
   display: flex;
@@ -137,10 +141,10 @@ main .slogan-area ul p {
   font-weight: 700;
 }
 main .slogan-area ul p:nth-last-of-type(2) span {
-  color: #EEB8AF;
+  color: #eeb8af;
 }
 main .slogan-area ul p:nth-last-of-type(1) span:nth-last-of-type(2) {
-  color: #EEB8AF;
+  color: #eeb8af;
 }
 main .slogan-area ul p:nth-last-of-type(1) span:nth-last-of-type(1) {
   color: rgb(141, 215, 204);
@@ -277,6 +281,10 @@ main .history-area .brand-area .brand-picture img {
 }
 
 @media (max-width: 1240px) {
+  main .page-area {
+    width: 100%;
+    padding: 0 5%;
+  }
   main .banner-area .banner {
     width: 1000px;
   }
@@ -313,6 +321,9 @@ main .history-area .brand-area .brand-picture img {
 @media (max-width: 720px) {
   main .page-area {
     opacity: 0;
+  }
+  main .phone_title {
+    display: block;
   }
   main .phone_title li {
     opacity: 1;
