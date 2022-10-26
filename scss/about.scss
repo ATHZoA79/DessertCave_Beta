@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap");
 
 // -- Define variable --
 $grey-9: #dcdcdc;
@@ -38,18 +37,15 @@ $darkgold: rgb(107, 78, 38);
     }
 }
 
-
 //---end of keyframe
-
 
 // -- Define mixin --
 @mixin dimension($w, $h) {
     width: $w;
     height: $h;
-
 }
 
-// width, height 
+// width, height
 @mixin position-center {
     position: absolute;
     top: 50%;
@@ -90,13 +86,11 @@ $darkgold: rgb(107, 78, 38);
     transition-duration: $transition_time;
     transition-delay: $transition_delay;
     transition-timing-function: $transition_funtion;
-
 }
 
 @mixin background($bgcolor) {
     background-color: $bgcolor;
 }
-
 
 @mixin font($size, $weight, $family, $color) {
     font-size: $size;
@@ -127,6 +121,7 @@ main {
     @include flex-col(center, center);
     .page-area {
         width: 1100px;
+        padding: 0 5%;
         margin-top: 40px;
 
         li {
@@ -151,19 +146,20 @@ main {
     }
 
     .phone_title {
+        display: none;
         li {
-          @include flex-row(center, center);
-          font-weight: 700;
-          margin: 118px 0 71px;
-          opacity: 0;
-    
-          span {
-            letter-spacing: 10px;
-            padding: 18px 10px 18px 20px;
-            font-size: 18px;
-          }
+            @include flex-row(center, center);
+            font-weight: 700;
+            margin: 118px 0 71px;
+            opacity: 0;
+
+            span {
+                letter-spacing: 10px;
+                padding: 18px 10px 18px 20px;
+                font-size: 18px;
+            }
         }
-      }
+    }
 
     .logo-area {
         @include dimension(100%, auto);
@@ -174,7 +170,6 @@ main {
             @include dimension(900px, 126px);
             @include flex-row(space-around, center);
             color: $darkgold;
-
 
             .logo-img {
                 @include dimension(434px, 126px);
@@ -225,13 +220,13 @@ main {
 
             p:nth-last-of-type(2) {
                 span {
-                    color: #EEB8AF;
+                    color: #eeb8af;
                 }
             }
 
             p:nth-last-of-type(1) {
                 span:nth-last-of-type(2) {
-                    color: #EEB8AF;
+                    color: #eeb8af;
                 }
 
                 span:nth-last-of-type(1) {
@@ -253,7 +248,6 @@ main {
                 border: 1px solid black;
                 border-radius: 50%;
             }
-
         }
     }
 
@@ -349,14 +343,16 @@ main {
             }
         }
     }
-
 }
-
 
 //1240px
 
 @media (max-width: 1240px) {
     main {
+        .page-area {
+            width: 100%;
+            padding: 0 5%;
+        }
         .banner-area {
             .banner {
                 width: 1000px;
@@ -423,7 +419,6 @@ main {
     }
 }
 
-
 //phone-size:750px
 
 @media (max-width: 720px) {
@@ -433,6 +428,7 @@ main {
         }
 
         .phone_title {
+            display: block;
             li {
                 opacity: 1;
             }
