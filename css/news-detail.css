@@ -147,6 +147,16 @@ main .news-container .news-content {
   main .phone_title {
     padding: 78px 0;
   }
+  main .news-container .news-header .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  main .news-container .news-header .subtitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   main .news-container .news-banner {
     width: 80%;
   }

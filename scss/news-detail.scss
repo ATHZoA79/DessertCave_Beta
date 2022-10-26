@@ -216,6 +216,15 @@ main {
       }
 
       .news-container {
+        .news-header{
+          .title{
+            @include flex-row(center, center);
+          }
+          .subtitle{
+            @include flex-row(center, center);
+          }
+
+        }
         .news-banner {
           width: 80%;
 
