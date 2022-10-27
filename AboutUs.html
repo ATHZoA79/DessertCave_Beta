@@ -19,19 +19,12 @@
 <body>
     <header class="nav-bar">
         <nav>
-            <a href="./index.html">
-                <div class="nav-logo"></div>
+            <ul>
+                <li class="nav-logo"><a href="./index.html"><img src="./img/NAV/Logo/logo-bg-white.png" alt=""></a></li>
+            </ul>
             </a>
             <ul class="nav-btns">
                 <li><a href="./news.html" class="nav-style nav-btn1">活動快訊</a></li>
-                <li><a href="#" id="order" class="nav-style nav-btn2">
-                        我要訂購<i class="bi bi-caret-down-fill"></i>
-                        <ul class="order-menu">
-                            <li>單品訂購</li>
-                            <li>大量訂購</li>
-                        </ul>
-                    </a>
-                </li>
                 <li><a href="./product.html" class="nav-style nav-btn2">產品介紹</a></li>
                 <li><a href="./AboutUs.html" class="nav-style nav-btn3">品牌故事</a></li>
             </ul>
@@ -41,12 +34,33 @@
                 <a href="https://www.instagram.com/dessertcave_taichung/?utm_medium=copy_link" target="_blank"
                     id="instagram" class="social-style"></a>
             </div>
+            <ul class="ham-bar">
+                <label for="menu-switch" class="menu_all" id="menu_all">
+                    <div>
+                        <span class="menu_line"></span>
+                    </div>
+                </label>
+                <input type="checkbox" id="menu-switch" hidden>
+                <ul class="menu-1">
+                    <div class="left-area">
+                        <div class="menu-1-logo"><a href="./index.html"><img src="./img/logo-bg-white.png"></a></div>
+                        <li><a href="./news.html">活動快訊</a></li>
+                        <li><a href="./product.html">產品介紹</a></li>
+                        <li><a href="./AboutUs.html">品牌故事</a></li>
+                        <li>Follow us</li>
+                        <ul class="social-style">
+                                <a href="https://www.facebook.com/dessertcave0725/" target="_blank" id="facebook"><i class="fa-brands fa-facebook "></i></a>
+                                <a href="https://www.instagram.com/dessertcave_taichung/?utm_medium=copy_link" target="_blank" id="instagram"><i class="fa-brands fa-instagram "></i></a>
+                        </ul>
+                    </div>
+                    <div class="close-area">
+                        <ul><i class="fa-solid fa-x"></i></ul>
+                    </div>
+                </ul>
+            </ul>
+
         </nav>
-        <input id="ham-icon" type="checkbox" hidden>
-        <label for="ham-icon" class="ham-icon">
-            <i class="fa-solid fa-bars"></i>
-        </label>
-        <div id="toggle-menu"></div>
+
 
 
     </header>
@@ -54,7 +68,7 @@
     <main>
         <ul class="page-area">
             <li><span><a href="#">首頁</a> </span>/<span>品牌故事</span></li>
-        </ul> 
+        </ul>
         <ul class="phone_title">
             <li>———<span>品牌故事</span>———</li>
         </ul>
@@ -130,20 +144,22 @@
         <div class="footer_box">
             <div class="information">
                 <ul class="information_box">
-                    <div id="footer_title">
-                        <img src="./img/logo-white.png" alt="">
-                    </div>
+                    <li class="footer-title"><img src="./img/logo-white.png" alt=""></li>
                     <ul class="text">
                         <li class="open-time">
                             <i class="fa-regular fa-clock"></i>營業時間：14:00~19:00 / 週二公休
                         </li>
-                        <li class="address">
-                            <i class="fa-solid fa-location-dot"></i>
-                            地址：406台中市北屯區中清路二段675號
-                        </li>
                         <li class="phone">
                             <i class="fa-solid fa-phone"></i>
-                            連絡電話：(09)58 792 622
+                            連絡電話：(09)58-792-622
+                        </li>
+                        <li class="address">
+                            <span><i class="fa-solid fa-location-dot"></i>
+                                地址：</span> 406台中市北屯區中清路二段675號
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <a href="https://goo.gl/maps/UedJ8vudftVtVXbB7"></a> google map
                         </li>
                     </ul>
                 </ul>
@@ -160,10 +176,22 @@
 
     </footer>
 
+    <script>
+        const menubox = document.querySelector('#menu_all');
+        const menuList = document.querySelector('.menu-1');
+        const downLine = window.getComputedStyle(menu_all, '::after');
+        const lineM = document.querySelector('.menu_line');
+        const areaX = document.querySelector('.close-area');
+
+        menubox.addEventListener('click', function () {
+            menuList.classList.add('menu-show');
+        })
+        areaX.addEventListener('click', function () {
+            menuList.classList.remove('menu-show');
+        })
+    </script>
+
 </body>
 
-
-<script>
-</script>
 
 </html>

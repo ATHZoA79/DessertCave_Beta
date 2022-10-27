@@ -119,9 +119,9 @@ a {
 main {
     width: 100%;
     @include flex-col(center, center);
+
     .page-area {
         width: 1100px;
-        padding: 0 5%;
         margin-top: 40px;
 
         li {
@@ -136,6 +136,7 @@ main {
                 a {
                     border-bottom: 2px solid transparent;
                     margin-top: 3px;
+
                     &:hover {
                         border-bottom: solid black;
                         transition: 0.1s linear;
@@ -147,6 +148,7 @@ main {
 
     .phone_title {
         display: none;
+
         li {
             @include flex-row(center, center);
             font-weight: 700;
@@ -172,10 +174,12 @@ main {
             color: $darkgold;
 
             .logo-img {
-                @include dimension(434px, 126px);
                 @include flex-row(center, center);
-                object-fit: cover;
-                object-position: center;
+                img{
+                    @include dimension(434px, 126px);
+                    object-fit: cover;
+                    object-position: center;
+                }
             }
 
             .logo-text {
@@ -190,12 +194,12 @@ main {
     }
 
     .banner-area {
-        @include dimension(1190px, auto);
+        @include dimension(1190px, 505px);
         @include flex-row(center, center);
         margin-bottom: 120px;
 
         img {
-            @include dimension(100%, 505px);
+            @include dimension(1190px, 505px);
             @include flex-row(center, center);
             object-fit: cover;
             object-position: center;
@@ -221,16 +225,19 @@ main {
             p:nth-last-of-type(2) {
                 span {
                     color: #eeb8af;
+                    -webkit-text-stroke: 1px #a25042;
                 }
             }
 
             p:nth-last-of-type(1) {
                 span:nth-last-of-type(2) {
                     color: #eeb8af;
+                    -webkit-text-stroke: 1px #a25042;
                 }
 
                 span:nth-last-of-type(1) {
                     color: $logo_color;
+                    -webkit-text-stroke: 1px #358176;
                 }
             }
         }
@@ -345,14 +352,33 @@ main {
     }
 }
 
+//1280px
+@media (max-width: 1280px) {
+    main {
+        .page-area {
+            width: 80%;
+
+            .page {
+                @include flex-row(center, center);
+            }
+        }
+
+        .banner-area {
+            width: 85%;
+            img{
+                width: 900px;
+            }
+        }
+    }
+}
+
+
+
 //1240px
 
 @media (max-width: 1240px) {
     main {
-        .page-area {
-            width: 100%;
-            padding: 0 5%;
-        }
+
         .banner-area {
             .banner {
                 width: 1000px;
@@ -381,30 +407,15 @@ main {
 
 
 
-//1280px
-@media (max-width: 1280px) {
-    main{
-        .page-area {
-            width: 99%;
-            padding: 0 5%;
-      
-            .page {
-              @include flex-row(center, center);
-            }
-          }
-        .banner-area{
-            width: 85%;
-        }
-    }
-}
 
 //1024px
 
 @media (max-width: 1024px) {
     main {
         .banner-area {
-            .banner {
-                width: 800px;
+            width: 90%;
+            img {
+                width:700px;
             }
         }
 
@@ -414,6 +425,12 @@ main {
                     width: 350px;
                     padding: 5%;
                 }
+            }
+        }
+
+        .slogan-area {
+            ul {
+                font-size: 18px;
             }
         }
     }
@@ -429,6 +446,7 @@ main {
 
         .phone_title {
             display: block;
+
             li {
                 opacity: 1;
             }
@@ -443,12 +461,12 @@ main {
                 height: 100%;
 
                 .logo-img {
-                    @include dimension(260px, 75px);
                     margin-top: 112px;
                     margin-bottom: 107px;
                     padding: 0;
-                    object-fit: cover;
-                    object-position: center;
+                    img{
+                        @include dimension(260px, 75px);
+                    }
                 }
 
                 .logo-text {
@@ -461,14 +479,17 @@ main {
         }
 
         .banner-area {
-            .banner {
+            width: 100%;
+            height: 236px;
+            margin-top: 121px;
+            img {
                 width: 100%;
             }
         }
 
         .slogan-area {
-            .slogan-text {
-                font-size: 16px;
+            ul {
+                font-size: 14px;
             }
 
             .slogan-oval1 {
