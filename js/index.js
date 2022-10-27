@@ -9,7 +9,7 @@ const SHOWCASE = document.querySelector('#showcase');
 var currentTop = 0;
 
 window.addEventListener('scroll', () => {
-  console.log(body.scrollTop, currentTop, window.scrollY);
+  // console.log(body.scrollTop, currentTop, window.scrollY);
   if (window.scrollY < 830) {
     header.classList.remove('header-hide');
     header.classList.remove('header-show');

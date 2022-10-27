@@ -115,7 +115,7 @@ $darkgold: rgb(107, 78, 38);
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Noto Serif TC", sans-serif;
+    font-family: "Noto Sans TC", sans-serif;
 }
 
 html {
@@ -569,8 +569,9 @@ main {
                         }
 
                         .swiper-product-name {
-                            @include font(20px, none, "Noto Serif TC", black);
+                            @include font(18px, none, "Noto Sans TC", black);
                             padding-top: 48px;
+                            letter-spacing: 0.2rem;
                         }
                     }
                 }
@@ -743,7 +744,6 @@ footer {
                 z-index: 1;
 
                 a {
-                    color: $redwine;
                     text-decoration: none;
                 }
             }
@@ -788,7 +788,6 @@ footer {
                 z-index: 1;
 
                 a {
-                    color: $redwine;
                     text-decoration: none;
                 }
             }
@@ -851,12 +850,23 @@ footer {
             display: block;
             font-size: 3rem;
             // background-color: rgb(48, 68, 111);
-            z-index: 20;
+            z-index: 1;
         }
 
         #ham_icon:checked ~ #toggle_menu {
             @include dimension(100%, 100vh);
-            z-index: 5;
+            .wrap {
+                .toggle-menu-content {
+                    img {
+                        scale: 1;
+                    }
+                }
+                .close-icon {
+                    @include dimension(80px, 100vh);
+                    @include flex-row(flex-start, center);
+                    background-color: #8dd7cc;
+                }
+            }
         }
 
         #toggle_menu {
@@ -864,23 +874,61 @@ footer {
             @include transition(0.4s, 0s, ease-out);
             position: fixed;
             top: 0;
-            right: 0;
+            right: -100vw;
             display: block;
             background-color: white;
+            translate: -100% 0;
+            z-index: 5;
             .wrap {
                 display: flex;
                 .toggle-menu-content {
                     @include dimension(calc(100% - 80px), 100vh);
-                    @include flex-col(flex-start, center);
+                    @include flex-col(center, center);
                     img {
                         @include dimension(130px, 130px);
                         object-fit: contain;
+                        scale: 0;
+                    }
+                    .nav-links {
+                        @include flex-col(center, center);
+                        padding: 70px 0;
+                        a + a {
+                            padding-top: 35px;
+                        }
+                        a {
+                            color: #000;
+                            font-size: 20px;
+                            text-decoration: none;
+                        }
+                    }
+                    .ssn {
+                        @include dimension(102px, 42px);
+                        @include flex-row(space-between, center);
+                        margin-top: 18px;
+                        .facebook {
+                            @include dimension(42px, 42px);
+                            @include image("../img/NAV/社群/FB.png");
+                            transition: 0.4s ease;
+                            scale: 1;
+                        }
+            
+                        .instagram {
+                            @include dimension(40px, 40px);
+                            @include image("../img/NAV/社群/IG.png");
+                            background-size: contain;
+                            transition: 0.4s ease;
+                            scale: 1;
+                        }
                     }
                 }
                 .close-icon {
                     @include dimension(80px, 100vh);
                     @include flex-row(flex-start, center);
                     background-color: #8dd7cc;
+                    i {
+                        font-size: 30px;
+                        padding-left: 25px;
+                    }
                 }
             }
         }
