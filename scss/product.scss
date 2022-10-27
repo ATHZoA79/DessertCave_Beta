@@ -7,22 +7,24 @@ $grey-5: #555;
 $grey-3: #393939;
 $grey-2: #242424;
 $grey-1: #121212;
+$primary: #8dd7cc;
+$secondary: #eeb8af;
 $redwine: #901111;
 $logo_color: rgb(141, 215, 204);
 $darkgold: rgb(107, 78, 38);
 // -- End of variable --
 
 // -- animation
-@keyframes test {}
+@keyframes test {
+}
 
 // -- Define mixin --
 @mixin dimension($w, $h) {
   width: $w;
   height: $h;
-
 }
 
-// width, height 
+// width, height
 @mixin position-center {
   position: absolute;
   top: 50%;
@@ -63,13 +65,11 @@ $darkgold: rgb(107, 78, 38);
   transition-duration: $transition_time;
   transition-delay: $transition_delay;
   transition-timing-function: $transition_funtion;
-
 }
 
 @mixin background($bgcolor) {
   background-color: $bgcolor;
 }
-
 
 @mixin font($size, $weight, $family, $color) {
   font-size: $size;
@@ -78,13 +78,11 @@ $darkgold: rgb(107, 78, 38);
   color: $color;
 }
 
-
 // -- End of mixin --
 main {
   position: relative;
   // top: 103px;
   width: 100%;
-
 
   .page-area {
     @include dimension(100%, 50px);
@@ -97,6 +95,7 @@ main {
       height: 20px;
       // background-color: $grey-7;
       padding-right: 5%;
+      font-size: 16px;
 
       a {
         text-decoration: none;
@@ -112,102 +111,139 @@ main {
   }
 
   .hr-head {
-    @include dimension(500px, auto);
+    @include dimension(100%, auto);
     @include flex-row(center, center);
-    padding: 150px 0;
+    padding: 120px 0 60px;
     margin: auto;
-    background-color: $grey-9;
+    // background-color: $grey-9;
 
     p {
-      font-size: 24px;
+      @include font(24px, bold, none, black);
 
       &::before {
-        content: '———';
-
+        content: "———";
       }
 
       &::after {
-        content: '———';
-
+        content: "———";
       }
     }
-
   }
 
   .product-sheet-area {
     @include dimension(961px, auto);
     @include flex-row(space-between, center);
     margin: auto;
-    padding: 0 60px 167px;
+    padding: 0 60px 72px;
 
     // background-color: $grey-6;
     .product-series {
       @include dimension(120px, 50px);
       @include flex-row(center, center);
-      background-color: $grey-1;
-      color: $darkgold;
+      // background-color: $grey-1;
       border-radius: 10px;
       text-decoration: none;
-      font-size: 20px;
+      @include font(20px, none, "Inter", black);
+    }
+  }
+  @media screen and (max-width: 720px) {
+    .product-sheet-area {
+      @include dimension(80%, auto);
+      justify-content: center;
+      flex-wrap: wrap;
 
-      &:hover {
-        background-color: $grey-3;
+      .product-series {
+        @include dimension(200px, 50px);
       }
     }
   }
 
   .product-card-area {
-    @include dimension(1000px, 913px);
+    @include dimension(1000px, auto);
     @include flex-row(space-between, space-between);
     flex-wrap: wrap;
     margin: auto;
-    background-color: $grey-8;
+    // background-color: $grey-8;
 
     .product-card {
-      @include dimension(275px, 410px);
-      background-color: $grey-9;
+      @include dimension(275px, auto);
+      // background-color: $grey-9;
 
       &:hover {
         .img-container {
           @include transition(0.5s, 0s, linear);
           transform: scale(1.1);
         }
-
       }
 
       .img-container {
         @include dimension(100%, 350px);
-        background-color: $grey-7;
+        // background-color: $grey-7;
         overflow: hidden;
+
+        img {
+          @include dimension(100%, 100%);
+        }
       }
 
       .product-name {
-        @include dimension(100%, calc(410px - 350px));
-        font-size: 18px;
+        @include dimension(100%, 50px);
+        @include flex-row(center, center);
+        margin: 28px 0 56px;
         text-align: center;
 
         h3 {
           @include dimension(100%, 50px);
+          font-size: 18px;
           color: $darkgold;
-          background-color: $grey-6;
+          // background-color: $grey-6;
         }
       }
+    }
+  }
+  @media screen and (max-width: 540px) {
+    .product-card-area {
+      @include dimension(361px, auto);
+      @include flex-row(space-between, space-between);
 
+      .product-card {
+        @include dimension(165px, auto);
 
+        .img-container {
+          @include dimension(auto, auto);
+
+          img {
+            object-fit: contain;
+          }
+        }
+      }
     }
   }
 
-  .message-area {
+  #order-btn {
     @include dimension(100%, auto);
     @include flex-row(center, center);
-    margin: 50px 0 150px;
-    // background-color: $grey-9;
-
-    .message {
-      @include dimension(219px, 70px);
+    padding: 90px 0 110px;
+    a {
+      @include dimension(170px, 50px);
       @include flex-row(center, center);
-      background-color: $logo_color;
-      border-radius: 20px;
+      text-decoration: none;
+      color: #000;
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      border: none;
+      border-radius: 15px;
+      background-color: $secondary;
+      &:after {
+      }
+      &:hover {
+      }
+    }
+  }
+  @media screen and (max-width: 720px) {
+    #order-btn {
+      padding: 9px 0 50px;
     }
   }
 
@@ -226,7 +262,7 @@ main {
     }
 
     .product-detail-card-container {
-      @include dimension(580px, 530px);
+      @include dimension(580px, auto);
       position: fixed;
       left: 50%;
       top: 50%;
@@ -235,7 +271,7 @@ main {
       z-index: 6;
 
       .product-detail-card {
-        @include dimension(100%, 100%);
+        @include dimension(100%, auto);
         position: relative;
 
         .product-detail-close {
@@ -249,18 +285,56 @@ main {
 
         .product-detail-img {
           @include dimension(580px, 335px);
-          position: absolute;
-          background-color: $grey-7;
-          top: 0;
-          left: 0;
+
+          img {
+            @include dimension(100%, 100%);
+            object-fit: cover;
+            object-position: center;
+          }
         }
 
         .product-detail-text {
-          @include dimension(580px, 195px);
-          background-color: $grey-6;
-          position: absolute;
-          left: 0;
-          bottom: 0;
+          @include dimension(100%, auto);
+          @include flex-col(flex-start, center);
+
+          .product-detail-name {
+            @include flex-row(center, center);
+            padding: 43px 23px;
+            font-size: 18px;
+            font-weight: bold;
+          }
+
+          .product-detail-content {
+            margin: 0 41px 33px;
+            padding: 7px 16px 27px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 720px) {
+      .product-detail-card-container {
+        @include dimension(300px, auto);
+        .product-detail-card {
+          .product-detail-close {
+            top: 12px;
+            right: 12px;
+          }
+          .product-detail-img {
+            @include dimension(300px, 250px);
+          }
+          .product-detail-text {
+            .product-detail-name {
+              padding: 27px 0 14px;
+              font-size: 14px;
+            }
+            .product-detail-content {
+              margin: 0 22px 70px;
+              text-align: center;
+            }
+          }
         }
       }
     }
@@ -277,3 +351,141 @@ main {
 }
 
 // --End of control block
+
+// control sheet color
+.bg-pink {
+  background-color: #eeb8af;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+// End of control sheet color
+
+//--Media Query
+
+//-- 1100px
+@media screen and(min-width:851px) and (max-width: 1100px) {
+  main {
+    .product-sheet-area {
+      @include dimension(80%, auto);
+      flex-wrap: wrap;
+
+      .product-series {
+        @include dimension(200px, 50px);
+      }
+    }
+
+    .product-card-area {
+      @include dimension(80%, auto);
+
+      .product-card {
+        @include dimension(275px, auto);
+        margin: 0 10px;
+      }
+    }
+  }
+}
+
+//-- End of 1100px
+
+//--850px
+
+@media screen and(min-width:721px) and (max-width: 850px) {
+  main {
+    .product-sheet-area {
+      @include dimension(80%, auto);
+      flex-wrap: wrap;
+
+      .product-series {
+        @include dimension(200px, 50px);
+      }
+    }
+
+    .product-card-area {
+      @include dimension(80%, auto);
+
+      .product-card {
+        @include dimension(200px, auto);
+        margin: 0 30px;
+
+        .img-container {
+          @include dimension(auto, auto);
+
+          img {
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+}
+
+//--End of 850px
+
+//--720px
+
+@media screen and (min-width: 541px) and (max-width: 720px) {
+  main {
+    .product-sheet-area {
+      @include dimension(80%, auto);
+      justify-content: center;
+      flex-wrap: wrap;
+
+      .product-series {
+        @include dimension(200px, 50px);
+      }
+    }
+
+    .product-card-area {
+      @include dimension(auto, auto);
+      @include flex-row(center, space-between);
+
+      .product-card {
+        @include dimension(165px, auto);
+        margin: 0 50px;
+
+        .img-container {
+          @include dimension(auto, auto);
+
+          img {
+            object-fit: contain;
+          }
+        }
+        .product-name {
+          padding: 17px 0 46px;
+          text-align: center;
+        }
+      }
+    }
+
+    .product-detail-area {
+      .product-detail-card-container {
+        @include dimension(300px, 450px);
+
+        .product-detail-card {
+          .product-detail-img {
+            @include dimension(300px, 250px);
+          }
+
+          .product-detail-text {
+            @include dimension(300px, 200px);
+
+            .product-detail-name {
+              @include dimension(153px, 17px);
+              font-size: 14px;
+            }
+
+            .product-detail-content {
+              @include dimension(256px, 72px);
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//--End of 720px

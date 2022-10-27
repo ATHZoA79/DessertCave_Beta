@@ -342,10 +342,10 @@ footer {
     background-color: $logo_color;
     color: $darkgold;
 
+
     .footer-box {
         width: 80%;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+        padding: 20px 0 0;
 
         .information {
             @include flex-row(center, center);
@@ -359,7 +359,24 @@ footer {
                         @include dimension(261px, 87px);
                     }
                 }
+            }
 
+            .text {
+                padding: 20px 10px;
+                color: #fff;
+                li {
+                    font-size: 14px;
+                    line-height: 17px;
+                    i {
+                        padding-right: 8px;
+                    }
+                }
+            }
+        }
+        @media screen and (max-width: 1440px) {
+            .information {
+                @include flex-col(flex-start, center);
+                @include flex-col(flex-start, center);
                 .text {
                     padding: 20px 10px;
                     color: #fff;
@@ -369,7 +386,7 @@ footer {
                         line-height: 17px;
 
                         i {
-                            padding-right: 8px;
+                            display: none;
                         }
                     }
 
@@ -390,13 +407,18 @@ footer {
                 padding: 10px;
             }
         }
+        @media screen and (max-width: 1440px) {
+            .map {
+                display: none;
+            }
+        }
     }
 
     .copy-right {
         @include dimension(419px, 15px);
         @include flex-row(center, center);
-        transform: translate(0, 250%);
-        color: white;
+        padding: 20px 0 32px;
+        color: #fff;
         font-size: 12px;
         letter-spacing: 1px;
     }
@@ -404,7 +426,6 @@ footer {
 
 
 // Media Query
-
 
 @media (max-width: 1280px) {
     header {
@@ -511,7 +532,6 @@ footer {
             .nav-btns,
             .social-media-area {
                 display: none;
-
             }
 
             .ham-bar {
