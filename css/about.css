@@ -30,7 +30,6 @@ main {
 }
 main .page-area {
   width: 1100px;
-  padding: 0 5%;
   margin-top: 40px;
 }
 main .page-area li {
@@ -85,11 +84,13 @@ main .logo-area .logo {
   color: rgb(107, 78, 38);
 }
 main .logo-area .logo .logo-img {
-  width: 434px;
-  height: 126px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+main .logo-area .logo .logo-img img {
+  width: 434px;
+  height: 126px;
   object-fit: cover;
   object-position: center;
 }
@@ -107,14 +108,14 @@ main .logo-area .logo .logo-text {
 }
 main .banner-area {
   width: 1190px;
-  height: auto;
+  height: 505px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 120px;
 }
 main .banner-area img {
-  width: 100%;
+  width: 1190px;
   height: 505px;
   display: flex;
   justify-content: center;
@@ -142,12 +143,15 @@ main .slogan-area ul p {
 }
 main .slogan-area ul p:nth-last-of-type(2) span {
   color: #eeb8af;
+  -webkit-text-stroke: 1px #a25042;
 }
 main .slogan-area ul p:nth-last-of-type(1) span:nth-last-of-type(2) {
   color: #eeb8af;
+  -webkit-text-stroke: 1px #a25042;
 }
 main .slogan-area ul p:nth-last-of-type(1) span:nth-last-of-type(1) {
   color: rgb(141, 215, 204);
+  -webkit-text-stroke: 1px #358176;
 }
 main .slogan-area .slogan-oval1 {
   width: 646px;
@@ -280,11 +284,23 @@ main .history-area .brand-area .brand-picture img {
   object-position: center;
 }
 
-@media (max-width: 1240px) {
+@media (max-width: 1280px) {
   main .page-area {
-    width: 100%;
-    padding: 0 5%;
+    width: 80%;
   }
+  main .page-area .page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  main .banner-area {
+    width: 85%;
+  }
+  main .banner-area img {
+    width: 900px;
+  }
+}
+@media (max-width: 1240px) {
   main .banner-area .banner {
     width: 1000px;
   }
@@ -295,27 +311,19 @@ main .history-area .brand-area .brand-picture img {
     width: 95%;
   }
 }
-@media (max-width: 1280px) {
-  main .page-area {
-    width: 99%;
-    padding: 0 5%;
-  }
-  main .page-area .page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  main .banner-area {
-    width: 85%;
-  }
-}
 @media (max-width: 1024px) {
-  main .banner-area .banner {
-    width: 800px;
+  main .banner-area {
+    width: 90%;
+  }
+  main .banner-area img {
+    width: 700px;
   }
   main .logo-area .logo .logo-img {
     width: 350px;
     padding: 5%;
+  }
+  main .slogan-area ul {
+    font-size: 18px;
   }
 }
 @media (max-width: 720px) {
@@ -340,13 +348,13 @@ main .history-area .brand-area .brand-picture img {
     height: 100%;
   }
   main .logo-area .logo .logo-img {
-    width: 260px;
-    height: 75px;
     margin-top: 112px;
     margin-bottom: 107px;
     padding: 0;
-    object-fit: cover;
-    object-position: center;
+  }
+  main .logo-area .logo .logo-img img {
+    width: 260px;
+    height: 75px;
   }
   main .logo-area .logo .logo-text {
     width: 300px;
@@ -355,11 +363,16 @@ main .history-area .brand-area .brand-picture img {
     line-height: 24px;
     font-size: 16px;
   }
-  main .banner-area .banner {
+  main .banner-area {
+    width: 100%;
+    height: 236px;
+    margin-top: 121px;
+  }
+  main .banner-area img {
     width: 100%;
   }
-  main .slogan-area .slogan-text {
-    font-size: 16px;
+  main .slogan-area ul {
+    font-size: 14px;
   }
   main .slogan-area .slogan-oval1 {
     width: 380px;
