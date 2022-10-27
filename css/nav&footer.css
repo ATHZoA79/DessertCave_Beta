@@ -207,37 +207,35 @@ footer .footer_box .information {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-footer .footer_box .information .information_box {
   width: 350px;
   font-size: 14px;
   display: flex;
   flex-direction: column;
   justify-content: start;
 }
-footer .footer_box .information .information_box #footer_title {
+footer .footer_box .information #footer_title {
   width: 240px;
   height: auto;
 }
-footer .footer_box .information .information_box #footer_title img {
+footer .footer_box .information #footer_title img {
   width: 100%;
   object-fit: contain;
 }
 @media screen and (max-width: 720px) {
-  footer .footer_box .information .information_box #footer_title {
+  footer .footer_box .information #footer_title {
     width: 166px;
     height: auto;
   }
 }
-footer .footer_box .information .information_box .text {
+footer .footer_box .information .text {
   padding: 20px 10px;
   color: #fff;
 }
-footer .footer_box .information .information_box .text li {
+footer .footer_box .information .text li {
   font-size: 14px;
   line-height: 17px;
 }
-footer .footer_box .information .information_box .text li i {
+footer .footer_box .information .text li i {
   padding-right: 8px;
 }
 @media screen and (max-width: 1440px) {
@@ -246,24 +244,22 @@ footer .footer_box .information .information_box .text li i {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-  }
-  footer .footer_box .information .information_box {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
   }
-  footer .footer_box .information .information_box .text {
+  footer .footer_box .information .text {
     color: #000;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
   }
-  footer .footer_box .information .information_box .text li {
+  footer .footer_box .information .text div {
     font-size: 12px;
   }
-  footer .footer_box .information .information_box .text li i {
+  footer .footer_box .information .text div i {
     display: none;
   }
 }

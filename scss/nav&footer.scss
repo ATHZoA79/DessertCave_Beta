@@ -277,36 +277,33 @@ footer {
 
         .information {
             @include flex-row(center, center);
+            width: 350px;
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
 
-            .information_box {
-                width: 350px;
-                font-size: 14px;
-                display: flex;
-                flex-direction: column;
-                justify-content: start;
-
+            #footer_title {
+                @include dimension(240px, auto);
+                img {
+                    width: 100%;
+                    object-fit: contain;
+                }
+            }
+            @media screen and (max-width: 720px) {
                 #footer_title {
-                    @include dimension(240px, auto);
-                    img {
-                        width: 100%;
-                        object-fit: contain;
-                    }
-                }
-                @media screen and (max-width: 720px) {
-                    #footer_title {
                     @include dimension(166px, auto);
-                    }
                 }
+            }
 
-                .text {
-                    padding: 20px 10px;
-                    color: #fff;
-                    li {
-                        font-size: 14px;
-                        line-height: 17px;
-                        i {
-                            padding-right: 8px;
-                        }
+            .text {
+                padding: 20px 10px;
+                color: #fff;
+                li {
+                    font-size: 14px;
+                    line-height: 17px;
+                    i {
+                        padding-right: 8px;
                     }
                 }
             }
@@ -314,16 +311,14 @@ footer {
         @media screen and (max-width: 1440px) {
             .information {
                 @include flex-col(flex-start, center);
-                .information_box {
+                @include flex-col(flex-start, center);
+                .text {
+                    color: #000;
                     @include flex-col(flex-start, center);
-                    .text {
-                        color: #000;
-                        @include flex-col(flex-start, center);
-                        li {
-                            font-size: 12px;
-                            i {
-                                display: none;
-                            }
+                    div {
+                        font-size: 12px;
+                        i {
+                            display: none;
                         }
                     }
                 }
@@ -332,7 +327,7 @@ footer {
 
         .map {
             @include flex-row(center, center);
-            
+
             iframe {
                 @include dimension(554px, 236px);
                 border: 0;
