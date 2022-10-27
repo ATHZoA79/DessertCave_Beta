@@ -868,7 +868,7 @@ footer {
                 }
             }
         }
-
+// 
         #toggle_menu {
             @include dimension(0, 100vh);
             @include transition(0.4s, 0s, ease-out);
