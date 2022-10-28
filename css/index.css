@@ -658,92 +658,61 @@ main .product-series .swiper-area .swiper .swiper-wrapper .swiper-slide .swiper-
 
 footer {
   width: 100%;
-  height: auto;
+  height: 426px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: rgb(141, 215, 204);
+  color: rgb(107, 78, 38);
 }
-footer .footer_box {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+footer .footer-box {
   width: 80%;
-  padding: 20px 0 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
-footer .footer_box .information {
+footer .footer-box .information {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+footer .footer-box .information .information_box {
   width: 350px;
   font-size: 14px;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
 }
-footer .footer_box .information #footer_title {
-  width: 240px;
-  height: auto;
+footer .footer-box .information .information_box .footer-title {
+  list-style: none;
 }
-footer .footer_box .information #footer_title img {
-  width: 100%;
-  object-fit: contain;
+footer .footer-box .information .information_box .footer-title img {
+  width: 261px;
+  height: 87px;
 }
-@media screen and (max-width: 720px) {
-  footer .footer_box .information #footer_title {
-    width: 166px;
-    height: auto;
-  }
-}
-footer .footer_box .information .text {
+footer .footer-box .information .information_box .text {
   padding: 20px 10px;
   color: #fff;
 }
-footer .footer_box .information .text li {
+footer .footer-box .information .information_box .text li {
   font-size: 14px;
   line-height: 17px;
+  list-style: none;
 }
-footer .footer_box .information .text li i {
+footer .footer-box .information .information_box .text li i {
   padding-right: 8px;
 }
-@media screen and (max-width: 1440px) {
-  footer .footer_box .information {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  footer .footer_box .information .text {
-    color: #000;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  footer .footer_box .information .text div {
-    font-size: 12px;
-  }
-  footer .footer_box .information .text div i {
-    display: none;
-  }
+footer .footer-box .information .information_box .text li:nth-last-of-type(1) {
+  display: none;
 }
-footer .footer_box .map {
+footer .footer-box .map {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-footer .footer_box .map iframe {
+footer .footer-box .map iframe {
   width: 554px;
   height: 236px;
   border: 0;
   border-radius: 40px;
   padding: 10px;
-}
-@media screen and (max-width: 1440px) {
-  footer .footer_box .map {
-    display: none;
-  }
 }
 footer .copy-right {
   width: 419px;
@@ -751,20 +720,79 @@ footer .copy-right {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px 0 32px;
-  color: #fff;
+  transform: translate(0, 250%);
+  color: white;
   font-size: 12px;
   letter-spacing: 1px;
 }
-@media screen and (max-width: 1440px) {
+
+@media (max-width: 1024px) {
+  header nav .nav-btns .nav-style {
+    padding: 4px 5px;
+  }
+  footer {
+    justify-content: flex-start;
+    width: 100%;
+    height: 236px;
+  }
+  footer .footer-box {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 21px;
+    border-bottom: 1px solid #121212;
+  }
+  footer .footer-box .information {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  footer .footer-box .information .information_box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  footer .footer-box .information .information_box .footer-title img {
+    width: 166px;
+    height: 49px;
+  }
+  footer .footer-box .information .information_box .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  footer .footer-box .information .information_box .text li {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #121212;
+  }
+  footer .footer-box .information .information_box .text li:nth-of-type(1) i {
+    display: none;
+  }
+  footer .footer-box .information .information_box .text li:nth-of-type(2) i {
+    display: none;
+  }
+  footer .footer-box .information .information_box .text li:nth-of-type(3) span {
+    display: none;
+  }
+  footer .footer-box .information .information_box .text li:nth-last-of-type(1) {
+    display: block;
+  }
+  footer .footer-box .map,
+footer .footer-box .map iframe {
+    display: none !important;
+  }
   footer .copy-right {
-    color: #000;
-    border-top: 1px solid black;
-    font-size: 10px;
-    letter-spacing: 0;
+    transform: translate(0, 0);
+    margin: 20px 0 17px;
+    color: #121212;
   }
 }
-
 @media screen and (min-width: 1441px) and (max-width: 1600px) {
   main .product-showcase .rotate-img {
     right: 0;
@@ -837,9 +865,6 @@ footer .copy-right {
     width: 700px;
     height: 624px;
   }
-  footer .map iframe {
-    width: 500px;
-  }
 }
 @media screen and (max-width: 720px) {
   header {
@@ -850,9 +875,9 @@ footer .copy-right {
   }
   header nav .nav-logo {
     width: 70px;
-    height: 72px;
+    height: 70px;
     position: absolute;
-    top: 0;
+    top: 19px;
     left: 50%;
     translate: -50% 0;
   }
@@ -864,10 +889,22 @@ header nav .social-media-area {
     position: absolute;
     right: 0;
     top: 50%;
+    padding: 0 15px 0;
     transform: translateY(-50%);
     display: block;
     font-size: 3rem;
     z-index: 1;
+    cursor: pointer;
+  }
+  header .ham-icon svg {
+    width: 35px;
+    height: 35px;
+  }
+  header .ham-icon svg .st0 {
+    fill: none;
+    stroke: #9CCEC5;
+    stroke-width: 10;
+    stroke-miterlimit: 10;
   }
   header #ham_icon:checked ~ #toggle_menu {
     width: 100%;
@@ -977,13 +1014,6 @@ header nav .social-media-area {
   header .pagination .content {
     width: 100%;
     color: white;
-  }
-  footer .information,
-footer .map {
-    position: relative !important;
-    top: 0;
-    left: 0;
-    translate: 0 0;
   }
 }
 .header-hide {
