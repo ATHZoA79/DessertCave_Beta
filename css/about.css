@@ -16,6 +16,16 @@
     transform: rotate(0deg);
   }
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 a {
   text-decoration: none;
   color: unset;
@@ -283,6 +293,14 @@ main .history-area .brand-area .brand-picture img {
   object-fit: cover;
   object-position: center;
 }
+main #back_to_top {
+  position: fixed;
+  right: 53px;
+  bottom: 40px;
+}
+main #back_to_top i {
+  font-size: 18px;
+}
 
 @media (max-width: 1280px) {
   main .page-area {
@@ -339,7 +357,6 @@ main .history-area .brand-area .brand-picture img {
     opacity: 1;
   }
   main .logo-area {
-    height: 100%;
     padding: 0;
   }
   main .logo-area .logo {
@@ -358,25 +375,37 @@ main .history-area .brand-area .brand-picture img {
   }
   main .logo-area .logo .logo-text {
     width: 300px;
-    height: 96px;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    margin: 107px 0 112px;
+    padding: 107px 0 112px;
     line-height: 24px;
     font-size: 16px;
   }
   main .banner-area {
     width: 100%;
-    height: 236px;
-    margin-top: 121px;
+    height: 263px;
+    margin: 0;
   }
   main .banner-area img {
     width: 100%;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  main .slogan-area {
+    width: 100%;
+    height: 549px;
+    padding: 0;
   }
   main .slogan-area ul {
     font-size: 14px;
+  }
+  main .slogan-area ul li:nth-of-type(1) {
+    margin: 0 0 17px;
   }
   main .slogan-area .slogan-oval1 {
     width: 380px;
@@ -391,14 +420,16 @@ main .history-area .brand-area .brand-picture img {
     height: 100%;
   }
   main .history-area .cordon-area {
+    width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    padding: 50px 0;
+    padding: 0 0 97px;
   }
   main .history-area .cordon-area .cordon-story {
-    width: 100%;
+    width: 90%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -413,6 +444,9 @@ main .history-area .brand-area .brand-picture img {
     justify-content: center;
     align-items: flex-start;
   }
+  main .history-area .cordon-area .cordon-story ul li {
+    font-size: 16px;
+  }
   main .history-area .cordon-area .cordon-story ul li:nth-of-type(1) {
     font-size: 18px;
     line-height: 35px;
@@ -426,18 +460,28 @@ main .history-area .brand-area .brand-picture img {
   }
   main .history-area .cordon-area .cordon-graduate {
     width: 100%;
-    height: 500px;
+    height: 280px;
+  }
+  main .history-area .cordon-area .cordon-graduate img {
+    width: 100%;
+    height: 100%;
   }
   main .history-area .brand-area {
+    width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    padding: 50px 0;
+    padding: 0;
   }
   main .history-area .brand-area .brand-picture {
     width: 100%;
-    height: 500px;
+    height: 280px;
+  }
+  main .history-area .brand-area .brand-picture img {
+    width: 100%;
+    height: 100%;
   }
   main .history-area .brand-area .brand-story {
     width: 100%;
