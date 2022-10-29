@@ -442,12 +442,14 @@ main {
     main {
         .page-area {
             opacity: 0;
+            display: none;
         }
 
         .phone_title {
             display: block;
 
             li {
+                margin: 42px 0 112px;
                 opacity: 1;
             }
         }
@@ -461,8 +463,6 @@ main {
                 height: 100%;
 
                 .logo-img {
-                    margin-top: 112px;
-                    margin-bottom: 107px;
                     padding: 0;
                     img{
                         @include dimension(260px, 75px);
@@ -471,7 +471,8 @@ main {
 
                 .logo-text {
                     @include dimension(300px, 96px);
-                    margin-bottom: 112px;
+                    @include flex-col(flex-start, center);
+                    margin: 107px 0 112px;
                     line-height: 24px;
                     font-size: 16px;
                 }

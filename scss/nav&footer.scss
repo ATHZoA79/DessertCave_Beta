@@ -511,39 +511,42 @@ footer {
 					}
 					.nav-links {
 						@include flex-col(center, center);
-						padding: 70px 0;
+						padding: 70px 0 0;
 						a + a {
 							padding-top: 35px;
 						}
 						a {
 							color: #000;
 							font-size: 20px;
+							font-family: 'Noto Sans TC';
 							text-decoration: none;
 						}
+					}
+					.follow-us {
+						padding: 100px 0 20px;
+						font-size: 16px;
+						font-family: 'Noto Sans TC';
 					}
 					.ssn {
 						@include dimension(102px, 42px);
 						@include flex-row(space-between, center);
-						margin-top: 18px;
-						.facebook {
-							@include dimension(42px, 42px);
-							@include image("../img/NAV/社群/FB.png");
+						.facebook, .instagram {
+							color: $primary;
 							transition: 0.4s ease;
 							scale: 1;
 						}
+						.facebook {
+							font-size: 42px;
+						}
 
 						.instagram {
-							@include dimension(40px, 40px);
-							@include image("../img/NAV/社群/IG.png");
-							background-size: contain;
-							transition: 0.4s ease;
-							scale: 1;
+							font-size: 42px;
 						}
 					}
 				}
 				.close-icon {
 					@include dimension(80px, 100vh);
-					@include flex-row(flex-start, center);
+					@include flex-row(center, center);
 					background-color: #8dd7cc;
 					i {
 						font-size: 30px;

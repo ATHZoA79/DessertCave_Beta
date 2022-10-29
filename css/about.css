@@ -329,11 +329,13 @@ main .history-area .brand-area .brand-picture img {
 @media (max-width: 720px) {
   main .page-area {
     opacity: 0;
+    display: none;
   }
   main .phone_title {
     display: block;
   }
   main .phone_title li {
+    margin: 42px 0 112px;
     opacity: 1;
   }
   main .logo-area {
@@ -348,8 +350,6 @@ main .history-area .brand-area .brand-picture img {
     height: 100%;
   }
   main .logo-area .logo .logo-img {
-    margin-top: 112px;
-    margin-bottom: 107px;
     padding: 0;
   }
   main .logo-area .logo .logo-img img {
@@ -359,7 +359,11 @@ main .history-area .brand-area .brand-picture img {
   main .logo-area .logo .logo-text {
     width: 300px;
     height: 96px;
-    margin-bottom: 112px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 107px 0 112px;
     line-height: 24px;
     font-size: 16px;
   }
