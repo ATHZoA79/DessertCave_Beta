@@ -52,7 +52,7 @@
   background: white;
   cursor: pointer;
 
-  z-index: 100;
+  z-index: 50;
 }
 
 .carousel__button--left {

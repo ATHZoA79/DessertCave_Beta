@@ -1026,6 +1026,7 @@ footer {
 
 		#ham_icon:checked ~ #toggle_menu {
 			@include dimension(100%, 100vh);
+			z-index: 100;
 			.wrap {
 				.toggle-menu-content {
 					img {
@@ -1074,7 +1075,7 @@ footer {
 						}
 					}
 					.follow-us {
-						padding: 100px 0 20px;
+						padding: 90px 0 20px;
 						font-size: 16px;
 						font-family: 'Noto Sans TC';
 					}
