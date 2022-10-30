@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 // -- Define variable --
 $grey-9: #dcdcdc;
 $grey-8: #c2c2c2;
@@ -116,9 +117,10 @@ main {
     padding: 120px 0 60px;
     margin: auto;
     // background-color: $grey-9;
-
+    
     p {
       @include font(24px, bold, none, black);
+      font-family: 'Noto Serif TC';
 
       &::before {
         content: "———";
@@ -201,10 +203,10 @@ main {
       }
     }
   }
-  @media screen and (max-width: 540px) {
+  @media screen and (max-width: 720px) {
     .product-card-area {
-      @include dimension(361px, auto);
-      @include flex-row(space-between, space-between);
+      @include dimension(100%, auto);
+      @include flex-row(space-around, space-between);
 
       .product-card {
         @include dimension(165px, auto);
@@ -215,6 +217,11 @@ main {
           img {
             object-fit: contain;
           }
+        }
+        .product-name {
+          padding: 17px 0 46px;
+          margin: 0;
+          text-align: center;
         }
       }
     }
@@ -426,8 +433,17 @@ main {
 
 //--720px
 
-@media screen and (min-width: 541px) and (max-width: 720px) {
+@media screen and (max-width: 720px) {
   main {
+    .page-area {
+      display: none;
+    }
+    .hr-head {
+      p {
+        font-size: 18px;
+        font-weight: 700;
+      }
+    }
     .product-sheet-area {
       @include dimension(80%, auto);
       justify-content: center;
@@ -435,28 +451,25 @@ main {
 
       .product-series {
         @include dimension(200px, 50px);
+        font-size: 16px;
       }
     }
 
-    .product-card-area {
-      @include dimension(auto, auto);
-      @include flex-row(center, space-between);
-
-      .product-card {
-        @include dimension(165px, auto);
-        margin: 0 50px;
-
-        .img-container {
-          @include dimension(auto, auto);
-
-          img {
-            object-fit: contain;
-          }
-        }
-        .product-name {
-          padding: 17px 0 46px;
-          text-align: center;
-        }
+    #order-btn {
+      @include dimension(100%, auto);
+      @include flex-row(center, center);
+      padding: 9px 0 50px;
+      a {
+        @include dimension(125px, 35px);
+        @include flex-row(center, center);
+        text-decoration: none;
+        color: #000;
+        font-size: 20px;
+        font-weight: 400;
+        letter-spacing: 0.1em;
+        border: none;
+        border-radius: 10px;
+        background-color: $secondary;
       }
     }
 

@@ -18,8 +18,8 @@
 	<!--分頁圖片ICON-->
 	<script src="./js/loading.js"></script>
 	<link rel="stylesheet" href="./css/loading.css">
-
 	<link rel="stylesheet" href="./css/index.css">
+	<link rel="stylesheet" href="./css/banner-swiper.css">
 </head>
 
 <body>
@@ -32,23 +32,20 @@
 
 	<script>
 		var chatbox = document.getElementById('fb-customer-chat');
-		chatbox.setAttribute("page_id", "551761584952728");
+		chatbox.setAttribute("page_id", "2015504092014554");
 		chatbox.setAttribute("attribution", "biz_inbox");
-        // Try to change css style
-        // var chatbox_icon = document.querySelector('fb_dialog_content');
-        // chatbox_icon.children[0].style.boxShadow = "#";
 	</script>
 
 	<!-- Your SDK code -->
 	<script>
-		window.fbAsyncInit = function () {
+		window.fbAsyncInit = function() {
 			FB.init({
-				xfbml: true,
-				version: 'v15.0'
+				xfbml            : true,
+				version          : 'v15.0'
 			});
 		};
 
-		(function (d, s, id) {
+		(function(d, s, id) {
 			var js, fjs = d.getElementsByTagName(s)[0];
 			if (d.getElementById(id)) return;
 			js = d.createElement(s); js.id = id;
@@ -112,16 +109,42 @@
 
 		<div class="pagination">
 			<div class="content">
-				<a href="#banner" class="page">Banner</a>
-				<a href="#showcase" class="page">Showcase</a>
-				<a href="#new" class="page">Product</a>
-				<a href="#series" class="page">Series</a>
+				<a href="#banner" class="page">
+					最新消息
+				</a>
+				<a href="#showcase" class="page">熱門產品</a>
+				<a href="#new" class="page">新品上市</a>
+				<a href="#footer" class="page">聯絡我們</a>
 			</div>
 		</div>
 	</header>
 
 	<main>
-		<div id="banner" class="banner"></div>
+		<div id="banner" class="banner">
+			<div class="carousel">
+				<button class="carousel__button carousel__button--left is-hidden">
+					<i class="fa fa-angle-left" aria-hidden="true"></i>
+				</button>
+				<div class="carousel__track-container">
+					<ul class="carousel__track">
+						<li class="carousel__slide current-slide">
+							<img class="carousel__image" src="./img/index/靜岡抹茶蜜蘋果.jfif" alt="">
+						</li>
+						<li class="carousel__slide">
+							<img class="carousel__image" src="./img/義式奶油檸檬塔.png" alt="">
+						</li>
+					</ul>
+				</div>
+				<button class="carousel__button carousel__button--right">
+					<i class="fa fa-angle-right" aria-hidden="true"></i>
+				</button>
+		
+				<div class="carousel__nav">
+					<button class="carousel__indicator current-slide"></button>
+					<button class="carousel__indicator"></button>
+				</div>
+			</div>
+		</div>
 		<div id="showcase" class="product-showcase">
 
 			<div class="see-through1 see-through-style"></div>
@@ -188,8 +211,10 @@
 							<div class="swiper-product-name">伯爵奶茶慕斯塔</div>
 						</div>
 						<div class="swiper-slide">
-							<div class="swiper-product-img"></div>
-							<div class="swiper-product-name">Slide 4</div>
+							<div class="swiper-product-img">
+								<img src="./img/index/靜岡抹茶蜜蘋果.jfif" alt="">
+								<a href="./product.html" class="more-product">查看更多</a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -199,7 +224,7 @@
 
 
 
-	<footer>
+	<footer id="footer">
 		<div class="footer-box">
 			<div class="information">
 				<ul class="information_box">
@@ -254,6 +279,7 @@
 
 	</script>
 	<script src="./js/index.js"></script>
+	<script src="./js/banner-swiper.js"></script>
 </body>
 
 </html>

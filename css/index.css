@@ -610,7 +610,7 @@ main .product-series .swiper-area .swiper .swiper-wrapper .swiper-slide .swiper-
   position: absolute;
   top: 0;
   color: #000;
-  font-size: 24px;
+  font-size: 18px;
   background-color: rgba(255, 255, 255, 0.6);
   z-index: 5;
 }
@@ -648,7 +648,7 @@ main .product-series .swiper-area .swiper .swiper-wrapper .swiper-slide .swiper-
     height: 300px;
   }
   main .product-series .swiper-area .swiper .swiper-wrapper .swiper-slide .swiper-product-name {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: none;
     font-family: "Noto Serif TC";
     color: black;
@@ -770,6 +770,10 @@ footer .copy-right {
     font-size: 12px;
     line-height: 15px;
     color: #121212;
+  }
+  footer .footer-box .information .information_box .text li a {
+    text-decoration: none;
+    color: #000;
   }
   footer .footer-box .information .information_box .text li:nth-of-type(1) i {
     display: none;

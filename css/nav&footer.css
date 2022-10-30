@@ -25,6 +25,10 @@ li {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 header {
   width: 100%;
   height: 70px;
@@ -232,6 +236,9 @@ footer .footer-box .information .information_box .text li {
 }
 footer .footer-box .information .information_box .text li i {
   padding-right: 8px;
+}
+footer .footer-box .information .information_box .text li a {
+  color: #000;
 }
 footer .footer-box .information .information_box .text li:nth-last-of-type(1) {
   display: none;

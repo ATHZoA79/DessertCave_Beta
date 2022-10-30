@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @keyframes test {}
 a {
   text-decoration: none;
@@ -39,7 +40,6 @@ main .phone_title li {
   justify-content: center;
   align-items: center;
   font-weight: 700;
-  margin: 118px 0 71px;
 }
 main .phone_title li span {
   letter-spacing: 10px;
@@ -59,6 +59,9 @@ main .news-container .news-card {
   align-items: flex-start;
   border: 2px solid rgb(141, 215, 204);
 }
+main .news-container .news-card + .news-card {
+  margin-top: 150px;
+}
 main .news-container .news-card .news-info {
   width: 555px;
   height: 402px;
@@ -66,10 +69,10 @@ main .news-container .news-card .news-info {
 main .news-container .news-card .news-info .news-date {
   width: 95px;
   height: 50px;
-  background-color: rgb(141, 215, 204);
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgb(141, 215, 204);
   transform: translate(50%, 0);
 }
 main .news-container .news-card .news-info .news-text {
@@ -151,12 +154,6 @@ main .news-container .news-card .news-img .news-img-date {
   justify-content: center;
   align-items: center;
 }
-main .news-container .news-card:nth-of-type(2) {
-  margin-top: 150px;
-}
-main .news-container .news-card:nth-of-type(3) {
-  margin-top: 150px;
-}
 
 .hidden {
   overflow: hidden;
@@ -197,22 +194,27 @@ main .news-container .news-card:nth-of-type(3) {
     display: none;
   }
   main .phone_title {
-    padding: 78px 0;
+    padding: 78px 0 43px;
   }
   main .news-container {
     display: flex;
     flex-direction: column;
-    justify-content: unset;
+    justify-content: flex-start;
     align-items: center;
-    width: 95%;
-    height: 80%;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding-bottom: 78px;
   }
   main .news-container .news-card {
+    width: 360px;
+    height: 450px;
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
-    width: 360px;
-    height: 450px;
+  }
+  main .news-container .news-card + .news-card {
+    margin-top: 50px;
   }
   main .news-container .news-card .news-info {
     width: 90%;

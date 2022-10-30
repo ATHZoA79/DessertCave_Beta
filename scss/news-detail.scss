@@ -212,24 +212,44 @@ main {
       }
 
       .phone_title {
-        padding: 78px 0;
+        padding: 78px 0 46px;
+        li {
+          margin: 0;
+        }
       }
 
       .news-container {
+        padding: 0;
         .news-header{
+          border: none;
+          margin: 0;
           .title{
             @include flex-row(center, center);
+            margin-bottom: 13px;
+            font-size: 16px;
           }
           .subtitle{
             @include flex-row(center, center);
+            padding-bottom: 46px;
+            font-size: 12px;
           }
 
         }
         .news-banner {
-          width: 80%;
+          @include dimension(360px, 270px);
 
           img {
-            width: 100%;
+            @include dimension(100%, 100%);
+          }
+        }
+
+        .news-content {
+          @include dimension(307px, auto);
+          margin: 46px 0 77px;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 25px;
+          .new-text-content {
           }
         }
       }

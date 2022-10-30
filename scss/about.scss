@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 // -- Define variable --
 $grey-9: #dcdcdc;
 $grey-8: #c2c2c2;
@@ -8,6 +8,8 @@ $grey-6: #7e7e7e;
 $grey-2: #242424;
 $grey-1: #121212;
 $redwine: #901111;
+$primary: #8dd7cc;
+$secondary: #eeb8af;
 $logo_color: rgb(141, 215, 204);
 $darkgold: rgb(107, 78, 38);
 
@@ -228,19 +230,19 @@ main {
             p:nth-last-of-type(2) {
                 span {
                     color: #eeb8af;
-                    -webkit-text-stroke: 1px #a25042;
+                    // -webkit-text-stroke: 1px #a25042;
                 }
             }
 
             p:nth-last-of-type(1) {
                 span:nth-last-of-type(2) {
                     color: #eeb8af;
-                    -webkit-text-stroke: 1px #a25042;
+                    // -webkit-text-stroke: 1px #a25042;
                 }
 
                 span:nth-last-of-type(1) {
                     color: $logo_color;
-                    -webkit-text-stroke: 1px #358176;
+                    // -webkit-text-stroke: 1px #358176;
                 }
             }
         }
@@ -505,16 +507,22 @@ main {
             padding: 0;
             ul {
                 font-size: 14px;
+                p {
+                    font-size: 16px;
+                    span {
+                        font-size: 16px;
+                    }
+                }
                 li:nth-of-type(1) {
                     margin: 0 0 17px;
                 }
             }
 
             .slogan-oval1 {
-                @include dimension(380px, 160px);
+                @include dimension(371px, 134px);
 
                 .slogan-oval2 {
-                    @include dimension(380px, 160px);
+                    @include dimension(338px, 135px);
                 }
             }
         }

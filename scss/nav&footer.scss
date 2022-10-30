@@ -103,6 +103,9 @@ ul,
 li {
 	list-style: none;
 }
+a {
+	text-decoration: none;
+}
 
 // -- header --
 header {
@@ -311,6 +314,9 @@ footer {
 
 						i {
 							padding-right: 8px;
+						}
+						a {
+							color: #000;
 						}
 					}
 
