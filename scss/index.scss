@@ -319,6 +319,8 @@ main {
 			// border: yellow 5px solid;
 			position: absolute;
 			.mask {
+				@include dimension(80px, 80px);
+				@include position-center();
 				z-index: 5;
 			}
 			img {
@@ -341,7 +343,7 @@ main {
 			top: 223px;
 			left: 170px;
 			.mask {
-				@include image('./img/index/icons8-lemon.png');
+				@include image('../img/index/icons8-lemon.png');
 			}
 		}
 
@@ -350,7 +352,7 @@ main {
 			top: 89px;
 			left: 667px;
 			.mask {
-				@include image('./img/index/icons8-marshmallow.png');
+				@include image('../img/index/icons8-marshmallow.png');
 			}
 		}
 
@@ -359,7 +361,7 @@ main {
 			top: 369px;
 			left: 733px;
 			.mask {
-				@include image('./img/index/Cookie.png');
+				@include image('../img/index/Cookie.png');
 			}
 		}
 
@@ -387,6 +389,7 @@ main {
 			display: flex;
 			justify-content: space-between;
 			// background-color: $grey-7;
+			z-index: 50;
 
 			.title {
 				@include dimension(100%, 100%);
@@ -400,7 +403,6 @@ main {
 					left: 145px;
 					@include font(24px, bold, "Noto Serif TC", black);
 					letter-spacing: 5px;
-					z-index: 5;
 				}
 
 				.bg {
@@ -464,6 +466,7 @@ main {
 			translate: 0 -50%;
 			border-radius: 50%;
 			// background-color: $grey-8;
+			z-index: 10;
 		}
 		@media screen and (max-width: 720px) {
 			.rotate-img {
@@ -494,6 +497,7 @@ main {
 
 		img {
 			@include dimension(1034px, 624px);
+			object-fit: cover;
 			background-color: $logo_color;
 		}
 
@@ -525,6 +529,7 @@ main {
 					color: transparent;
 					font-size: 70px;
 					font-weight: 700;
+					font-family: 'Noto Serif TC',sans-serif;
 					letter-spacing: 0.3em;
 					z-index: 0;
 				}
@@ -595,7 +600,7 @@ main {
 						font-size: 32px;
 						font-family: 'Noto Serif TC';
 						font-weight: 700;
-						letter-spacing: 0.3em;
+						
 					}
 				}
 				p {
@@ -874,7 +879,7 @@ footer {
 // Media Query
 
 // --1600px 防止文字爆版
-@media screen and(min-width:1441px) and (max-width: 1600px) {
+@media screen and(min-width:1241px) and (max-width: 1600px) {
 	main {
 		.product-showcase {
 			.rotate-img {
@@ -884,8 +889,11 @@ footer {
 
 		.new-product {
 			img {
-				@include dimension(800px, 624px);
+				@include dimension(60%, 624px);
 			}
+		}
+		.text {
+			@include dimension(40%, 624px);
 		}
 	}
 }
@@ -923,12 +931,6 @@ footer {
 			.rotate-img {
 				right: 0;
 				@include dimension(500px, 500px);
-			}
-		}
-
-		.new-product {
-			img {
-				@include dimension(800px, 624px);
 			}
 		}
 	}
@@ -1075,7 +1077,7 @@ footer {
 						}
 					}
 					.follow-us {
-						padding: 90px 0 20px;
+						padding: 15px 0 20px;
 						font-size: 16px;
 						font-family: 'Noto Sans TC';
 					}

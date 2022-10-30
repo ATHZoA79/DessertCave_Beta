@@ -111,6 +111,7 @@ $darkgold: rgb(107, 78, 38);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Noto Sans TC';
 }
 html {
     scroll-behavior: smooth;
@@ -216,6 +217,9 @@ main {
         @include flex-row(center, center);
         position: relative;
         padding: 120px 0;
+        * {
+            font-family: 'Noto Serif TC';
+        }
 
         ul {
             position: absolute;
@@ -362,7 +366,7 @@ main {
         right: 53px;
         bottom: 40px;
         border: 1px solid $primary;
-        border-radius: 12px;
+        border-radius: 50%;
         background-color: #8dd7cc40;
         transition: 0.3s;
         i {

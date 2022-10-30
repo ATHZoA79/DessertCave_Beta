@@ -21,6 +21,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Noto Sans TC";
 }
 
 html {
@@ -142,6 +143,9 @@ main .slogan-area {
   align-items: center;
   position: relative;
   padding: 120px 0;
+}
+main .slogan-area * {
+  font-family: "Noto Serif TC";
 }
 main .slogan-area ul {
   position: absolute;
@@ -301,7 +305,7 @@ main #back_to_top {
   right: 53px;
   bottom: 40px;
   border: 1px solid #8dd7cc;
-  border-radius: 12px;
+  border-radius: 50%;
   background-color: rgba(141, 215, 204, 0.2509803922);
   transition: 0.3s;
 }

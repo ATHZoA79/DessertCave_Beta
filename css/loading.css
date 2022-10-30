@@ -17,6 +17,12 @@
   width: 400px;
   height: 400px;
 }
+@media screen and (max-width: 720px) {
+  #loading :is(#img_bg, #img_logo, #img_logo_done) {
+    width: 250px;
+    height: 250px;
+  }
+}
 #loading #img_bg {
   animation: 2s cubic-bezier(.14,.8,.64,1.01) rotate, 2s linear 2s stop;
 }

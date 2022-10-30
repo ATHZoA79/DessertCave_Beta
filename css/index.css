@@ -243,6 +243,12 @@ main .product-showcase .see-through-style {
   position: absolute;
 }
 main .product-showcase .see-through-style .mask {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
   z-index: 5;
 }
 main .product-showcase .see-through-style img {
@@ -260,7 +266,7 @@ main .product-showcase .see-through1 {
   left: 170px;
 }
 main .product-showcase .see-through1 .mask {
-  background-image: url("./img/index/icons8-lemon.png");
+  background-image: url("../img/index/icons8-lemon.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -271,7 +277,7 @@ main .product-showcase .see-through2 {
   left: 667px;
 }
 main .product-showcase .see-through2 .mask {
-  background-image: url("./img/index/icons8-marshmallow.png");
+  background-image: url("../img/index/icons8-marshmallow.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -282,7 +288,7 @@ main .product-showcase .see-through3 {
   left: 733px;
 }
 main .product-showcase .see-through3 .mask {
-  background-image: url("./img/index/Cookie.png");
+  background-image: url("../img/index/Cookie.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -311,6 +317,7 @@ main .product-showcase .description {
   left: 200px;
   display: flex;
   justify-content: space-between;
+  z-index: 50;
 }
 main .product-showcase .description .title {
   width: 100%;
@@ -327,7 +334,6 @@ main .product-showcase .description .title .text {
   font-family: "Noto Serif TC";
   color: black;
   letter-spacing: 5px;
-  z-index: 5;
 }
 main .product-showcase .description .title .bg {
   font-size: 70px;
@@ -393,6 +399,7 @@ main .product-showcase .rotate-img {
   right: 100px;
   translate: 0 -50%;
   border-radius: 50%;
+  z-index: 10;
 }
 @media screen and (max-width: 720px) {
   main .product-showcase .rotate-img {
@@ -425,6 +432,7 @@ main .new-product {
 main .new-product img {
   width: 1034px;
   height: 624px;
+  object-fit: cover;
   background-color: rgb(141, 215, 204);
 }
 main .new-product .text {
@@ -467,6 +475,7 @@ main .new-product .text .title .bg {
   color: transparent;
   font-size: 70px;
   font-weight: 700;
+  font-family: "Noto Serif TC", sans-serif;
   letter-spacing: 0.3em;
   z-index: 0;
 }
@@ -546,7 +555,6 @@ main .new-product .text button:hover {
     font-size: 32px;
     font-family: "Noto Serif TC";
     font-weight: 700;
-    letter-spacing: 0.3em;
   }
   main .new-product .text p {
     width: 100vw;
@@ -823,12 +831,16 @@ footer .footer-box .map iframe {
     color: #121212;
   }
 }
-@media screen and (min-width: 1441px) and (max-width: 1600px) {
+@media screen and (min-width: 1241px) and (max-width: 1600px) {
   main .product-showcase .rotate-img {
     right: 0;
   }
   main .new-product img {
-    width: 800px;
+    width: 60%;
+    height: 624px;
+  }
+  main .text {
+    width: 40%;
     height: 624px;
   }
 }
@@ -858,10 +870,6 @@ footer .footer-box .map iframe {
     right: 0;
     width: 500px;
     height: 500px;
-  }
-  main .new-product img {
-    width: 800px;
-    height: 624px;
   }
 }
 @media screen and (min-width: 780px) and (max-width: 1240px) {
@@ -1000,7 +1008,7 @@ header nav .social-media-area {
     text-decoration: none;
   }
   header #toggle_menu .wrap .toggle-menu-content .follow-us {
-    padding: 90px 0 20px;
+    padding: 15px 0 20px;
     font-size: 16px;
     font-family: "Noto Sans TC";
   }
