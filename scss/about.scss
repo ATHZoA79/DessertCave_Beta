@@ -356,11 +356,20 @@ main {
         }
     }
     #back_to_top {
+        @include dimension(30px, 30px);
+        @include flex-row(center, center);
         position: fixed;
         right: 53px;
         bottom: 40px;
+        border: 1px solid $primary;
+        border-radius: 12px;
+        background-color: #8dd7cc40;
+        transition: 0.3s;
         i {
             font-size: 18px;
+        }
+        &:hover {
+            background-color: $primary;
         }
     }
 }
@@ -591,6 +600,9 @@ main {
 
                     ul {
                         @include flex-col(center, flex-start);
+                        li {
+                            font-size: 16px;
+                        }
 
                         li:nth-of-type(1) {
                             font-size: 18px;

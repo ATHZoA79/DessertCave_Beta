@@ -240,14 +240,14 @@ main .product-showcase .see-through-style {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  border: yellow 5px solid;
   position: absolute;
 }
-main .product-showcase .see-through-style:hover {
-  transition-duration: 0s;
-  transition-delay: 0s;
-  transition-timing-function: linear;
-  transform: scale(1.5);
+main .product-showcase .see-through-style .mask {
+  z-index: 5;
+}
+main .product-showcase .see-through-style img {
+  width: 100%;
+  height: 100%;
 }
 @media screen and (max-width: 720px) {
   main .product-showcase .see-through-style {
@@ -256,27 +256,48 @@ main .product-showcase .see-through-style:hover {
 }
 main .product-showcase .see-through1 {
   background-color: #969696;
-  top: 400px;
-  left: 100px;
+  top: 223px;
+  left: 170px;
+}
+main .product-showcase .see-through1 .mask {
+  background-image: url("./img/index/icons8-lemon.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 main .product-showcase .see-through2 {
   background-color: #969696;
-  left: 180px;
-  top: 50px;
+  top: 89px;
+  left: 667px;
+}
+main .product-showcase .see-through2 .mask {
+  background-image: url("./img/index/icons8-marshmallow.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 main .product-showcase .see-through3 {
   background-color: #969696;
-  top: 90px;
-  left: 600px;
+  top: 369px;
+  left: 733px;
+}
+main .product-showcase .see-through3 .mask {
+  background-image: url("./img/index/Cookie.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 main .product-showcase .profile {
-  width: 574px;
-  height: 225px;
-  background-image: url("../img/index/Product_List/義式奶油檸檬塔.png");
+  width: 621px;
+  height: auto;
   position: absolute;
-  top: 217px;
-  left: 231px;
-  background-color: #c2c2c2;
+  top: 219px;
+  left: 184px;
+}
+main .product-showcase .profile img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 @media screen and (max-width: 720px) {
   main .product-showcase .profile {
@@ -474,6 +495,11 @@ main .new-product .text button:hover {
   outline: 4px solid #242424;
 }
 @media screen and (max-width: 720px) {
+  main .new-product .text button {
+    display: none;
+  }
+}
+@media screen and (max-width: 720px) {
   main .new-product {
     width: 100%;
     height: 451px;
@@ -629,7 +655,7 @@ main .product-series .swiper-area .swiper .swiper-wrapper .swiper-slide .swiper-
   main .product-series .swiper-area .swiper .swiper-wrapper {
     position: relative;
     left: 50%;
-    translate: -144px 0;
+    translate: -150px 0;
   }
   main .product-series .swiper-area .swiper .swiper-wrapper .swiper-slide {
     width: 300px;
@@ -649,8 +675,8 @@ main .product-series .swiper-area .swiper .swiper-wrapper .swiper-slide .swiper-
   }
   main .product-series .swiper-area .swiper .swiper-wrapper .swiper-slide .swiper-product-name {
     font-size: 16px;
-    font-weight: none;
-    font-family: "Noto Serif TC";
+    font-weight: 400;
+    font-family: "Noto Sans TC";
     color: black;
     padding-top: 36px;
   }

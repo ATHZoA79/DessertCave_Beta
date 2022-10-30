@@ -43,7 +43,7 @@ nextButton.addEventListener("click", (e) => {
   const nextDot = currentDot.nextElementSibling;
   const slideIndex = slides.findIndex((s) => s === currentSlide);
 
-  console.log(slideIndex + 1);
+  // console.log(slideIndex + 1);
   moveToSlide(track, currentSlide, nextSlide);
   updateDots(currentDot, nextDot);
   hideArrow(slideIndex + 1);
@@ -55,7 +55,7 @@ prevButton.addEventListener("click", (e) => {
   const prevDot = currentDot.previousElementSibling;
   const slideIndex = slides.findIndex((s) => s === currentSlide);
 
-  console.log(slideIndex - 1);
+  // console.log(slideIndex - 1);
 
   moveToSlide(track, currentSlide, prevSlide);
   updateDots(currentDot, prevDot);

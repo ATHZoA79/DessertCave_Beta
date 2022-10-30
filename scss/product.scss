@@ -196,8 +196,9 @@ main {
 
         h3 {
           @include dimension(100%, 50px);
-          font-size: 18px;
-          color: $darkgold;
+          font-size: 14px;
+          font-family: 'Noto Sana serif';
+          // color: $darkgold;
           // background-color: $grey-6;
         }
       }
@@ -219,6 +220,7 @@ main {
           }
         }
         .product-name {
+          @include dimension(100%, auto);
           padding: 17px 0 46px;
           margin: 0;
           text-align: center;

@@ -122,8 +122,8 @@ main .product-card-area .product-card .product-name {
 main .product-card-area .product-card .product-name h3 {
   width: 100%;
   height: 50px;
-  font-size: 18px;
-  color: rgb(107, 78, 38);
+  font-size: 14px;
+  font-family: "Noto Sana serif";
 }
 @media screen and (max-width: 720px) {
   main .product-card-area {
@@ -145,6 +145,8 @@ main .product-card-area .product-card .product-name h3 {
     object-fit: contain;
   }
   main .product-card-area .product-card .product-name {
+    width: 100%;
+    height: auto;
     padding: 17px 0 46px;
     margin: 0;
     text-align: center;
