@@ -336,6 +336,9 @@ main {
 			.see-through-style {
 				display: none;
 			}
+			.dash-line {
+				display: none;
+			}
 		}
 
 		.see-through1 {
@@ -343,8 +346,13 @@ main {
 			top: 223px;
 			left: 170px;
 			.mask {
-				@include image('../img/index/icons8-lemon.png');
+				@include image("../img/index/icons8-lemon.png");
 			}
+		}
+		.dash-line1 {
+			position: absolute;
+			top: 296px;
+			left: 250px;
 		}
 
 		.see-through2 {
@@ -352,8 +360,13 @@ main {
 			top: 89px;
 			left: 667px;
 			.mask {
-				@include image('../img/index/icons8-marshmallow.png');
+				@include image("../img/index/icons8-marshmallow.png");
 			}
+		}
+		.dash-line2 {
+			position: absolute;
+			top: 172px;
+			left: 543px;
 		}
 
 		.see-through3 {
@@ -361,8 +374,13 @@ main {
 			top: 369px;
 			left: 733px;
 			.mask {
-				@include image('../img/index/Cookie.png');
+				@include image("../img/index/Cookie.png");
 			}
+		}
+		.dash-line3 {
+			position: absolute;
+			top: 347px;
+			left: 659px;
 		}
 
 		.profile {
@@ -468,6 +486,21 @@ main {
 			// background-color: $grey-8;
 			z-index: 10;
 		}
+		@media screen and (min-width: 1241px) and (max-width: 1440px) {
+			.rotate-img {
+				right: 0;
+				translate: 50% -50%;
+			}
+		}
+		@media screen and (min-width: 721px) and (max-width: 1240px) {
+			.rotate-img {
+				@include dimension(500px, 500px);
+				position: absolute;
+				top: 100%;
+				right: -191px;
+				translate: 0 -50%;
+			}
+		}
 		@media screen and (max-width: 720px) {
 			.rotate-img {
 				@include dimension(383px, 383px);
@@ -529,7 +562,7 @@ main {
 					color: transparent;
 					font-size: 70px;
 					font-weight: 700;
-					font-family: 'Noto Serif TC',sans-serif;
+					font-family: "Noto Serif TC", sans-serif;
 					letter-spacing: 0.3em;
 					z-index: 0;
 				}
@@ -564,6 +597,61 @@ main {
 			}
 		}
 	}
+	@media screen and (min-width: 721px) and (max-width: 1240px) {
+		.new-product {
+			img {
+				@include dimension(100%, 100%);
+				object-fit: cover;
+				object-position: center;
+			}
+			.text {
+				@include dimension(100%, 100%);
+				@include flex-col(flex-start, center);
+				position: absolute;
+				top: 0;
+				left: 0;
+				background-color: transparent;
+				background-image: linear-gradient(90deg, transparent, #fff);
+				z-index: 5;
+				.title {
+					@include dimension(320px, 44px);
+					position: absolute;
+					top: 0;
+					left: 50%;
+					.inner-text {
+						top: 296px;
+						left: 53px;
+						color: #000;
+						font-size: 18px;
+					}
+					.bg {
+						@include dimension(auto, auto);
+						top: 247px;
+						left: 24px;
+						-webkit-text-stroke: 0px #000;
+						color: #000;
+						font-size: 32px;
+						font-family: "Noto Serif TC";
+						font-weight: 700;
+					}
+				}
+				p {
+					@include dimension(320px, auto);
+					position: absolute;
+					top: 357px;
+					left: 50%;
+					padding: 0 45px;
+					color: #000;
+					font-size: 14px;
+				}
+				.more-info {
+					position: absolute;
+					top: 60%;
+					left: 70%;
+				}
+			}
+		}
+	}
 	@media screen and (max-width: 720px) {
 		.new-product {
 			@include dimension(100%, 451px);
@@ -573,7 +661,7 @@ main {
 				object-position: center;
 			}
 			.text {
-				@include dimension(100vw, 200px);
+				@include dimension(100%, 200px);
 				@include flex-col(flex-start, center);
 				position: absolute;
 				top: 0;
@@ -581,7 +669,7 @@ main {
 				background-color: transparent;
 				z-index: 5;
 				.title {
-					@include dimension(100vw, 44px);
+					@include dimension(100%, 44px);
 					position: absolute;
 					top: 0;
 					left: 0;
@@ -598,13 +686,12 @@ main {
 						-webkit-text-stroke-width: 0px;
 						color: #fff;
 						font-size: 32px;
-						font-family: 'Noto Serif TC';
+						font-family: "Noto Serif TC";
 						font-weight: 700;
-						
 					}
 				}
 				p {
-					@include dimension(100vw, auto);
+					@include dimension(100%, auto);
 					position: absolute;
 					top: 357px;
 					padding: 0 45px;
@@ -653,6 +740,7 @@ main {
 			position: relative;
 			display: flex;
 			align-items: center;
+			overflow: hidden;
 
 			.swiper {
 				@include dimension(100%, auto);
@@ -735,144 +823,144 @@ footer {
 	color: $darkgold;
 
 	.footer-box {
-			width: 80%;
-			display: grid;
-			grid-template-columns: 1fr 1fr;
+		width: 80%;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
 
-			.information {
-					@include flex-row(center, center);
+		.information {
+			@include flex-row(center, center);
 
-					.information_box {
-							width: 350px;
-							font-size: 14px;
+			.information_box {
+				width: 350px;
+				font-size: 14px;
 
-							.footer-title {
-								list-style: none;
-									img {
-											@include dimension(261px, 87px);
-									}
-							}
-
-							.text {
-									padding: 20px 10px;
-									color: #fff;
-
-									li {
-											font-size: 14px;
-											line-height: 17px;
-											list-style: none;
-
-											i {
-													padding-right: 8px;
-											}
-									}
-
-									li:nth-last-of-type(1) {
-											display: none;
-									}
-							}
+				.footer-title {
+					list-style: none;
+					img {
+						@include dimension(261px, 87px);
 					}
-			}
+				}
 
-			.map {
-					@include flex-row(center, center);
+				.text {
+					padding: 20px 10px;
+					color: #fff;
 
-					iframe {
-							@include dimension(554px, 236px);
-							border: 0;
-							border-radius: 40px;
-							padding: 10px;
+					li {
+						font-size: 14px;
+						line-height: 17px;
+						list-style: none;
+
+						i {
+							padding-right: 8px;
+						}
 					}
+
+					li:nth-last-of-type(1) {
+						display: none;
+					}
+				}
 			}
+		}
+
+		.map {
+			@include flex-row(center, center);
+
+			iframe {
+				@include dimension(554px, 236px);
+				border: 0;
+				border-radius: 40px;
+				padding: 10px;
+			}
+		}
 	}
 
 	.copy-right {
-			@include dimension(419px, 15px);
-			@include flex-row(center, center);
-			transform: translate(0, 250%);
-			color: white;
-			font-size: 12px;
-			letter-spacing: 1px;
+		@include dimension(419px, 15px);
+		@include flex-row(center, center);
+		transform: translate(0, 250%);
+		color: white;
+		font-size: 12px;
+		letter-spacing: 1px;
 	}
 }
 @media (max-width: 1024px) {
 	header {
-			nav {
-					.nav-btns {
-							.nav-style {
-									padding: 4px 5px;
-							}
-					}
+		nav {
+			.nav-btns {
+				.nav-style {
+					padding: 4px 5px;
+				}
 			}
+		}
 	}
 
 	footer {
-			justify-content: flex-start;
-			@include dimension(100%, 236px);
-			.footer-box {
-					width: 70%;
-					@include flex-row(center, center);
-					margin-top: 21px;
-					.information {
-							@include flex-col(center, center);
+		justify-content: flex-start;
+		@include dimension(100%, 236px);
+		.footer-box {
+			width: 70%;
+			@include flex-row(center, center);
+			margin-top: 21px;
+			.information {
+				@include flex-col(center, center);
 
-							.information_box {
-									@include flex-col(center, center);
+				.information_box {
+					@include flex-col(center, center);
 
-									.footer-title{
-											img{
-													@include dimension(166px, 49px);
-											}
-									}
+					.footer-title {
+						img {
+							@include dimension(166px, 49px);
+						}
+					}
 
-									.text {
-											@include flex-col(center, center);
-											li {
-													font-weight: 400;
-													font-size: 12px;
-													line-height: 15px;
-													color: $grey-1;
-													a {
-														text-decoration: none;
-														color: #000;
-													}
-											}
-
-											li:nth-of-type(1){
-													i{
-															display: none;
-													}
-											}
-											li:nth-of-type(2){
-													i{
-															display: none;
-													}
-											}
-											li:nth-of-type(3){
-													span{
-															display: none;
-													}
-											}
-
-											li:nth-last-of-type(1) {
-													display: block;
-											}
-									}
+					.text {
+						@include flex-col(center, center);
+						li {
+							font-weight: 400;
+							font-size: 12px;
+							line-height: 15px;
+							color: $grey-1;
+							a {
+								text-decoration: none;
+								color: #000;
 							}
-					}
+						}
 
-					.map,
-					.map iframe {
-							display: none !important;
+						li:nth-of-type(1) {
+							i {
+								display: none;
+							}
+						}
+						li:nth-of-type(2) {
+							i {
+								display: none;
+							}
+						}
+						li:nth-of-type(3) {
+							span {
+								display: none;
+							}
+						}
+
+						li:nth-last-of-type(1) {
+							display: block;
+						}
 					}
-					border-bottom: 1px solid $grey-1;
+				}
 			}
 
-			.copy-right{
-					transform: translate(0, 0);
-					margin: 20px 0 17px;
-					color: $grey-1;
+			.map,
+			.map iframe {
+				display: none !important;
 			}
+			border-bottom: 1px solid $grey-1;
+		}
+
+		.copy-right {
+			transform: translate(0, 0);
+			margin: 20px 0 17px;
+			color: $grey-1;
+		}
 	}
 }
 
@@ -881,11 +969,6 @@ footer {
 // --1600px 防止文字爆版
 @media screen and(min-width:1241px) and (max-width: 1600px) {
 	main {
-		.product-showcase {
-			.rotate-img {
-				right: 0;
-			}
-		}
 
 		.new-product {
 			img {
@@ -927,12 +1010,7 @@ footer {
 	}
 
 	main {
-		.product-showcase {
-			.rotate-img {
-				right: 0;
-				@include dimension(500px, 500px);
-			}
-		}
+		// 
 	}
 }
 
@@ -960,21 +1038,6 @@ footer {
 				a {
 					text-decoration: none;
 				}
-			}
-		}
-	}
-
-	main {
-		.product-showcase {
-			.rotate-img {
-				right: 0;
-				@include dimension(400px, 400px);
-			}
-		}
-
-		.new-product {
-			img {
-				@include dimension(700px, 624px);
 			}
 		}
 	}
@@ -1019,7 +1082,7 @@ footer {
 				@include dimension(35px, 35px);
 				.st0 {
 					fill: none;
-					stroke: #9CCEC5;
+					stroke: #9ccec5;
 					stroke-width: 10;
 					stroke-miterlimit: 10;
 				}
@@ -1072,19 +1135,20 @@ footer {
 						a {
 							color: #000;
 							font-size: 20px;
-							font-family: 'Noto Sans TC';
+							font-family: "Noto Sans TC";
 							text-decoration: none;
 						}
 					}
 					.follow-us {
 						padding: 15px 0 20px;
 						font-size: 16px;
-						font-family: 'Noto Sans TC';
+						font-family: "Noto Sans TC";
 					}
 					.ssn {
 						@include dimension(102px, 42px);
 						@include flex-row(space-between, center);
-						.facebook, .instagram {
+						.facebook,
+						.instagram {
 							color: $primary;
 							transition: 0.4s ease;
 							scale: 1;
@@ -1119,7 +1183,6 @@ footer {
 			}
 		}
 	}
-
 }
 
 // -- End of 720px

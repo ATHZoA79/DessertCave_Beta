@@ -1,4 +1,4 @@
-// Back to top button 
+
 const body = document.querySelector('body');
 const main = document.querySelector('main');
 const TOTOP = document.querySelector('#back_to_top');

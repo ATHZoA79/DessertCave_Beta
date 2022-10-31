@@ -259,6 +259,9 @@ main .product-showcase .see-through-style img {
   main .product-showcase .see-through-style {
     display: none;
   }
+  main .product-showcase .dash-line {
+    display: none;
+  }
 }
 main .product-showcase .see-through1 {
   background-color: #969696;
@@ -271,6 +274,11 @@ main .product-showcase .see-through1 .mask {
   background-size: cover;
   background-repeat: no-repeat;
 }
+main .product-showcase .dash-line1 {
+  position: absolute;
+  top: 296px;
+  left: 250px;
+}
 main .product-showcase .see-through2 {
   background-color: #969696;
   top: 89px;
@@ -282,6 +290,11 @@ main .product-showcase .see-through2 .mask {
   background-size: cover;
   background-repeat: no-repeat;
 }
+main .product-showcase .dash-line2 {
+  position: absolute;
+  top: 172px;
+  left: 543px;
+}
 main .product-showcase .see-through3 {
   background-color: #969696;
   top: 369px;
@@ -292,6 +305,11 @@ main .product-showcase .see-through3 .mask {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+main .product-showcase .dash-line3 {
+  position: absolute;
+  top: 347px;
+  left: 659px;
 }
 main .product-showcase .profile {
   width: 621px;
@@ -401,6 +419,22 @@ main .product-showcase .rotate-img {
   border-radius: 50%;
   z-index: 10;
 }
+@media screen and (min-width: 1241px) and (max-width: 1440px) {
+  main .product-showcase .rotate-img {
+    right: 0;
+    translate: 50% -50%;
+  }
+}
+@media screen and (min-width: 721px) and (max-width: 1240px) {
+  main .product-showcase .rotate-img {
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    top: 100%;
+    right: -191px;
+    translate: 0 -50%;
+  }
+}
 @media screen and (max-width: 720px) {
   main .product-showcase .rotate-img {
     width: 383px;
@@ -508,6 +542,67 @@ main .new-product .text button:hover {
     display: none;
   }
 }
+@media screen and (min-width: 721px) and (max-width: 1240px) {
+  main .new-product img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  main .new-product .text {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    background-image: linear-gradient(90deg, transparent, #fff);
+    z-index: 5;
+  }
+  main .new-product .text .title {
+    width: 320px;
+    height: 44px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+  }
+  main .new-product .text .title .inner-text {
+    top: 296px;
+    left: 53px;
+    color: #000;
+    font-size: 18px;
+  }
+  main .new-product .text .title .bg {
+    width: auto;
+    height: auto;
+    top: 247px;
+    left: 24px;
+    -webkit-text-stroke: 0px #000;
+    color: #000;
+    font-size: 32px;
+    font-family: "Noto Serif TC";
+    font-weight: 700;
+  }
+  main .new-product .text p {
+    width: 320px;
+    height: auto;
+    position: absolute;
+    top: 357px;
+    left: 50%;
+    padding: 0 45px;
+    color: #000;
+    font-size: 14px;
+  }
+  main .new-product .text .more-info {
+    position: absolute;
+    top: 60%;
+    left: 70%;
+  }
+}
 @media screen and (max-width: 720px) {
   main .new-product {
     width: 100%;
@@ -520,7 +615,7 @@ main .new-product .text button:hover {
     object-position: center;
   }
   main .new-product .text {
-    width: 100vw;
+    width: 100%;
     height: 200px;
     display: flex;
     flex-direction: column;
@@ -533,7 +628,7 @@ main .new-product .text button:hover {
     z-index: 5;
   }
   main .new-product .text .title {
-    width: 100vw;
+    width: 100%;
     height: 44px;
     position: absolute;
     top: 0;
@@ -557,7 +652,7 @@ main .new-product .text button:hover {
     font-weight: 700;
   }
   main .new-product .text p {
-    width: 100vw;
+    width: 100%;
     height: auto;
     position: absolute;
     top: 357px;
@@ -606,6 +701,7 @@ main .product-series .swiper-area {
   position: relative;
   display: flex;
   align-items: center;
+  overflow: hidden;
 }
 main .product-series .swiper-area .swiper {
   width: 100%;
@@ -832,9 +928,6 @@ footer .footer-box .map iframe {
   }
 }
 @media screen and (min-width: 1241px) and (max-width: 1600px) {
-  main .product-showcase .rotate-img {
-    right: 0;
-  }
   main .new-product img {
     width: 60%;
     height: 624px;
@@ -866,11 +959,6 @@ footer .footer-box .map iframe {
   header .pagination .content a {
     text-decoration: none;
   }
-  main .product-showcase .rotate-img {
-    right: 0;
-    width: 500px;
-    height: 500px;
-  }
 }
 @media screen and (min-width: 780px) and (max-width: 1240px) {
   header nav {
@@ -893,15 +981,6 @@ footer .footer-box .map iframe {
   }
   header .pagination .content a {
     text-decoration: none;
-  }
-  main .product-showcase .rotate-img {
-    right: 0;
-    width: 400px;
-    height: 400px;
-  }
-  main .new-product img {
-    width: 700px;
-    height: 624px;
   }
 }
 @media screen and (max-width: 720px) {
@@ -940,7 +1019,7 @@ header nav .social-media-area {
   }
   header .ham-icon svg .st0 {
     fill: none;
-    stroke: #9CCEC5;
+    stroke: #9ccec5;
     stroke-width: 10;
     stroke-miterlimit: 10;
   }
@@ -1019,7 +1098,8 @@ header nav .social-media-area {
     justify-content: space-between;
     align-items: center;
   }
-  header #toggle_menu .wrap .toggle-menu-content .ssn .facebook, header #toggle_menu .wrap .toggle-menu-content .ssn .instagram {
+  header #toggle_menu .wrap .toggle-menu-content .ssn .facebook,
+header #toggle_menu .wrap .toggle-menu-content .ssn .instagram {
     color: #8dd7cc;
     transition: 0.4s ease;
     scale: 1;

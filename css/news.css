@@ -125,14 +125,17 @@ main .news-container .news-card .news-info .news-date-duration-box .news-btn-are
   color: rgb(141, 215, 204);
   padding-right: 10px;
 }
-main .news-container .news-card .news-info .news-date-duration-box .news-btn-area:hover {
+main .news-container .news-card .news-info .news-date-duration-box .news-btn-area a {
+  width: 80px;
+}
+main .news-container .news-card .news-info .news-date-duration-box .news-btn-area a:hover {
   transform: translateX(2em);
   transition-duration: 0.5s;
   transition-delay: 0s;
   transition-timing-function: linear;
 }
-main .news-container .news-card .news-info .news-date-duration-box .news-btn-area span {
-  width: 100px;
+main .news-container .news-card .news-info .news-date-duration-box .news-btn-area a span {
+  width: 300px;
   font-size: 30px;
 }
 main .news-container .news-card .news-img {

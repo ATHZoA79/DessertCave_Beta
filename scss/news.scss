@@ -201,15 +201,18 @@ main {
             color: $logo_color;
             padding-right: 10px;
 
-            &:hover {
-              transform: translateX(2em);
-              @include transition(0.5s, 0s, linear);
+            a {
+              width: 80px;
+              &:hover {
+                transform: translateX(2em);
+                @include transition(0.5s, 0s, linear);
+              }
+              span {
+                width: 300px;
+                font-size: 30px;
+              }
             }
 
-            span {
-              width: 100px;
-              font-size: 30px;
-            }
           }
         }
       }
