@@ -46,5 +46,3 @@ areaX.addEventListener('click', function () {
   menuList.classList.remove('menu-show');
 });
 
-// Back to top button 
-const TOTOP = document.querySelector('#back_to_top');

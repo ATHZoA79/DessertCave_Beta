@@ -124,6 +124,7 @@ a {
 
 main {
     width: 100%;
+    position: relative;
     @include flex-col(center, center);
 
     .page-area {

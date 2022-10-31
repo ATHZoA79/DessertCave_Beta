@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 // -- Define variable --
 $grey-9: #dcdcdc;
 $grey-8: #c2c2c2;
@@ -97,9 +97,12 @@ main {
       // background-color: $grey-7;
       padding-right: 5%;
       font-size: 16px;
+      font-family: "Noto Sans TC";
 
       a {
         text-decoration: none;
+        font-family: "Noto Sans TC";
+        color: #000;
         border-bottom: 2px solid transparent;
 
         // color: black;
@@ -117,10 +120,10 @@ main {
     padding: 120px 0 60px;
     margin: auto;
     // background-color: $grey-9;
-    
+
     p {
       @include font(24px, bold, none, black);
-      font-family: 'Noto Serif TC';
+      font-family: "Noto Serif TC";
 
       &::before {
         content: "———";
@@ -197,7 +200,7 @@ main {
         h3 {
           @include dimension(100%, 50px);
           font-size: 14px;
-          font-family: 'Noto Sana serif';
+          font-family: "Noto Sana serif";
           // color: $darkgold;
           // background-color: $grey-6;
         }

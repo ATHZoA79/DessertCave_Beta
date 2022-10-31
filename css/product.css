@@ -17,9 +17,12 @@ main .page-area .page {
   height: 20px;
   padding-right: 5%;
   font-size: 16px;
+  font-family: "Noto Sans TC";
 }
 main .page-area .page a {
   text-decoration: none;
+  font-family: "Noto Sans TC";
+  color: #000;
   border-bottom: 2px solid transparent;
 }
 main .page-area .page a:hover {
