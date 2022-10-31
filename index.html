@@ -39,14 +39,14 @@
 
 	<!-- Your SDK code -->
 	<script>
-		window.fbAsyncInit = function() {
+		window.fbAsyncInit = function () {
 			FB.init({
-				xfbml            : true,
-				version          : 'v15.0'
+				xfbml: true,
+				version: 'v15.0'
 			});
 		};
 
-		(function(d, s, id) {
+		(function (d, s, id) {
 			var js, fjs = d.getElementsByTagName(s)[0];
 			if (d.getElementById(id)) return;
 			js = d.createElement(s); js.id = id;
@@ -112,11 +112,9 @@
 
 		<div class="pagination">
 			<div class="content">
-				<a href="#banner" class="page">
-					最新消息
-				</a>
 				<a href="#showcase" class="page">熱門產品</a>
 				<a href="#new" class="page">新品上市</a>
+				<a href="#new" class="page">系列產品</a>
 				<a href="#footer" class="page">聯絡我們</a>
 			</div>
 		</div>
@@ -141,7 +139,7 @@
 				<button class="carousel__button carousel__button--right">
 					<i class="fa fa-angle-right" aria-hidden="true"></i>
 				</button>
-		
+
 				<div class="carousel__nav">
 					<button class="carousel__indicator current-slide"></button>
 					<button class="carousel__indicator"></button>
@@ -164,19 +162,13 @@
 			</div>
 
 			<svg class="dash-line dash-line1">
-				<line x1="15" y1="2" x2="100" y2="40" 
-				stroke="#aaa" stroke-width="2" stroke-dasharray="5"
-				>
+				<line x1="15" y1="2" x2="100" y2="40" stroke="#aaa" stroke-width="2" stroke-dasharray="5">
 			</svg>
 			<svg class="dash-line dash-line2">
-				<line x1="0" y1="80" x2="140" y2="7" 
-				stroke="#aaa" stroke-width="2" stroke-dasharray="5"
-				>
+				<line x1="0" y1="80" x2="140" y2="7" stroke="#aaa" stroke-width="2" stroke-dasharray="5">
 			</svg>
 			<svg class="dash-line dash-line3">
-				<line x1="0" y1="0" x2="80" y2="50" 
-				stroke="#aaa" stroke-width="2" stroke-dasharray="5"
-				>
+				<line x1="0" y1="0" x2="80" y2="50" stroke="#aaa" stroke-width="2" stroke-dasharray="5">
 			</svg>
 
 			<div class="profile">
@@ -209,11 +201,11 @@
 					<div class="bg">新品上市</div>
 				</div>
 				<p>
-					慢火熬煮蜜蘋果，
-					搭配靜岡抹茶慕斯以及香草卡士達，口感扎實，
-					層次感豐富！
+					這次出場的新品是，
+					用慢火熬煮蜜蘋果，搭配靜岡抹茶慕斯以及香草卡士達，使口感更加扎實，層次充滿您的味蕾！讓您一秒到達日本靜岡，體驗最好的靜岡抹茶。
 				</p>
-				<a class="more-info" href="https://www.facebook.com/dessertcave0725/" target="_blank"><button>了解更多 ...</button></a>
+				<a class="more-info" href="https://www.facebook.com/dessertcave0725/" target="_blank"><button>了解更多
+						...</button></a>
 			</div>
 
 
@@ -226,26 +218,29 @@
 				<div class="swiper mySwiper">
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
-							<div class="swiper-product-img"><img src="./img/index/Product_List/香草荔葡萄夏洛特.jfif" alt="">
+							<div class="swiper-product-img"><img src="./img/index/fruit-1.png" alt="">
 							</div>
-							<div class="swiper-product-name">香草荔葡萄夏洛特</div>
+							<div class="swiper-product-name">菓洞鮮果系列</div>
 						</div>
 						<div class="swiper-slide">
-							<div class="swiper-product-img"><img src="./img/index/Product_List/橙香法芙娜生巧塔.jfif" alt="">
+							<div class="swiper-product-img"><img src="./img/index/nut-2.png" alt="">
 							</div>
-							<div class="swiper-product-name">橙香法芙娜生巧塔</div>
+							<div class="swiper-product-name">綜合堅果系列</div>
 						</div>
 						<div class="swiper-slide">
-							<div class="swiper-product-img"><img src="./img/index/Product_List/伯爵奶茶慕斯塔.jfif" alt="">
+							<div class="swiper-product-img"><img src="./img/index/matcha-3.png" alt="">
 							</div>
-							<div class="swiper-product-name">伯爵奶茶慕斯塔</div>
+							<div class="swiper-product-name">濃郁抹茶系列</div>
 						</div>
 						<div class="swiper-slide">
 							<div class="swiper-product-img">
-								<img src="./img/index/靜岡抹茶蜜蘋果.jfif" alt="">
+								<img src="./img/index/chocolate-4.png" alt="">
 								<a href="./product.html" class="more-product">查看更多</a>
 							</div>
 						</div>
+					</div>
+					<div class="right-arrow">
+						<i class="fa-solid fa-angle-right"></i>
 					</div>
 				</div>
 			</div>
@@ -301,10 +296,6 @@
 			spaceBetween: 114,
 			centeredSlides: true,
 			width: 289,
-			// pagination: {
-			//     el: ".swiper-pagination",
-			//     clickable: true,
-			// },
 		});
 
 	</script>

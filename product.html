@@ -16,6 +16,7 @@
 
   <link rel="stylesheet" href="./css/nav&footer.css">
   <link rel="stylesheet" href="./css/product.css">
+  <link rel="stylesheet" href="./css/toTop.css">
 </head>
 
 <body>
@@ -34,14 +35,14 @@
 
   <!-- Your SDK code -->
   <script>
-    window.fbAsyncInit = function() {
+    window.fbAsyncInit = function () {
       FB.init({
-        xfbml            : true,
-        version          : 'v15.0'
+        xfbml: true,
+        version: 'v15.0'
       });
     };
 
-    (function(d, s, id) {
+    (function (d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
       if (d.getElementById(id)) return;
       js = d.createElement(s); js.id = id;
@@ -85,8 +86,8 @@
       <div class="wrap">
         <div class="toggle-menu-content">
           <a href="./index.html">
-						<img src="./img/logo-bg-white.png" alt="">
-					</a>
+            <img src="./img/logo-bg-white.png" alt="">
+          </a>
           <div class="nav-links">
             <a href="./news.html">活動快訊</a>
             <a href="./product.html">產品介紹</a>
@@ -192,6 +193,9 @@
         </div>
       </div>
     </div>
+    <a href="#" id="back_to_top">
+      <i class="fa-solid fa-angle-up"></i>
+    </a>
   </main>
 
   <footer>
@@ -230,6 +234,7 @@
   </footer>
 
   <script src="./js/product.js"></script>
+  <script src="./js/toTop.js"></script>
 </body>
 
 </html>
