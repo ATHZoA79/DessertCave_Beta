@@ -29,20 +29,16 @@ window.addEventListener('scroll', () => {
   currentTop = window.scrollY;
 });
 
-// JH 2022/10/28 
+const TOTOP = document.querySelector('#back_to_top');
+const FOOTER = document.querySelector('footer');
 
-const menubox = document.querySelector('#menu_all');
-const menuList = document.querySelector('.menu-1');
-const downLine = window.getComputedStyle(menu_all, '::after');
-const areaX = document.querySelector('.close-area');
-
-console.log(menubox, areaX, menuList, downLine);
-
-menubox.addEventListener('click', function () {
-  console.log('click');
-  menuList.classList.add('menu-show');
+console.log(window.innerHeight, window.scrollY, body.clientHeight, main.clientHeight, FOOTER.clientHeight);
+window.addEventListener('scroll', () => {
+  if (window.scrollY < window.innerHeight) {
+    TOTOP.style = 'display: none;';
+  }else if (window.scrollY < body.clientHeight-FOOTER.clientHeight-window.innerHeight) {
+    TOTOP.style = 'position: fixed; right: 53px; bottom: 40px;';
+  }else if (window.scrollY > body.clientHeight-FOOTER.clientHeight-window.innerHeight) {
+    TOTOP.style = 'position: absolute; right: 53px; bottom: 40px;';
+  }
 });
-areaX.addEventListener('click', function () {
-  menuList.classList.remove('menu-show');
-});
-
