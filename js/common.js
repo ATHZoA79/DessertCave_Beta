@@ -38,8 +38,8 @@ window.addEventListener('scroll', () => {
   if (window.scrollY < window.innerHeight) {
     TOTOP.style = 'display: none;';
   }else if (window.scrollY < body.clientHeight-FOOTER.clientHeight-window.innerHeight) {
-    TOTOP.style = 'position: fixed; right: 53px; bottom: 40px;';
+    TOTOP.style = 'position: fixed; right: 40px; bottom: 92px;';
   }else if (window.scrollY > body.clientHeight-FOOTER.clientHeight-window.innerHeight) {
-    TOTOP.style = 'position: absolute; right: 53px; bottom: 40px;';
+    TOTOP.style = 'position: absolute; right: 40px; bottom: 92px;';
   }
 });

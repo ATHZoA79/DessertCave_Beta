@@ -10,6 +10,9 @@
   font-family: "Noto Serif TC", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 html ::-webkit-scrollbar {
   width: 0px;
 }
