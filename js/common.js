@@ -31,9 +31,10 @@ window.addEventListener('scroll', () => {
 
 const TOTOP = document.querySelector('#back_to_top');
 const FOOTER = document.querySelector('footer');
+
 TOTOP.style = 'display: none;';
 
-console.log(window.innerHeight, window.scrollY, body.clientHeight, main.clientHeight, FOOTER.clientHeight);
+// console.log(window.innerHeight, window.scrollY, body.clientHeight, main.clientHeight, FOOTER.clientHeight);
 window.addEventListener('scroll', () => {
   if (window.scrollY < window.innerHeight) {
     TOTOP.style = 'display: none;';

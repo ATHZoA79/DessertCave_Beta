@@ -167,6 +167,7 @@ header {
 				color: black;
 				font-weight: 400;
 				font-size: 18px;
+				font-family: 'Noto Sans TC';
 				border-radius: 8px;
 				letter-spacing: 1px;
 				transition: 0.2s;
@@ -278,6 +279,205 @@ header {
 
 	// End of pagination
 }
+@media (max-width: 1024px) {
+	header {
+		nav {
+			.nav-btns {
+				.nav-style {
+					padding: 4px 5px;
+				}
+			}
+		}
+	}
+}
+@media screen and(min-width:1241px) and (max-width: 1440px) {
+	header {
+		nav {
+			padding: 0 20px;
+			@include dimension(calc(100% - 50px), 100%);
+
+			.nav-logo {
+				left: 50px;
+			}
+		}
+		.pagination {
+			.content {
+				@include flex-row(space-around, center);
+				@include dimension(calc(100% - 121px), 100%);
+				padding: 0 10%;
+				background-color: rgba(141, 215, 204, 0.6);
+				z-index: 1;
+
+				a {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+@media screen and(min-width:720px) and (max-width: 1240px) {
+	header {
+		nav {
+			padding: 0 20px;
+			@include dimension(calc(100% - 30px), 100%);
+
+			.nav-logo {
+				left: 30px;
+			}
+		}
+		.pagination {
+			.content {
+				@include flex-row(space-around, center);
+				@include dimension(calc(100% - 131px), 100%);
+				padding: 0 10%;
+				background-color: rgba(141, 215, 204, 0.6);
+				z-index: 1;
+
+				a {
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 720px) {
+	header {
+		position: relative;
+
+		nav {
+			padding: 0 20px;
+
+			.nav-logo {
+				@include dimension(70px, 70px);
+				position: absolute;
+				top: 19px;
+				left: 50%;
+				translate: -50% 0;
+			}
+
+			.nav-btns,
+			.social-media-area {
+				display: none;
+			}
+		}
+
+		.ham-icon {
+			position: absolute;
+			right: 0;
+			top: 50%;
+			padding: 0 15px 0;
+			transform: translateY(-50%);
+			display: block;
+			font-size: 3rem;
+			z-index: 1;
+			cursor: pointer;
+
+			svg {
+				@include dimension(35px, 35px);
+				.st0 {
+					fill: none;
+					stroke: #fff;
+					stroke-width: 10;
+					stroke-miterlimit: 10;
+				}
+			}
+		}
+
+		#ham_icon:checked ~ #toggle_menu {
+			@include dimension(100%, 100vh);
+			z-index: 100;
+			.wrap {
+				.toggle-menu-content {
+					img {
+						scale: 1;
+					}
+				}
+				.close-icon {
+					@include dimension(80px, 100vh);
+					@include flex-row(flex-start, center);
+					background-color: #8dd7cc;
+				}
+			}
+		}
+		//
+		#toggle_menu {
+			@include dimension(0, 100vh);
+			@include transition(0.4s, 0s, ease-out);
+			position: fixed;
+			top: 0;
+			right: -100vw;
+			display: block;
+			background-color: white;
+			translate: -100% 0;
+			z-index: 5;
+			.wrap {
+				display: flex;
+				.toggle-menu-content {
+					@include dimension(calc(100% - 80px), 100vh);
+					@include flex-col(center, center);
+					img {
+						@include dimension(130px, 130px);
+						object-fit: contain;
+						scale: 0;
+					}
+					.nav-links {
+						@include flex-col(center, center);
+						padding: 70px 0;
+						a + a {
+							padding-top: 35px;
+						}
+						a {
+							color: #000;
+							font-size: 20px;
+							font-family: "Noto Sans TC";
+							text-decoration: none;
+						}
+					}
+					.follow-us {
+						padding: 15px 0 20px;
+						font-size: 16px;
+						font-family: "Noto Sans TC";
+					}
+					.ssn {
+						@include dimension(102px, 42px);
+						@include flex-row(space-between, center);
+						.facebook,
+						.instagram {
+							color: $primary;
+							transition: 0.4s ease;
+							scale: 1;
+						}
+						.facebook {
+							font-size: 42px;
+						}
+
+						.instagram {
+							font-size: 42px;
+						}
+					}
+				}
+				.close-icon {
+					@include dimension(80px, 100vh);
+					@include flex-row(center, center);
+					background-color: #8dd7cc;
+					i {
+						font-size: 30px;
+						padding-left: 25px;
+					}
+				}
+			}
+		}
+
+		.pagination {
+			display: none !important;
+
+			.content {
+				width: 100%;
+				color: white;
+			}
+		}
+	}
+}
 
 // End of header
 
@@ -353,24 +553,7 @@ footer {
 
 // Media Query
 
-@media (max-width: 1280px) {
-	header {
-		nav {
-			width: 75%;
-		}
-	}
-}
-
 @media (max-width: 1024px) {
-	header {
-		nav {
-			.nav-btns {
-				.nav-style {
-					padding: 4px 5px;
-				}
-			}
-		}
-	}
 
 	footer {
 		justify-content: flex-start;
@@ -436,142 +619,4 @@ footer {
 			color: $grey-1;
 		}
 	}
-}
-
-@media screen and (max-width: 720px) {
-	header {
-		position: relative;
-
-		nav {
-			padding: 0 20px;
-
-			.nav-logo {
-				@include dimension(70px, 70px);
-				position: absolute;
-				top: 19px;
-				left: 50%;
-				translate: -50% 0;
-			}
-
-			.nav-btns,
-			.social-media-area {
-				display: none;
-			}
-		}
-
-		.ham-icon {
-			position: absolute;
-			right: 0;
-			top: 50%;
-			padding: 0 15px 0;
-			transform: translateY(-50%);
-			display: block;
-			font-size: 3rem;
-			z-index: 1;
-			cursor: pointer;
-
-			svg {
-				@include dimension(35px, 35px);
-				.st0 {
-					fill: none;
-					stroke: white;
-					stroke-width: 10;
-					stroke-miterlimit: 10;
-				}
-			}
-		}
-
-		#ham_icon:checked ~ #toggle_menu {
-			@include dimension(100%, 100vh);
-			.wrap {
-				.toggle-menu-content {
-					img {
-						scale: 1;
-					}
-				}
-				.close-icon {
-					@include dimension(80px, 100vh);
-					@include flex-row(flex-start, center);
-					background-color: #8dd7cc;
-				}
-			}
-		}
-		//
-		#toggle_menu {
-			@include dimension(0, 100vh);
-			@include transition(0.4s, 0s, ease-out);
-			position: fixed;
-			top: 0;
-			right: -100vw;
-			display: block;
-			background-color: white;
-			translate: -100% 0;
-			z-index: 5;
-			.wrap {
-				display: flex;
-				.toggle-menu-content {
-					@include dimension(calc(100% - 80px), 100vh);
-					@include flex-col(center, center);
-					img {
-						@include dimension(130px, 130px);
-						object-fit: contain;
-						scale: 0;
-					}
-					.nav-links {
-						@include flex-col(center, center);
-						padding: 70px 0 0;
-						a + a {
-							padding-top: 35px;
-						}
-						a {
-							color: #000;
-							font-size: 20px;
-							font-family: 'Noto Sans TC';
-							text-decoration: none;
-						}
-					}
-					.follow-us {
-						padding: 15px 0 20px;
-						font-size: 16px;
-						font-family: 'Noto Sans TC';
-					}
-					.ssn {
-						@include dimension(102px, 42px);
-						@include flex-row(space-between, center);
-						.facebook, .instagram {
-							color: $primary;
-							transition: 0.4s ease;
-							scale: 1;
-						}
-						.facebook {
-							font-size: 42px;
-						}
-
-						.instagram {
-							font-size: 42px;
-						}
-					}
-				}
-				.close-icon {
-					@include dimension(80px, 100vh);
-					@include flex-row(center, center);
-					background-color: #8dd7cc;
-					i {
-						font-size: 30px;
-						padding-left: 25px;
-					}
-				}
-			}
-		}
-
-		.pagination {
-			display: none !important;
-
-			.content {
-				width: 100%;
-				color: white;
-			}
-		}
-	}
-
 }
