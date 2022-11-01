@@ -692,7 +692,7 @@ main {
 					}
 				}
 				p {
-					@include dimension(341px, auto);
+					@include dimension(300px, auto);
 					position: absolute;
 					top: 357px;
 					left: 45px;
@@ -897,11 +897,12 @@ footer {
 	}
 
 	.copy-right {
-		@include dimension(419px, 15px);
+		@include dimension(350px, 15px);
 		@include flex-row(center, center);
 		transform: translate(0, 250%);
 		color: white;
-		font-size: 12px;
+		font-size: 10px;
+		font-family: 'Noto Sans TC';
 		letter-spacing: 1px;
 	}
 }

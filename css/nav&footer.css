@@ -256,14 +256,15 @@ footer .footer-box .map iframe {
   padding: 10px;
 }
 footer .copy-right {
-  width: 419px;
+  width: 370px;
   height: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
   transform: translate(0, 250%);
   color: white;
-  font-size: 12px;
+  font-size: 10px;
+  font-family: "Noto Sans TC";
   letter-spacing: 1px;
 }
 

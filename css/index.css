@@ -653,7 +653,7 @@ main .new-product .text button:hover {
     font-weight: 700;
   }
   main .new-product .text p {
-    width: 341px;
+    width: 300px;
     height: auto;
     position: absolute;
     top: 357px;
@@ -873,14 +873,15 @@ footer .footer-box .map iframe {
   padding: 10px;
 }
 footer .copy-right {
-  width: 419px;
+  width: 350px;
   height: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
   transform: translate(0, 250%);
   color: white;
-  font-size: 12px;
+  font-size: 10px;
+  font-family: "Noto Sans TC";
   letter-spacing: 1px;
 }
 
