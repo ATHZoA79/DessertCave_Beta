@@ -86,16 +86,16 @@ main {
   width: 100%;
 
   .page-area {
-    @include dimension(100%, 50px);
+    @include dimension(100%, auto);
     // background-color: $grey-6;
     margin-top: 40px;
 
     @include flex-row(End, center);
 
     .page {
-      height: 20px;
+      // height: 20px;
       // background-color: $grey-7;
-      padding-right: 5%;
+      padding: 0 5% 0;
       font-size: 16px;
       font-family: "Noto Sans TC";
 
@@ -117,13 +117,14 @@ main {
   .hr-head {
     @include dimension(100%, auto);
     @include flex-row(center, center);
-    padding: 120px 0 60px;
+    padding: 118px 0 49px;
     margin: auto;
     // background-color: $grey-9;
 
     p {
       @include font(24px, bold, none, black);
       font-family: "Noto Serif TC";
+      font-weight: 700;
 
       &::before {
         content: "———";

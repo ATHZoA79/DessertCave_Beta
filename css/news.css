@@ -25,6 +25,9 @@ main .page-area li {
   line-height: 19px;
   font-weight: 400;
 }
+main .page-area li * {
+  font-family: "Noto Sans TC";
+}
 main .page-area li span {
   padding: 0 11px;
 }
@@ -41,11 +44,12 @@ main .phone_title li {
   justify-content: center;
   align-items: center;
   font-weight: 700;
+  padding: 118px 0 49px;
 }
 main .phone_title li span {
   letter-spacing: 10px;
   padding: 18px 10px 18px 20px;
-  font-size: 18px;
+  font-size: 24px;
 }
 main .news-container {
   width: 1090px;

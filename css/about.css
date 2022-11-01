@@ -72,13 +72,14 @@ main .phone_title li {
   justify-content: center;
   align-items: center;
   font-weight: 700;
-  margin: 118px 0 71px;
+  margin: 78px 0 112px;
   opacity: 0;
 }
 main .phone_title li span {
-  letter-spacing: 10px;
   padding: 18px 10px 18px 20px;
   font-size: 18px;
+  font-family: "Noto Serif TC";
+  letter-spacing: 10px;
 }
 main .logo-area {
   width: 100%;
@@ -368,7 +369,7 @@ main #back_to_top:hover {
     display: block;
   }
   main .phone_title li {
-    margin: 42px 0 112px;
+    margin: 78px 0 112px;
     opacity: 1;
   }
   main .logo-area {
