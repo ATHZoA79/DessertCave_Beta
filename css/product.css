@@ -303,6 +303,10 @@ main .product-detail-area .product-detail-card-container .product-detail-card .p
 }
 
 @media screen and (min-width: 851px) and (max-width: 1100px) {
+  main .page-area {
+    width: 95%;
+    margin-top: 40px;
+  }
   main .product-sheet-area {
     width: 80%;
     height: auto;
@@ -323,6 +327,10 @@ main .product-detail-area .product-detail-card-container .product-detail-card .p
   }
 }
 @media screen and (min-width: 721px) and (max-width: 850px) {
+  main .page-area {
+    width: 95%;
+    margin-top: 40px;
+  }
   main .product-sheet-area {
     width: 80%;
     height: auto;
@@ -351,6 +359,7 @@ main .product-detail-area .product-detail-card-container .product-detail-card .p
 }
 @media screen and (max-width: 720px) {
   main .page-area {
+    display: none;
     width: 1100px;
     margin-top: 40px;
   }
