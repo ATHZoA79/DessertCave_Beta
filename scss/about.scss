@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&family=Crimson+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('');
 // -- Define variable --
 $grey-9: #dcdcdc;
 $grey-8: #c2c2c2;
@@ -113,6 +114,7 @@ $darkgold: rgb(107, 78, 38);
     box-sizing: border-box;
     font-family: 'Noto Sans TC';
 }
+
 html {
     scroll-behavior: smooth;
 }
@@ -128,45 +130,53 @@ main {
     @include flex-col(center, center);
 
     .page-area {
+        @include flex-row(end, center);
         width: 1100px;
         margin-top: 40px;
 
-        li {
-            @include flex-row(flex-end, center);
+
+        .page {
+            // height: 20px;
+            // background-color: $grey-7;
+
             font-size: 16px;
-            line-height: 19px;
-            font-weight: 400;
+            font-family: "Noto Sans TC";
 
-            span {
-                padding: 0 11px;
+            a {
+                text-decoration: none;
+                font-family: "Noto Sans TC";
+                color: #000;
+                border-bottom: 2px solid transparent;
 
-                a {
-                    border-bottom: 2px solid transparent;
-                    margin-top: 3px;
+                // color: black;
+                &:hover {
 
-                    &:hover {
-                        border-bottom: solid black;
-                        transition: 0.1s linear;
-                    }
+                    border-bottom: solid #8DD7CC;
+
+                    transition: 0.1s linear;
                 }
             }
         }
     }
 
-    .phone_title {
-        display: none;
+    .hr-head {
+        @include dimension(100%, auto);
+        @include flex-row(center, center);
+        padding: 118px 0 49px;
+        margin: auto;
+        // background-color: $grey-9;
 
-        li {
-            @include flex-row(center, center);
+        p {
+            @include font(24px, bold, none, black);
+            font-family: "Noto Serif TC";
             font-weight: 700;
-            margin: 78px 0 112px;
-            opacity: 0;
-            
-            span {
-                padding: 18px 10px 18px 20px;
-                font-size: 18px;
-                font-family: 'Noto Serif TC';
-                letter-spacing: 10px;
+
+            &::before {
+                content: "———";
+            }
+
+            &::after {
+                content: "———";
             }
         }
     }
@@ -176,6 +186,11 @@ main {
         @include flex-row(center, center);
         padding: 148px 0;
 
+        * {
+            font-family: 'Noto Serif TC';
+            font-weight: 500;
+        }
+
         .logo {
             @include dimension(900px, 126px);
             @include flex-row(space-around, center);
@@ -183,7 +198,8 @@ main {
 
             .logo-img {
                 @include flex-row(center, center);
-                img{
+
+                img {
                     @include dimension(434px, 126px);
                     object-fit: cover;
                     object-position: center;
@@ -192,11 +208,14 @@ main {
 
             .logo-text {
                 @include dimension(330px, 120px);
-                color: $grey-1;
                 @include flex-col(center, flex-start);
+                @include font(20px, 400, 'Noto Serif CJK TC', $grey-1 );
                 line-height: 30px;
-                font-size: 20px;
                 letter-spacing: 0.1em;
+
+                li {
+                    font-family: 'Noto Serif TC', 'Noto Sans Japanese';
+                }
             }
         }
     }
@@ -219,8 +238,9 @@ main {
         @include flex-row(center, center);
         position: relative;
         padding: 120px 0;
+
         * {
-            font-family: 'Noto Serif TC';
+            font-family: 'Noto Serif CJK TC';
         }
 
         ul {
@@ -230,7 +250,7 @@ main {
                 line-height: 24px;
                 font-size: 24px;
                 padding: 6px 0;
-                font-weight: 700;
+                font-weight: 600;
             }
 
             p:nth-last-of-type(2) {
@@ -361,6 +381,7 @@ main {
             }
         }
     }
+
     #back_to_top {
         @include dimension(30px, 30px);
         @include flex-row(center, center);
@@ -371,14 +392,17 @@ main {
         border-radius: 50%;
         background-color: #8dd7cc40;
         transition: 0.3s;
+
         i {
             font-size: 18px;
         }
+
         &:hover {
             background-color: $primary;
         }
     }
 }
+
 // -- End of main --
 
 //1280px
@@ -394,7 +418,8 @@ main {
 
         .banner-area {
             width: 85%;
-            img{
+
+            img {
                 width: 900px;
             }
         }
@@ -443,8 +468,9 @@ main {
     main {
         .banner-area {
             width: 90%;
+
             img {
-                width:700px;
+                width: 700px;
             }
         }
 
@@ -485,13 +511,15 @@ main {
 
         .logo-area {
             padding: 0;
+
             .logo {
                 @include flex-col(space-between, center);
                 height: 100%;
 
                 .logo-img {
                     padding: 0;
-                    img{
+
+                    img {
                         @include dimension(260px, 75px);
                     }
                 }
@@ -509,6 +537,7 @@ main {
         .banner-area {
             @include dimension(100%, 263px);
             margin: 0;
+
             img {
                 @include dimension(100%, 100%);
                 width: 100%;
@@ -520,14 +549,18 @@ main {
         .slogan-area {
             @include dimension(100%, 549px);
             padding: 0;
+
             ul {
                 font-size: 14px;
+
                 p {
                     font-size: 16px;
+
                     span {
                         font-size: 16px;
                     }
                 }
+
                 li:nth-of-type(1) {
                     margin: 0 0 17px;
                 }
@@ -549,7 +582,7 @@ main {
                 @include dimension(100%, auto);
                 @include flex-col(space-around, center);
                 padding: 0 0 97px;
-                
+
                 .cordon-story {
                     @include dimension(90%, 100%);
                     @include flex-col(center, center);
@@ -558,6 +591,7 @@ main {
 
                     ul {
                         @include flex-col(center, flex-start);
+
                         li {
                             font-size: 16px;
                         }
@@ -580,6 +614,7 @@ main {
 
                 .cordon-graduate {
                     @include dimension(100%, 280px);
+
                     img {
                         @include dimension(100%, 100%);
                     }
@@ -593,6 +628,7 @@ main {
 
                 .brand-picture {
                     @include dimension(100%, 280px);
+
                     img {
                         @include dimension(100%, 100%);
                     }
@@ -606,6 +642,7 @@ main {
 
                     ul {
                         @include flex-col(center, flex-start);
+
                         li {
                             font-size: 16px;
                         }

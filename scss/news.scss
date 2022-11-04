@@ -93,46 +93,53 @@ main {
   position: relative;
 
   .page-area {
+    @include flex-row(end, center);
     width: 1100px;
     margin-top: 40px;
 
-    li {
-      @include flex-row(flex-end, center);
+
+    .page {
+      // height: 20px;
       // background-color: $grey-7;
+
       font-size: 16px;
-      line-height: 19px;
-      font-weight: 400;
-      * {
-        font-family: 'Noto Sans TC';
-      }
-      
-      span {
-        padding: 0 11px;
+      font-family: "Noto Sans TC";
 
-        a {
-          border-bottom: 2px solid transparent;
-          margin-top: 3px;
+      a {
+        text-decoration: none;
+        font-family: "Noto Sans TC";
+        color: #000;
+        border-bottom: 2px solid transparent;
 
-          // color: black;
-          &:hover {
-            border-bottom: solid black;
-            transition: 0.1s linear;
-          }
+        // color: black;
+        &:hover {
+
+          border-bottom: solid #8DD7CC;
+
+          transition: 0.1s linear;
         }
       }
     }
   }
 
-  .phone_title {
-    li {
-      @include flex-row(center, center);
-      font-weight: 700;
-      padding: 118px 0 49px;
+  .hr-head {
+    @include dimension(100%, auto);
+    @include flex-row(center, center);
+    padding: 118px 0 49px;
+    margin: auto;
+    // background-color: $grey-9;
 
-      span {
-        letter-spacing: 10px;
-        padding: 18px 10px 18px 20px;
-        font-size: 24px;
+    p {
+      @include font(24px, bold, none, black);
+      font-family: "Noto Serif TC";
+      font-weight: 700;
+
+      &::before {
+        content: "———";
+      }
+
+      &::after {
+        content: "———";
       }
     }
   }
@@ -147,7 +154,7 @@ main {
       @include flex-row(center, flex-start);
       border: 2px solid $logo_color;
 
-      & + .news-card {
+      &+.news-card {
         margin-top: 150px;
       }
 
@@ -159,6 +166,8 @@ main {
           @include flex-row(center, center);
           background-color: $logo_color;
           transform: translate(50%, 0);
+          font-family: "Noto Serif TC";
+          font-weight: 500;
         }
 
         .news-text {
@@ -171,7 +180,7 @@ main {
             margin-bottom: 32px;
             font-size: 18px;
             line-height: 22px;
-            font-weight: 600;
+            font-weight: 500;
           }
 
           .new-text-content {
@@ -208,10 +217,12 @@ main {
 
             a {
               width: 80px;
+
               &:hover {
                 transform: translateX(2em);
                 @include transition(0.5s, 0s, linear);
               }
+
               span {
                 width: 300px;
                 font-size: 30px;
@@ -309,12 +320,12 @@ main {
         flex-direction: column-reverse;
         align-items: center;
 
-        & + .news-card {
+        &+.news-card {
           margin-top: 50px;
         }
 
         .news-info {
-          @include dimension(90%, 180px);
+          @include dimension(100%, 180px);
 
           .news-date {
             opacity: 0;
